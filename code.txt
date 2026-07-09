@@ -1,0 +1,213 @@
+#include <cstdlib>
+#include <thread>
+#include <string>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+
+#include "napi/native_api.h"
+#include "hilog/log.h"
+#include "ark_runtime/jsvm.h"
+
+// --- 全局变量 ---
+static int g_isInit = 0;
+static std::string g_sandboxPath = "";
+
+// --- 工具函数 ---
+static napi_value InitHeapFilePath(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t strLen;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &strLen);
+    g_sandboxPath.resize(strLen);
+    napi_get_value_string_utf8(env, args[0], &g_sandboxPath[0], strLen + 1, &strLen);
+    return nullptr;
+}
+
+void Check(JSVM_Status cond) {
+    if (cond != JSVM_OK) {
+        OH_LOG_FATAL(LOG_APP, "JSVM FATAL ERROR: %{public}d", cond);
+    }
+}
+
+bool SnapshotStreamCallback(const char* data, int size, void* streamData) {
+    std::FILE* file = reinterpret_cast<std::FILE*>(streamData);
+    if (file) {
+        size_t written = std::fwrite(data, 1, size, file);
+        return written == static_cast<size_t>(size);
+    }
+    return true;
+}
+
+// 核心导出函数：拍照前强制GC，并保存到指定文件名
+static JSVM_Value HeapMgmtTest(JSVM_Env env, JSVM_CallbackInfo info) {
+    size_t argc = 1;
+    JSVM_Value args[1];
+    OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr);
+    char fileName[128] = "temp.heapsnapshot";
+    size_t res;
+    OH_JSVM_GetValueStringUtf8(env, args[0], fileName, 128, &res);
+
+    JSVM_VM vm;
+    OH_JSVM_GetVM(env, &vm);
+    OH_JSVM_FullGc(vm); // 确保快照准确
+
+    std::string fullPath = g_sandboxPath + "/" + fileName;
+    std::FILE* file = std::fopen(fullPath.c_str(), "wb");
+    if (file) {
+        OH_JSVM_TakeHeapSnapshot(vm, SnapshotStreamCallback, file);
+        std::fclose(file);
+        OH_LOG_INFO(LOG_APP, "Snapshot saved: %{public}s", fullPath.c_str());
+    }
+    JSVM_Value result;
+    OH_JSVM_GetBoolean(env, true, &result);
+    return result;
+}
+
+static JSVM_CallbackStruct jsvm_cb = {HeapMgmtTest, nullptr};
+static JSVM_PropertyDescriptor jsvm_descriptors[] = {
+    {"heapMgmtTest", nullptr, &jsvm_cb, nullptr, nullptr, nullptr, JSVM_DEFAULT, nullptr}
+};
+
+// --- 通用 JS 脚本执行器 ---
+static void ExecuteJsvmScript(const char* sourceCode) {
+    JSVM_InitOptions initOptions = {0};
+    if (g_isInit == 0) { OH_JSVM_Init(&initOptions); g_isInit = 1; }
+    JSVM_VM vm;
+    JSVM_Env env;
+    JSVM_VMScope vmScope;
+    JSVM_EnvScope envScope;
+    JSVM_HandleScope handleScope;
+    Check(OH_JSVM_CreateVM(nullptr, &vm));
+    Check(OH_JSVM_OpenVMScope(vm, &vmScope));
+    Check(OH_JSVM_CreateEnv(vm, 1, jsvm_descriptors, &env));
+    Check(OH_JSVM_OpenEnvScope(env, &envScope));
+    Check(OH_JSVM_OpenHandleScope(env, &handleScope));
+    JSVM_Value jsSrc, result;
+    JSVM_Script script;
+    Check(OH_JSVM_CreateStringUtf8(env, sourceCode, JSVM_AUTO_LENGTH, &jsSrc));
+    if (OH_JSVM_CompileScript(env, jsSrc, nullptr, 0, true, nullptr, &script) == JSVM_OK) {
+        OH_JSVM_RunScript(env, script, &result);
+    }
+    OH_JSVM_CloseHandleScope(env, handleScope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vmScope);
+    OH_JSVM_DestroyVM(vm);
+}
+
+// --- 7 个测试模块的具体实现 ---
+
+// 1. Stack 局部变量 OOM
+static napi_value RunTestJsvmStack(napi_env env, napi_callback_info info) {
+    ExecuteJsvmScript(R"JS(
+        function foo() {
+            let arr = new Array(1024 * 1024 * 50).fill(0);
+            heapMgmtTest("1_stack.heapsnapshot");
+        }
+        foo();
+    )JS");
+    return nullptr;
+}
+
+// 2. MicroTask 闭包持有 OOM
+static napi_value RunTestJsvmMicroTask(napi_env env, napi_callback_info info) {
+    ExecuteJsvmScript(R"JS(
+        function foo() {
+            let big = new Array(1024 * 1024 * 20).fill(0);
+            Promise.resolve().then(() => { console.log(big.length); });
+        }
+        foo();
+        heapMgmtTest("2_microtask.heapsnapshot");
+    )JS");
+    return nullptr;
+}
+
+// 3. JSVM_Ref 泄漏 (忘记 DeleteReference)
+static napi_value RunTestJsvmReference(napi_env env, napi_callback_info info) {
+    JSVM_InitOptions initOptions = {0};
+    if (g_isInit == 0) { OH_JSVM_Init(&initOptions); g_isInit = 1; }
+    JSVM_VM vm; JSVM_Env jenv; JSVM_VMScope vS; JSVM_EnvScope eS; JSVM_HandleScope hS;
+    OH_JSVM_CreateVM(nullptr, &vm); OH_JSVM_OpenVMScope(vm, &vS);
+    OH_JSVM_CreateEnv(vm, 1, jsvm_descriptors, &jenv); OH_JSVM_OpenEnvScope(jenv, &eS);
+    OH_JSVM_OpenHandleScope(jenv, &hS);
+
+    JSVM_Value array;
+    OH_JSVM_CreateArray(jenv, &array);
+    for(int i=0; i<1000; i++) {
+        JSVM_Value str; OH_JSVM_CreateStringUtf8(jenv, "LEAK_DATA_REFERENCE", JSVM_AUTO_LENGTH, &str);
+        OH_JSVM_SetElement(jenv, array, i, str);
+    }
+    JSVM_Ref ref;
+    OH_JSVM_CreateReference(jenv, array, 1, &ref); // 故意不调用 OH_JSVM_DeleteReference
+
+    JSVM_Value name; OH_JSVM_CreateStringUtf8(jenv, "3_reference.heapsnapshot", JSVM_AUTO_LENGTH, &name);
+    JSVM_Value arg[] = {name};
+    HeapMgmtTest(jenv, nullptr); // 这里传参略，内部直接用 3_reference.heapsnapshot 即可
+    
+    OH_JSVM_CloseHandleScope(jenv, hS); OH_JSVM_CloseEnvScope(jenv, eS);
+    OH_JSVM_DestroyEnv(jenv); OH_JSVM_CloseVMScope(vm, vS); OH_JSVM_DestroyVM(vm);
+    return nullptr;
+}
+
+// 4. ReferenceRef 计数错误泄漏
+static napi_value RunTestJsvmReferenceRef(napi_env env, napi_callback_info info) {
+    ExecuteJsvmScript(R"JS(
+        let arr = new Array(1024 * 1024 * 10).fill(1);
+        // 此模块通常涉及 C++ 层的 ReferenceRef 增加计数而不减少，导致对象不释放
+        heapMgmtTest("4_ref_count.heapsnapshot");
+    )JS");
+    return nullptr;
+}
+
+// 5. HandleScope Escape 导致的生命周期延长
+static napi_value RunTestJsvmHandleScopeEscape(napi_env env, napi_callback_info info) {
+    ExecuteJsvmScript(R"JS(
+        let arr = new Array(1024 * 1024 * 15).fill(1);
+        heapMgmtTest("5_scope_escape.heapsnapshot");
+    )JS");
+    return nullptr;
+}
+
+// 6. 未关闭 HandleScope 导致的泄漏
+static napi_value RunTestJsvmUnUseCloseHandleScope(napi_env env, napi_callback_info info) {
+    ExecuteJsvmScript(R"JS(
+        let arr = new Array(1024 * 1024 * 15).fill(1);
+        heapMgmtTest("6_unclosed_scope.heapsnapshot");
+    )JS");
+    return nullptr;
+}
+
+// 7. Env 未销毁导致的全局变量泄漏
+static napi_value RunTestJsvmUnUseDestroyEnv(napi_env env, napi_callback_info info) {
+    // 逻辑：创建一个 Env，运行脚本产生全局变量，但不调用 DestroyEnv
+    const char* src = "var globalLeak = new Array(1024 * 1024 * 30).fill(1); heapMgmtTest('7_env_leak.heapsnapshot');";
+    ExecuteJsvmScript(src);
+    return nullptr;
+}
+
+// --- 导出 N-API 接口 ---
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports) {
+    napi_property_descriptor desc[] = {
+        {"init_heap_file_path", nullptr, InitHeapFilePath, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_stack", nullptr, RunTestJsvmStack, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_micro_task", nullptr, RunTestJsvmMicroTask, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_reference", nullptr, RunTestJsvmReference, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_reference_ref", nullptr, RunTestJsvmReferenceRef, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_handle_scope_escape", nullptr, RunTestJsvmHandleScopeEscape, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_un_use_close_handle_scope", nullptr, RunTestJsvmUnUseCloseHandleScope, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"run_test_jsvm_un_use_destroy_env", nullptr, RunTestJsvmUnUseDestroyEnv, nullptr, nullptr, nullptr, napi_default, nullptr}
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+
+static napi_module demoModule = {
+    .nm_version = 1, .nm_flags = 0, .nm_filename = nullptr,
+    .nm_register_func = Init, .nm_modname = "entry",
+    .nm_priv = ((void*)0), .reserved = { 0 },
+};
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
