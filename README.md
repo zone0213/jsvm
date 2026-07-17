@@ -1,6 +1,13 @@
 # jsvm
 
-# 请将文件名替换为你实际下载的文件名
-scp D:\pip_offline\json5-0.9.25-py3-none-any.whl gonglingwen@10.174.176.201:~
-# 同样请将文件名替换为你传过来的实际文件名
-pip3 install json5-0.9.25-py3-none-any.whl
+# --platform 指定 Linux 平台
+# --only-binary=:all: 确保下载的是编译好的二进制包
+# --python-version 310 (如果你 Linux 上的 python3 -V 显示是 3.8.x，这里就改写 38)
+# --implementation cp (代表 CPython)
+
+pip download json5 `
+    --platform manylinux2014_x86_64 `
+    --only-binary=:all: `
+    --python-version 310 `
+    --implementation cp `
+    -d D:\pip_offline
