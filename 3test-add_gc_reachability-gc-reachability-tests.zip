@@ -1,1 +1,1591 @@
 11
+
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Workload$ python run_workload.py --ssh-ip 10.174.176.201 --ssh-user g50060069 --output out --sn 5JV0226127000574 --workload_dir app_preheat --modelist litecg asmint --push_so True --daily False --runtimes 1 --branch trunk
+2026-07-20 10:23:34 args:Namespace(case='all', process=128, output='out', sdk='/home/gonglingwen', target='generic_generic_arm_64only/hisi_all_phone_standard/clang_x64', ssh_ip='10.174.176.201', ssh_port=22, ssh_user='g50060069', ssh_pkey='/home/gonglingwen/.ssh/id_rsa', only_compile=False, mode='all', sn='5JV0226127000574', workload_dir='app_preheat', datafilefoldername='/home/gonglingwen/Test_Report/20260720', modelist=['litecg', 'asmint'], runtimes='1', branch='trunk', compiler_time=False, push_so='True', compare_path=None, daily='False')
+2026-07-20 10:23:34 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:34 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc bili_kntr.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/bili_kntr.abc
+2026-07-20 10:23:34
+2026-07-20 10:23:34 ('', 0)
+2026-07-20 10:23:34 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:34 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc @lottie/fileInfo.txt  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/lottie.abc
+2026-07-20 10:23:38
+2026-07-20 10:23:38 ('', 0)
+2026-07-20 10:23:38 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:38 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc OneItems_zsyh.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/OneItems_zsyh.abc
+2026-07-20 10:23:38
+2026-07-20 10:23:38 ('', 0)
+2026-07-20 10:23:38 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:38 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc gaode.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/gaode.abc
+2026-07-20 10:23:38
+2026-07-20 10:23:38 ('', 0)
+2026-07-20 10:23:38 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:38 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc @shimo/fileInfo.txt  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/shimo.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc sort_pcfilemanager.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/sort_pcfilemanager.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc arkui.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/arkui.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc tranform_zsyh.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/tranform_zsyh.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc bili.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/bili.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc testfileinfo.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/testfileinfo.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:23:41 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc welink.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-litecg/welink.abc
+2026-07-20 10:23:41
+2026-07-20 10:23:41 ('', 0)
+2026-07-20 10:23:41 out-litecg abc编译完成！
+2026-07-20 10:23:41 ++++++++++++++++++
+2026-07-20 10:23:41 SSH开始连接，ssh g50060069@10.174.176.201
+2026-07-20 10:23:42 Connected (version 2.0, client OpenSSH_for_Windows_9.8)
+2026-07-20 10:23:42 Authentication (publickey) successful!
+2026-07-20 10:23:42 [chan 0] Opened sftp connection (server version 3)
+2026-07-20 10:23:42 SSH 连接成功！
+2026-07-20 10:23:42 执行远程命令：hdc -t 5JV0226127000574 target mount
+2026-07-20 10:23:44 命令输出：
+Mount finish
+
+2026-07-20 10:23:44 执行远程命令：hdc -t 5JV0226127000574 shell mount /sys_prod -o rw,remount
+2026-07-20 10:23:45 命令输出：
+
+2026-07-20 10:23:46 执行远程命令：hdc -t 5JV0226127000574 shell truncate -s 0 /sys_prod/etc/soc_perf/*.xml
+2026-07-20 10:23:47 命令输出：
+
+2026-07-20 10:23:47 执行远程命令：hdc -t 5JV0226127000574 shell mount / -o rw,remount
+2026-07-20 10:23:49 命令输出：
+mount: '/dev/block/dm-2'->'/': Not supported
+
+2026-07-20 10:23:49 执行远程命令：hdc -t 5JV0226127000574 shell mv /system/etc/soc_perf/socperf_resource_config.xml /system/etc/soc_perf/socperf_resource_config.xml
+2026-07-20 10:23:50 命令输出：
+
+2026-07-20 10:23:50 执行远程命令：hdc -t 5JV0226127000574 shell mount /vendor -o rw,remount
+2026-07-20 10:23:52 命令输出：
+
+2026-07-20 10:23:52 执行远程命令：hdc -t 5JV0226127000574 shell mv /vendor/etc/soc_perf/socperf_resource_config.xml /vendor/etc/soc_perf/socperf_resource_config.xml.bak
+2026-07-20 10:23:54 命令输出：
+mv: bad '/vendor/etc/soc_perf/socperf_resource_config.xml': No such file or directory
+
+2026-07-20 10:23:54 执行远程命令：hdc list targets
+2026-07-20 10:23:55 命令输出：
+5JV0226127000574
+
+2026-07-20 10:23:55 hdc list targets output: 5JV0226127000574
+
+2026-07-20 10:23:55 ******** sn:5JV0226127000574 ********
+2026-07-20 10:23:55 执行远程命令：hdc -t 5JV0226127000574 shell setenforce 0
+2026-07-20 10:23:57 命令输出：
+
+2026-07-20 10:23:57 执行远程命令：hdc -t 5JV0226127000574 shell if [ -d /data/local/tmp/workload ];then echo 0; else echo 1; fi
+2026-07-20 10:23:58 命令输出：
+0
+
+2026-07-20 10:23:58 执行远程命令：hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/workload
+2026-07-20 10:24:00 命令输出：
+
+2026-07-20 10:24:00 执行远程命令：hdc -t 5JV0226127000574 shell mkdir -p /data/local/tmp/workload
+2026-07-20 10:24:02 命令输出：
+
+2026-07-20 10:24:02 执行远程命令：hdc -t 5JV0226127000574 shell \"param get | grep software\"
+2026-07-20 10:24:03 命令输出：
+    const.software.model = SGT-AL00B
+    const.product.software.version = SGT-AL00B 7.0.0.32(C00E32R3P2log)
+
+2026-07-20 10:24:03
+--------系统版本: SGT-AL00B 7.0.0.32(C00E32R3P2log)  --------
+2026-07-20 10:24:03 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/module/arkcompiler/stub.an ];then echo 0; else echo 1; fi
+2026-07-20 10:24:05 命令输出：
+0
+
+2026-07-20 10:24:05 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/module/arkcompiler/stub.an /data/local/tmp/workload/stub.an
+2026-07-20 10:24:06 命令输出：
+
+2026-07-20 10:24:06 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/stub.an
+2026-07-20 10:24:08 命令输出：
+
+2026-07-20 10:24:08 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/bin/ark_aot_compiler ];then echo 0; else echo 1; fi
+2026-07-20 10:24:10 命令输出：
+0
+
+2026-07-20 10:24:10 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/bin/ark_aot_compiler /data/local/tmp/workload/ark_aot_compiler
+2026-07-20 10:24:11 命令输出：
+
+2026-07-20 10:24:11 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/ark_aot_compiler
+2026-07-20 10:24:13 命令输出：
+
+2026-07-20 10:24:13 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /data/local/tmp/ark_js_vm ];then echo 0; else echo 1; fi
+2026-07-20 10:24:14 命令输出：
+1
+
+2026-07-20 10:24:14 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libbacktrace_local.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:16 命令输出：
+0
+
+2026-07-20 10:24:16 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libbacktrace_local.so /data/local/tmp/workload/libbacktrace_local.so
+2026-07-20 10:24:18 命令输出：
+
+2026-07-20 10:24:18 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libbacktrace_local.so
+2026-07-20 10:24:19 命令输出：
+
+2026-07-20 10:24:19 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libark_llvmcodegen.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:21 命令输出：
+0
+
+2026-07-20 10:24:21 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libark_llvmcodegen.so /data/local/tmp/workload/libark_llvmcodegen.so
+2026-07-20 10:24:23 命令输出：
+
+2026-07-20 10:24:23 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_llvmcodegen.so
+2026-07-20 10:24:24 命令输出：
+
+2026-07-20 10:24:24 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libark_jsruntime.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:26 命令输出：
+0
+
+2026-07-20 10:24:26 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libark_jsruntime.so /data/local/tmp/workload/libark_jsruntime.so
+2026-07-20 10:24:27 命令输出：
+
+2026-07-20 10:24:27 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_jsruntime.so
+2026-07-20 10:24:29 命令输出：
+
+2026-07-20 10:24:29 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libark_jsoptimizer.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:31 命令输出：
+0
+
+2026-07-20 10:24:31 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libark_jsoptimizer.so /data/local/tmp/workload/libark_jsoptimizer.so
+2026-07-20 10:24:32 命令输出：
+
+2026-07-20 10:24:32 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_jsoptimizer.so
+2026-07-20 10:24:34 命令输出：
+
+2026-07-20 10:24:34 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libbegetutil.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:35 命令输出：
+0
+
+2026-07-20 10:24:35 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libbegetutil.z.so /data/local/tmp/workload/libbegetutil.z.so
+2026-07-20 10:24:37 命令输出：
+
+2026-07-20 10:24:37 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libbegetutil.z.so
+2026-07-20 10:24:39 命令输出：
+
+2026-07-20 10:24:39 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libcjson.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:40 命令输出：
+0
+
+2026-07-20 10:24:40 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libcjson.z.so /data/local/tmp/workload/libcjson.z.so
+2026-07-20 10:24:42 命令输出：
+
+2026-07-20 10:24:42 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libcjson.z.so
+2026-07-20 10:24:44 命令输出：
+
+2026-07-20 10:24:44 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libdfx_procinfo.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:45 命令输出：
+0
+
+2026-07-20 10:24:45 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libdfx_procinfo.z.so /data/local/tmp/workload/libdfx_procinfo.z.so
+2026-07-20 10:24:47 命令输出：
+
+2026-07-20 10:24:47 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libdfx_procinfo.z.so
+2026-07-20 10:24:48 命令输出：
+
+2026-07-20 10:24:48 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libdfx_signalhandler.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:50 命令输出：
+1
+
+2026-07-20 10:24:50 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libfaultloggerd.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:52 命令输出：
+0
+
+2026-07-20 10:24:52 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libfaultloggerd.z.so /data/local/tmp/workload/libfaultloggerd.z.so
+2026-07-20 10:24:53 命令输出：
+
+2026-07-20 10:24:53 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libfaultloggerd.z.so
+2026-07-20 10:24:55 命令输出：
+
+2026-07-20 10:24:55 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/ndk/libffrt.so ];then echo 0; else echo 1; fi
+2026-07-20 10:24:56 命令输出：
+0
+
+2026-07-20 10:24:56 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/ndk/libffrt.so /data/local/tmp/workload/libffrt.so
+2026-07-20 10:24:58 命令输出：
+
+2026-07-20 10:24:58 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libffrt.so
+2026-07-20 10:25:00 命令输出：
+
+2026-07-20 10:25:00 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhilog.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:01 命令输出：
+1
+
+2026-07-20 10:25:01 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libhilog_encode.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:03 命令输出：
+1
+
+2026-07-20 10:25:03 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhisysevent.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:04 命令输出：
+0
+
+2026-07-20 10:25:04 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhisysevent.z.so /data/local/tmp/workload/libhisysevent.z.so
+2026-07-20 10:25:06 命令输出：
+
+2026-07-20 10:25:06 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhisysevent.z.so
+2026-07-20 10:25:08 命令输出：
+
+2026-07-20 10:25:08 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhitrace_meter.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:09 命令输出：
+0
+
+2026-07-20 10:25:09 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhitrace_meter.so /data/local/tmp/workload/libhitrace_meter.so
+2026-07-20 10:25:11 命令输出：
+
+2026-07-20 10:25:11 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhitrace_meter.so
+2026-07-20 10:25:12 命令输出：
+
+2026-07-20 10:25:12 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhitracechain.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:14 命令输出：
+0
+
+2026-07-20 10:25:14 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhitracechain.so /data/local/tmp/workload/libhitracechain.so
+2026-07-20 10:25:16 命令输出：
+
+2026-07-20 10:25:16 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhitracechain.so
+2026-07-20 10:25:17 命令输出：
+
+2026-07-20 10:25:17 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libhmicui18n.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:19 命令输出：
+0
+
+2026-07-20 10:25:19 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libhmicui18n.z.so /data/local/tmp/workload/libhmicui18n.z.so
+2026-07-20 10:25:20 命令输出：
+
+2026-07-20 10:25:20 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhmicui18n.z.so
+2026-07-20 10:25:22 命令输出：
+
+2026-07-20 10:25:22 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libhmicuuc.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:24 命令输出：
+0
+
+2026-07-20 10:25:24 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libhmicuuc.z.so /data/local/tmp/workload/libhmicuuc.z.so
+2026-07-20 10:25:25 命令输出：
+
+2026-07-20 10:25:25 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhmicuuc.z.so
+2026-07-20 10:25:27 命令输出：
+
+2026-07-20 10:25:27 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libipc_common.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:28 命令输出：
+1
+
+2026-07-20 10:25:28 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libipc_single.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:30 命令输出：
+1
+
+2026-07-20 10:25:30 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libjit_code_sign.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:32 命令输出：
+0
+
+2026-07-20 10:25:32 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libjit_code_sign.z.so /data/local/tmp/workload/libjit_code_sign.z.so
+2026-07-20 10:25:33 命令输出：
+
+2026-07-20 10:25:33 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libjit_code_sign.z.so
+2026-07-20 10:25:35 命令输出：
+
+2026-07-20 10:25:35 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/liblzma.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:36 命令输出：
+0
+
+2026-07-20 10:25:36 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/liblzma.z.so /data/local/tmp/workload/liblzma.z.so
+2026-07-20 10:25:38 命令输出：
+
+2026-07-20 10:25:38 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/liblzma.z.so
+2026-07-20 10:25:40 命令输出：
+
+2026-07-20 10:25:40 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libqos.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:41 命令输出：
+0
+
+2026-07-20 10:25:41 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libqos.z.so /data/local/tmp/workload/libqos.z.so
+2026-07-20 10:25:43 命令输出：
+
+2026-07-20 10:25:43 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libqos.z.so
+2026-07-20 10:25:44 命令输出：
+
+2026-07-20 10:25:44 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libsamgr_proxy.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:46 命令输出：
+1
+
+2026-07-20 10:25:46 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libsec_shared.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:48 命令输出：
+0
+
+2026-07-20 10:25:48 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libsec_shared.z.so /data/local/tmp/workload/libsec_shared.z.so
+2026-07-20 10:25:49 命令输出：
+
+2026-07-20 10:25:49 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libsec_shared.z.so
+2026-07-20 10:25:51 命令输出：
+
+2026-07-20 10:25:51 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libshared_libz.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:52 命令输出：
+1
+
+2026-07-20 10:25:52 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libucollection_client.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:54 命令输出：
+1
+
+2026-07-20 10:25:54 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libunwinder.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:25:56 命令输出：
+0
+
+2026-07-20 10:25:56 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libunwinder.z.so /data/local/tmp/workload/libunwinder.z.so
+2026-07-20 10:25:57 命令输出：
+
+2026-07-20 10:25:57 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libunwinder.z.so
+2026-07-20 10:25:59 命令输出：
+
+2026-07-20 10:25:59 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libutils.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:00 命令输出：
+0
+
+2026-07-20 10:26:00 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libutils.z.so /data/local/tmp/workload/libutils.z.so
+2026-07-20 10:26:02 命令输出：
+
+2026-07-20 10:26:02 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libutils.z.so
+2026-07-20 10:26:04 命令输出：
+
+2026-07-20 10:26:04 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libuv.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:05 命令输出：
+0
+
+2026-07-20 10:26:05 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libuv.so /data/local/tmp/workload/libuv.so
+2026-07-20 10:26:07 命令输出：
+
+2026-07-20 10:26:07 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libuv.so
+2026-07-20 10:26:08 命令输出：
+
+2026-07-20 10:26:08 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/librtg_interface.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:10 命令输出：
+0
+
+2026-07-20 10:26:10 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/librtg_interface.z.so /data/local/tmp/workload/librtg_interface.z.so
+2026-07-20 10:26:12 命令输出：
+
+2026-07-20 10:26:12 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/librtg_interface.z.so
+2026-07-20 10:26:13 命令输出：
+
+2026-07-20 10:26:13 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:15 命令输出：
+0
+
+2026-07-20 10:26:15 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:16 命令输出：
+
+2026-07-20 10:26:16 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:18 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:26:18 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:20 命令输出：
+0
+
+2026-07-20 10:26:20 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:21 命令输出：
+cp: /data/local/tmp/workload/libasync_stack.z.so: No such file or directory
+
+2026-07-20 10:26:21 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:23 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:26:23 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-pub-sdk/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:24 命令输出：
+0
+
+2026-07-20 10:26:24 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-pub-sdk/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:26 命令输出：
+
+2026-07-20 10:26:26 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:26:28 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:26:28 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libhilog_inner.so ];then echo 0; else echo 1; fi
+2026-07-20 10:26:29 命令输出：
+0
+
+2026-07-20 10:26:29 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libhilog_inner.so /data/local/tmp/workload/libhilog_inner.so
+2026-07-20 10:26:31 命令输出：
+
+2026-07-20 10:26:31 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhilog_inner.so
+2026-07-20 10:26:32 命令输出：
+
+2026-07-20 10:26:32 tar -czf test.tar.gz -C/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build out-litecg
+2026-07-20 10:26:33
+2026-07-20 10:26:33 send file test.tar.gz -> temp/test.tar.gz
+Transferred: 3.16/3.61 MB  Speed: 10.87 MB/s
+2026-07-20 10:26:34 执行远程命令：hdc -t 5JV0226127000574 file send temp\test.tar.gz /data/local/tmp/workload
+2026-07-20 10:26:35 命令输出：
+FileTransfer finish, Size:3790203, File count = 1, time:177ms rate:21413.58kB/s
+
+2026-07-20 10:26:35 执行远程命令：hdc -t 5JV0226127000574 shell tar -xzf /data/local/tmp/workload/test.tar.gz -C /data/local/tmp/workload
+2026-07-20 10:26:37 命令输出：
+
+2026-07-20 10:26:37 rm test.tar.gz
+2026-07-20 10:26:37
+2026-07-20 10:26:37 send file OHBigCoreMaxFreq.bat -> temp/OHBigCoreMaxFreq.bat
+
+2026-07-20 10:26:37 执行远程命令：call temp/OHBigCoreMaxFreq.bat 5JV0226127000574
+2026-07-20 10:26:44 命令输出：
+
+C:\Users\g50060069>set sn=5JV0226127000574
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/devices/system/cpu/online"
+0-13
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/class/power_supply/Battery/capacity"
+69
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu0/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu1/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu2/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu3/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu4/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu5/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu6/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu7/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu8/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu9/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu10/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu11/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/devices/system/cpu/online"
+0-13
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/class/power_supply/Battery/capacity"
+69
+
+2026-07-20 10:26:47 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:26:48 命令输出：
+0-13
+
+2026-07-20 10:26:48 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:26:50 命令输出：
+69
+
+2026-07-20 10:26:50 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:26:51 命令输出：
+29911
+
+2026-07-20 10:26:51 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:26:53 命令输出：
+280
+
+2026-07-20 10:26:53 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:26:55 命令输出：
+1660000
+
+2026-07-20 10:26:55 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:26:56 命令输出：
+1660000
+
+2026-07-20 10:26:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:26:58 命令输出：
+1660000
+
+2026-07-20 10:26:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:26:59 命令输出：
+1660000
+
+2026-07-20 10:26:59 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/bili_kntr.ap --entry-point=bili_kntr --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/bili_kntr.abc ; echo $?\"
+2026-07-20 10:27:01 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:27:01 ap failed_cases: bili_kntr
+2026-07-20 10:27:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:27:02 命令输出：
+0-13
+
+2026-07-20 10:27:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:27:04 命令输出：
+69
+
+2026-07-20 10:27:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:27:05 命令输出：
+29924
+
+2026-07-20 10:27:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:27:07 命令输出：
+280
+
+2026-07-20 10:27:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:27:08 命令输出：
+1660000
+
+2026-07-20 10:27:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:27:10 命令输出：
+1660000
+
+2026-07-20 10:27:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:27:11 命令输出：
+1660000
+
+2026-07-20 10:27:11 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:27:13 命令输出：
+1660000
+
+2026-07-20 10:27:13 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/lottie.ap --entry-point=lottie --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/lottie.abc ; echo $?\"
+2026-07-20 10:27:15 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:27:15 ap failed_cases: lottie
+2026-07-20 10:27:15 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:27:16 命令输出：
+0-13
+
+2026-07-20 10:27:16 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:27:18 命令输出：
+69
+
+2026-07-20 10:27:18 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:27:19 命令输出：
+29894
+
+2026-07-20 10:27:19 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:27:21 命令输出：
+280
+
+2026-07-20 10:27:21 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:27:22 命令输出：
+1660000
+
+2026-07-20 10:27:22 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:27:24 命令输出：
+1660000
+
+2026-07-20 10:27:24 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:27:25 命令输出：
+1660000
+
+2026-07-20 10:27:25 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:27:27 命令输出：
+1660000
+
+2026-07-20 10:27:27 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/OneItems_zsyh.ap --entry-point=OneItems_zsyh --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/OneItems_zsyh.abc ; echo $?\"
+2026-07-20 10:27:28 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:27:28 ap failed_cases: OneItems_zsyh
+2026-07-20 10:27:28 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:27:30 命令输出：
+0-13
+
+2026-07-20 10:27:30 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:27:32 命令输出：
+69
+
+2026-07-20 10:27:32 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:27:33 命令输出：
+29890
+
+2026-07-20 10:27:33 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:27:35 命令输出：
+280
+
+2026-07-20 10:27:35 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:27:36 命令输出：
+1660000
+
+2026-07-20 10:27:36 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:27:38 命令输出：
+1660000
+
+2026-07-20 10:27:38 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:27:39 命令输出：
+1660000
+
+2026-07-20 10:27:39 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:27:41 命令输出：
+1660000
+
+2026-07-20 10:27:41 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/gaode.ap --entry-point=gaode --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/gaode.abc ; echo $?\"
+2026-07-20 10:27:42 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:27:42 ap failed_cases: gaode
+2026-07-20 10:27:42 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:27:44 命令输出：
+0-13
+
+2026-07-20 10:27:44 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:27:45 命令输出：
+69
+
+2026-07-20 10:27:45 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:27:47 命令输出：
+29885
+
+2026-07-20 10:27:47 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:27:49 命令输出：
+280
+
+2026-07-20 10:27:49 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:27:50 命令输出：
+1660000
+
+2026-07-20 10:27:50 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:27:52 命令输出：
+1660000
+
+2026-07-20 10:27:52 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:27:53 命令输出：
+1660000
+
+2026-07-20 10:27:53 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:27:55 命令输出：
+1660000
+
+2026-07-20 10:27:55 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/shimo.ap --entry-point=shimo --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/shimo.abc ; echo $?\"
+2026-07-20 10:27:56 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:27:56 ap failed_cases: shimo
+2026-07-20 10:27:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:27:58 命令输出：
+0-13
+
+2026-07-20 10:27:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:27:59 命令输出：
+69
+
+2026-07-20 10:27:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:28:01 命令输出：
+29888
+
+2026-07-20 10:28:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:28:02 命令输出：
+280
+
+2026-07-20 10:28:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:28:04 命令输出：
+1660000
+
+2026-07-20 10:28:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:28:05 命令输出：
+1660000
+
+2026-07-20 10:28:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:28:07 命令输出：
+1660000
+
+2026-07-20 10:28:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:28:09 命令输出：
+1660000
+
+2026-07-20 10:28:09 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/sort_pcfilemanager.ap --entry-point=sort_pcfilemanager --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/sort_pcfilemanager.abc ; echo $?\"
+2026-07-20 10:28:10 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:28:10 ap failed_cases: sort_pcfilemanager
+2026-07-20 10:28:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:28:12 命令输出：
+0-13
+
+2026-07-20 10:28:12 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:28:13 命令输出：
+69
+
+2026-07-20 10:28:13 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:28:15 命令输出：
+29904
+
+2026-07-20 10:28:15 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:28:16 命令输出：
+280
+
+2026-07-20 10:28:16 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:28:18 命令输出：
+1660000
+
+2026-07-20 10:28:18 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:28:19 命令输出：
+1660000
+
+2026-07-20 10:28:19 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:28:21 命令输出：
+1660000
+
+2026-07-20 10:28:21 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:28:22 命令输出：
+1660000
+
+2026-07-20 10:28:22 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/arkui.ap --entry-point=arkui --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/arkui.abc ; echo $?\"
+2026-07-20 10:28:24 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:28:24 ap failed_cases: arkui
+2026-07-20 10:28:24 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:28:25 命令输出：
+0-13
+
+2026-07-20 10:28:25 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:28:27 命令输出：
+69
+
+2026-07-20 10:28:27 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:28:28 命令输出：
+29908
+
+2026-07-20 10:28:28 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:28:30 命令输出：
+280
+
+2026-07-20 10:28:30 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:28:31 命令输出：
+1660000
+
+2026-07-20 10:28:31 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:28:33 命令输出：
+1660000
+
+2026-07-20 10:28:33 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:28:35 命令输出：
+1660000
+
+2026-07-20 10:28:35 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:28:36 命令输出：
+1660000
+
+2026-07-20 10:28:36 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/tranform_zsyh.ap --entry-point=tranform_zsyh --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/tranform_zsyh.abc ; echo $?\"
+2026-07-20 10:28:38 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:28:38 ap failed_cases: tranform_zsyh
+2026-07-20 10:28:38 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:28:39 命令输出：
+0-13
+
+2026-07-20 10:28:39 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:28:41 命令输出：
+69
+
+2026-07-20 10:28:41 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:28:42 命令输出：
+29923
+
+2026-07-20 10:28:42 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:28:44 命令输出：
+280
+
+2026-07-20 10:28:44 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:28:45 命令输出：
+1660000
+
+2026-07-20 10:28:45 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:28:47 命令输出：
+1660000
+
+2026-07-20 10:28:47 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:28:48 命令输出：
+1660000
+
+2026-07-20 10:28:48 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:28:50 命令输出：
+1660000
+
+2026-07-20 10:28:50 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/bili.ap --entry-point=bili --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/bili.abc ; echo $?\"
+2026-07-20 10:28:51 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:28:51 ap failed_cases: bili
+2026-07-20 10:28:51 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:28:53 命令输出：
+0-13
+
+2026-07-20 10:28:53 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:28:54 命令输出：
+69
+
+2026-07-20 10:28:54 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:28:56 命令输出：
+29976
+
+2026-07-20 10:28:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:28:57 命令输出：
+280
+
+2026-07-20 10:28:57 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:28:59 命令输出：
+1660000
+
+2026-07-20 10:28:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:29:01 命令输出：
+1660000
+
+2026-07-20 10:29:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:29:02 命令输出：
+1660000
+
+2026-07-20 10:29:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:29:04 命令输出：
+1660000
+
+2026-07-20 10:29:04 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/testfileinfo.ap --entry-point=testfileinfo --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/testfileinfo.abc ; echo $?\"
+2026-07-20 10:29:05 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:29:05 ap failed_cases: testfileinfo
+2026-07-20 10:29:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 10:29:07 命令输出：
+0-13
+
+2026-07-20 10:29:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 10:29:08 命令输出：
+69
+
+2026-07-20 10:29:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 10:29:10 命令输出：
+30001
+
+2026-07-20 10:29:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 10:29:11 命令输出：
+280
+
+2026-07-20 10:29:11 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 10:29:13 命令输出：
+1660000
+
+2026-07-20 10:29:13 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 10:29:14 命令输出：
+1660000
+
+2026-07-20 10:29:14 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 10:29:16 命令输出：
+1660000
+
+2026-07-20 10:29:16 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 10:29:17 命令输出：
+1660000
+
+2026-07-20 10:29:17 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /data/local/tmp/workload/ark_js_vm --enable-pgo-profiler=true --compiler-pgo-profiler-path=out-litecg/welink.ap --entry-point=welink --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true out-litecg/welink.abc ; echo $?\"
+2026-07-20 10:29:19 命令输出：
+/bin/sh: /data/local/tmp/workload/ark_js_vm: inaccessible or not found
+127
+
+2026-07-20 10:29:19 ap failed_cases: welink
+2026-07-20 10:29:19 send file OHMediumCoreMaxFreq.bat -> temp/OHMediumCoreMaxFreq.bat
+
+2026-07-20 10:29:19 执行远程命令：call temp/OHMediumCoreMaxFreq.bat 5JV0226127000574
+2026-07-20 10:29:25 命令输出：
+
+C:\Users\g50060069>set sn=5JV0226127000574
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/devices/system/cpu/online"
+0-13
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/class/power_supply/Battery/capacity"
+69
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu0/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu1/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu2/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu3/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu4/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu5/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu6/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu7/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu8/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1 > /sys/devices/system/cpu/cpu9/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu10/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 0 > /sys/devices/system/cpu/cpu11/online"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 1600000>  /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu8/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2151000>  /sys/devices/system/cpu/cpu9/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu10/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_min_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "echo 2500000>  /sys/devices/system/cpu/cpu11/cpufreq/scaling_max_freq"
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/devices/system/cpu/online"
+0,4-9,12-13
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/class/power_supply/Battery/capacity"
+69
+
+2026-07-20 10:29:28 an、ap failed_cases is : bili_kntr
+2026-07-20 10:29:28 an、ap failed_cases is : lottie
+2026-07-20 10:29:28 an、ap failed_cases is : OneItems_zsyh
+2026-07-20 10:29:28 an、ap failed_cases is : gaode
+2026-07-20 10:29:28 an、ap failed_cases is : shimo
+2026-07-20 10:29:28 an、ap failed_cases is : sort_pcfilemanager
+2026-07-20 10:29:28 an、ap failed_cases is : arkui
+2026-07-20 10:29:28 an、ap failed_cases is : tranform_zsyh
+2026-07-20 10:29:28 an、ap failed_cases is : bili
+2026-07-20 10:29:28 an、ap failed_cases is : testfileinfo
+2026-07-20 10:29:28 an、ap failed_cases is : welink
+2026-07-20 10:29:28 mkdir /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint success！
+2026-07-20 10:29:28 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:28 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc bili_kntr.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/bili_kntr.abc
+2026-07-20 10:29:28
+2026-07-20 10:29:28 ('', 0)
+2026-07-20 10:29:28 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:28 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc @lottie/fileInfo.txt  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/lottie.abc
+2026-07-20 10:29:32
+2026-07-20 10:29:32 ('', 0)
+2026-07-20 10:29:32 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:32 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc OneItems_zsyh.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/OneItems_zsyh.abc
+2026-07-20 10:29:32
+2026-07-20 10:29:32 ('', 0)
+2026-07-20 10:29:32 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:32 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc gaode.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/gaode.abc
+2026-07-20 10:29:32
+2026-07-20 10:29:32 ('', 0)
+2026-07-20 10:29:32 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:32 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc @shimo/fileInfo.txt  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/shimo.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc sort_pcfilemanager.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/sort_pcfilemanager.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc arkui.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/arkui.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc tranform_zsyh.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/tranform_zsyh.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc bili.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/bili.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc testfileinfo.js --extension=js  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/testfileinfo.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/suites/workload/app_preheat
+2026-07-20 10:29:35 /home/gonglingwen/toolchain/x86_bin/trunk/es2abc welink.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/welink.abc
+2026-07-20 10:29:35
+2026-07-20 10:29:35 ('', 0)
+2026-07-20 10:29:35 out-asmint abc编译完成！
+2026-07-20 10:29:35 ++++++++++++++++++
+2026-07-20 10:29:35 SSH开始连接，ssh g50060069@10.174.176.201
+2026-07-20 10:29:35 Connected (version 2.0, client OpenSSH_for_Windows_9.8)
+2026-07-20 10:29:36 Authentication (publickey) successful!
+2026-07-20 10:29:36 [chan 0] Opened sftp connection (server version 3)
+2026-07-20 10:29:36 SSH 连接成功！
+2026-07-20 10:29:36 执行远程命令：hdc -t 5JV0226127000574 target mount
+2026-07-20 10:29:38 命令输出：
+Mount finish
+
+2026-07-20 10:29:38 执行远程命令：hdc -t 5JV0226127000574 shell mount /sys_prod -o rw,remount
+2026-07-20 10:29:39 命令输出：
+
+2026-07-20 10:29:39 执行远程命令：hdc -t 5JV0226127000574 shell truncate -s 0 /sys_prod/etc/soc_perf/*.xml
+2026-07-20 10:29:41 命令输出：
+
+2026-07-20 10:29:41 执行远程命令：hdc -t 5JV0226127000574 shell mount / -o rw,remount
+2026-07-20 10:29:42 命令输出：
+mount: '/dev/block/dm-2'->'/': Not supported
+
+2026-07-20 10:29:42 执行远程命令：hdc -t 5JV0226127000574 shell mv /system/etc/soc_perf/socperf_resource_config.xml /system/etc/soc_perf/socperf_resource_config.xml
+2026-07-20 10:29:44 命令输出：
+
+2026-07-20 10:29:44 执行远程命令：hdc -t 5JV0226127000574 shell mount /vendor -o rw,remount
+2026-07-20 10:29:45 命令输出：
+
+2026-07-20 10:29:45 执行远程命令：hdc -t 5JV0226127000574 shell mv /vendor/etc/soc_perf/socperf_resource_config.xml /vendor/etc/soc_perf/socperf_resource_config.xml.bak
+2026-07-20 10:29:47 命令输出：
+mv: bad '/vendor/etc/soc_perf/socperf_resource_config.xml': No such file or directory
+
+2026-07-20 10:29:47 执行远程命令：hdc list targets
+2026-07-20 10:29:49 命令输出：
+5JV0226127000574
+
+2026-07-20 10:29:49 hdc list targets output: 5JV0226127000574
+
+2026-07-20 10:29:49 ******** sn:5JV0226127000574 ********
+2026-07-20 10:29:49 执行远程命令：hdc -t 5JV0226127000574 shell setenforce 0
+2026-07-20 10:29:50 命令输出：
+
+2026-07-20 10:29:50 执行远程命令：hdc -t 5JV0226127000574 shell if [ -d /data/local/tmp/workload ];then echo 0; else echo 1; fi
+2026-07-20 10:29:52 命令输出：
+0
+
+2026-07-20 10:29:52 执行远程命令：hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/workload
+2026-07-20 10:29:53 命令输出：
+
+2026-07-20 10:29:53 执行远程命令：hdc -t 5JV0226127000574 shell mkdir -p /data/local/tmp/workload
+2026-07-20 10:29:55 命令输出：
+
+2026-07-20 10:29:55 执行远程命令：hdc -t 5JV0226127000574 shell \"param get | grep software\"
+2026-07-20 10:29:56 命令输出：
+    const.software.model = SGT-AL00B
+    const.product.software.version = SGT-AL00B 7.0.0.32(C00E32R3P2log)
+
+2026-07-20 10:29:56
+--------系统版本: SGT-AL00B 7.0.0.32(C00E32R3P2log)  --------
+2026-07-20 10:29:56 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/module/arkcompiler/stub.an ];then echo 0; else echo 1; fi
+2026-07-20 10:29:58 命令输出：
+0
+
+2026-07-20 10:29:58 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/module/arkcompiler/stub.an /data/local/tmp/workload/stub.an
+2026-07-20 10:30:00 命令输出：
+
+2026-07-20 10:30:00 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/stub.an
+2026-07-20 10:30:01 命令输出：
+
+2026-07-20 10:30:01 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/bin/ark_aot_compiler ];then echo 0; else echo 1; fi
+2026-07-20 10:30:03 命令输出：
+0
+
+2026-07-20 10:30:03 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/bin/ark_aot_compiler /data/local/tmp/workload/ark_aot_compiler
+2026-07-20 10:30:04 命令输出：
+
+2026-07-20 10:30:04 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/ark_aot_compiler
+2026-07-20 10:30:06 命令输出：
+
+2026-07-20 10:30:06 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /data/local/tmp/ark_js_vm ];then echo 0; else echo 1; fi
+2026-07-20 10:30:07 命令输出：
+1
+
+2026-07-20 10:30:07 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libbacktrace_local.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:09 命令输出：
+0
+
+2026-07-20 10:30:09 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libbacktrace_local.so /data/local/tmp/workload/libbacktrace_local.so
+2026-07-20 10:30:11 命令输出：
+
+2026-07-20 10:30:11 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libbacktrace_local.so
+2026-07-20 10:30:12 命令输出：
+
+2026-07-20 10:30:12 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libark_llvmcodegen.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:14 命令输出：
+0
+
+2026-07-20 10:30:14 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libark_llvmcodegen.so /data/local/tmp/workload/libark_llvmcodegen.so
+2026-07-20 10:30:15 命令输出：
+
+2026-07-20 10:30:15 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_llvmcodegen.so
+2026-07-20 10:30:17 命令输出：
+
+2026-07-20 10:30:17 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libark_jsruntime.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:18 命令输出：
+0
+
+2026-07-20 10:30:18 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libark_jsruntime.so /data/local/tmp/workload/libark_jsruntime.so
+2026-07-20 10:30:20 命令输出：
+
+2026-07-20 10:30:20 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_jsruntime.so
+2026-07-20 10:30:22 命令输出：
+
+2026-07-20 10:30:22 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libark_jsoptimizer.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:23 命令输出：
+0
+
+2026-07-20 10:30:23 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libark_jsoptimizer.so /data/local/tmp/workload/libark_jsoptimizer.so
+2026-07-20 10:30:25 命令输出：
+
+2026-07-20 10:30:25 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libark_jsoptimizer.so
+2026-07-20 10:30:26 命令输出：
+
+2026-07-20 10:30:26 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libbegetutil.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:28 命令输出：
+0
+
+2026-07-20 10:30:28 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libbegetutil.z.so /data/local/tmp/workload/libbegetutil.z.so
+2026-07-20 10:30:29 命令输出：
+
+2026-07-20 10:30:29 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libbegetutil.z.so
+2026-07-20 10:30:31 命令输出：
+
+2026-07-20 10:30:31 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libcjson.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:32 命令输出：
+0
+
+2026-07-20 10:30:32 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libcjson.z.so /data/local/tmp/workload/libcjson.z.so
+2026-07-20 10:30:34 命令输出：
+
+2026-07-20 10:30:34 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libcjson.z.so
+2026-07-20 10:30:36 命令输出：
+
+2026-07-20 10:30:36 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libdfx_procinfo.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:37 命令输出：
+0
+
+2026-07-20 10:30:37 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libdfx_procinfo.z.so /data/local/tmp/workload/libdfx_procinfo.z.so
+2026-07-20 10:30:39 命令输出：
+
+2026-07-20 10:30:39 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libdfx_procinfo.z.so
+2026-07-20 10:30:40 命令输出：
+
+2026-07-20 10:30:40 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libdfx_signalhandler.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:42 命令输出：
+1
+
+2026-07-20 10:30:42 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libfaultloggerd.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:43 命令输出：
+0
+
+2026-07-20 10:30:43 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libfaultloggerd.z.so /data/local/tmp/workload/libfaultloggerd.z.so
+2026-07-20 10:30:45 命令输出：
+
+2026-07-20 10:30:45 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libfaultloggerd.z.so
+2026-07-20 10:30:46 命令输出：
+
+2026-07-20 10:30:46 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/ndk/libffrt.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:48 命令输出：
+0
+
+2026-07-20 10:30:48 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/ndk/libffrt.so /data/local/tmp/workload/libffrt.so
+2026-07-20 10:30:50 命令输出：
+
+2026-07-20 10:30:50 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libffrt.so
+2026-07-20 10:30:51 命令输出：
+
+2026-07-20 10:30:51 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhilog.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:53 命令输出：
+1
+
+2026-07-20 10:30:53 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libhilog_encode.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:54 命令输出：
+1
+
+2026-07-20 10:30:54 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhisysevent.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:30:56 命令输出：
+0
+
+2026-07-20 10:30:56 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhisysevent.z.so /data/local/tmp/workload/libhisysevent.z.so
+2026-07-20 10:30:57 命令输出：
+
+2026-07-20 10:30:57 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhisysevent.z.so
+2026-07-20 10:30:59 命令输出：
+
+2026-07-20 10:30:59 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhitrace_meter.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:00 命令输出：
+0
+
+2026-07-20 10:31:00 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhitrace_meter.so /data/local/tmp/workload/libhitrace_meter.so
+2026-07-20 10:31:02 命令输出：
+
+2026-07-20 10:31:02 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhitrace_meter.so
+2026-07-20 10:31:04 命令输出：
+
+2026-07-20 10:31:04 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libhitracechain.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:05 命令输出：
+0
+
+2026-07-20 10:31:05 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libhitracechain.so /data/local/tmp/workload/libhitracechain.so
+2026-07-20 10:31:07 命令输出：
+
+2026-07-20 10:31:07 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhitracechain.so
+2026-07-20 10:31:08 命令输出：
+
+2026-07-20 10:31:08 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libhmicui18n.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:10 命令输出：
+0
+
+2026-07-20 10:31:10 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libhmicui18n.z.so /data/local/tmp/workload/libhmicui18n.z.so
+2026-07-20 10:31:11 命令输出：
+
+2026-07-20 10:31:11 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhmicui18n.z.so
+2026-07-20 10:31:13 命令输出：
+
+2026-07-20 10:31:13 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libhmicuuc.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:15 命令输出：
+0
+
+2026-07-20 10:31:15 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libhmicuuc.z.so /data/local/tmp/workload/libhmicuuc.z.so
+2026-07-20 10:31:16 命令输出：
+
+2026-07-20 10:31:16 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhmicuuc.z.so
+2026-07-20 10:31:18 命令输出：
+
+2026-07-20 10:31:18 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libipc_common.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:19 命令输出：
+1
+
+2026-07-20 10:31:19 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libipc_single.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:21 命令输出：
+1
+
+2026-07-20 10:31:21 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libjit_code_sign.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:22 命令输出：
+0
+
+2026-07-20 10:31:22 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libjit_code_sign.z.so /data/local/tmp/workload/libjit_code_sign.z.so
+2026-07-20 10:31:24 命令输出：
+
+2026-07-20 10:31:24 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libjit_code_sign.z.so
+2026-07-20 10:31:25 命令输出：
+
+2026-07-20 10:31:25 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/liblzma.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:27 命令输出：
+0
+
+2026-07-20 10:31:27 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/liblzma.z.so /data/local/tmp/workload/liblzma.z.so
+2026-07-20 10:31:28 命令输出：
+
+2026-07-20 10:31:28 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/liblzma.z.so
+2026-07-20 10:31:30 命令输出：
+
+2026-07-20 10:31:30 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libqos.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:32 命令输出：
+0
+
+2026-07-20 10:31:32 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libqos.z.so /data/local/tmp/workload/libqos.z.so
+2026-07-20 10:31:33 命令输出：
+
+2026-07-20 10:31:33 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libqos.z.so
+2026-07-20 10:31:35 命令输出：
+
+2026-07-20 10:31:35 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libsamgr_proxy.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:36 命令输出：
+1
+
+2026-07-20 10:31:36 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libsec_shared.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:38 命令输出：
+0
+
+2026-07-20 10:31:38 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libsec_shared.z.so /data/local/tmp/workload/libsec_shared.z.so
+2026-07-20 10:31:39 命令输出：
+
+2026-07-20 10:31:39 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libsec_shared.z.so
+2026-07-20 10:31:41 命令输出：
+
+2026-07-20 10:31:41 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libshared_libz.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:42 命令输出：
+1
+
+2026-07-20 10:31:42 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk/libucollection_client.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:44 命令输出：
+1
+
+2026-07-20 10:31:44 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libunwinder.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:46 命令输出：
+0
+
+2026-07-20 10:31:46 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libunwinder.z.so /data/local/tmp/workload/libunwinder.z.so
+2026-07-20 10:31:47 命令输出：
+
+2026-07-20 10:31:47 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libunwinder.z.so
+2026-07-20 10:31:49 命令输出：
+
+2026-07-20 10:31:49 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libutils.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:50 命令输出：
+0
+
+2026-07-20 10:31:50 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libutils.z.so /data/local/tmp/workload/libutils.z.so
+2026-07-20 10:31:52 命令输出：
+
+2026-07-20 10:31:52 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libutils.z.so
+2026-07-20 10:31:53 命令输出：
+
+2026-07-20 10:31:53 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libuv.so ];then echo 0; else echo 1; fi
+2026-07-20 10:31:55 命令输出：
+0
+
+2026-07-20 10:31:55 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libuv.so /data/local/tmp/workload/libuv.so
+2026-07-20 10:31:57 命令输出：
+
+2026-07-20 10:31:57 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libuv.so
+2026-07-20 10:31:58 命令输出：
+
+2026-07-20 10:31:58 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/librtg_interface.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:32:00 命令输出：
+0
+
+2026-07-20 10:32:00 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/librtg_interface.z.so /data/local/tmp/workload/librtg_interface.z.so
+2026-07-20 10:32:01 命令输出：
+
+2026-07-20 10:32:01 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/librtg_interface.z.so
+2026-07-20 10:32:03 命令输出：
+
+2026-07-20 10:32:03 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/platformsdk/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:32:04 命令输出：
+0
+
+2026-07-20 10:32:04 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/platformsdk/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:06 命令输出：
+
+2026-07-20 10:32:06 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:07 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:32:07 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-sdk-sp/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:32:09 命令输出：
+0
+
+2026-07-20 10:32:09 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-sdk-sp/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:11 命令输出：
+cp: /data/local/tmp/workload/libasync_stack.z.so: No such file or directory
+
+2026-07-20 10:32:11 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:12 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:32:12 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/chipset-pub-sdk/libasync_stack.z.so ];then echo 0; else echo 1; fi
+2026-07-20 10:32:14 命令输出：
+0
+
+2026-07-20 10:32:14 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/chipset-pub-sdk/libasync_stack.z.so /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:15 命令输出：
+
+2026-07-20 10:32:15 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libasync_stack.z.so
+2026-07-20 10:32:17 命令输出：
+chmod: chmod '/data/local/tmp/workload/libasync_stack.z.so' to 0755: No such file or directory
+
+2026-07-20 10:32:17 执行远程命令：hdc -t 5JV0226127000574 shell if [ -e /system/lib64/libhilog_inner.so ];then echo 0; else echo 1; fi
+2026-07-20 10:32:18 命令输出：
+0
+
+2026-07-20 10:32:18 执行远程命令：hdc -t 5JV0226127000574 shell cp -r /system/lib64/libhilog_inner.so /data/local/tmp/workload/libhilog_inner.so
+2026-07-20 10:32:20 命令输出：
+
+2026-07-20 10:32:20 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/workload/libhilog_inner.so
+2026-07-20 10:32:22 命令输出：
+
+2026-07-20 10:32:22 tar -czf test.tar.gz -C/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build out-asmint
+2026-07-20 10:32:22
+2026-07-20 10:32:22 send file test.tar.gz -> temp/test.tar.gz
+Transferred: 3.16/3.61 MB  Speed: 10.50 MB/s
+2026-07-20 10:32:23 执行远程命令：hdc -t 5JV0226127000574 file send temp\test.tar.gz /data/local/tmp/workload
+2026-07-20 10:32:24 命令输出：
+FileTransfer finish, Size:3790196, File count = 1, time:128ms rate:29610.91kB/s
+
+2026-07-20 10:32:24 执行远程命令：hdc -t 5JV0226127000574 shell tar -xzf /data/local/tmp/workload/test.tar.gz -C /data/local/tmp/workload
+2026-07-20 10:32:26 命令输出：
+
+2026-07-20 10:32:26 rm test.tar.gz
+2026-07-20 10:32:26
+2026-07-20 10:32:26 send file OHMediumCoreMaxFreq.bat -> temp/OHMediumCoreMaxFreq.bat
+
+2026-07-20 10:32:26 执行远程命令：call temp/OHMediumCoreMaxFreq.bat 5JV0226127000574
+2026-07-20 10:32:32 命令输出：
+
+C:\Users\g50060069>set sn=5JV0226127000574
+
+C:\Users\g50060069>hdc -t 5JV0226127000574 shell "cat /sys/devices/system/cpu/online"
+0,4-9,12-13
+
+
+2026-07-20 10:35:06 命令输出：
+1660000
+
+2026-07-20 10:35:06 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=welink --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/welink.abc ; echo $?\"
+2026-07-20 10:35:08 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 10:35:08 runtime failed_cases: welink
+2026-07-20 10:35:08 workloat result: {}
+2026-07-20 10:35:08 failed case: {'bili_kntr': {'litecg', 'asmint'}, 'lottie': {'litecg', 'asmint'}, 'OneItems_zsyh': {'litecg', 'asmint'}, 'gaode': {'litecg', 'asmint'}, 'shimo': {'litecg', 'asmint'}, 'sort_pcfilemanager': {'litecg', 'asmint'}, 'arkui': {'litecg', 'asmint'}, 'tranform_zsyh': {'litecg', 'asmint'}, 'bili': {'litecg', 'asmint'}, 'testfileinfo': {'litecg', 'asmint'}, 'welink': {'litecg', 'asmint'}}
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/../../JIT/Workload/v8_data/v8_app_data.json
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/../../JIT/Workload/jit_data/jit_app_data.json
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/case_test_point.json
+
+workload time:
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+| Num |      Testcase      |             Case            | jit(baseline) | v8(maglev) | asmint | litecg(Current) | litecg(Previous) | Rate(litecg vs v8) | Improved Value | Rate(litecg vs asmint) |
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+|     |   OneItems_zsyh    |     oneItem_zsyh_toBytes    |      31.5     |   148.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |   OneItems_zsyh    | oneItem_zsyh_parseFromBytes |      92.0     |   812.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       arkui        |            arkui            |     137.0     |   264.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |        bili        |             bili            |      67.0     |   164.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |     bili_kntr      |          bili_kntr          |     153.0     |   442.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       gaode        |            gaode            |      22.0     |    54.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       lottie       |        initItems time       |      39.5     |    11.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       shimo        |            shimo            |     812.5     |   2160.0   |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     | sort_pcfilemanager |      sort_pcfilemanager     |      20.0     |    54.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |    testfileinfo    |     testfileinfo-create     |     113.0     |   487.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |    testfileinfo    |    testfileinfo-transfer    |      41.0     |   168.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |   tranform_zsyh    |        tranform_zsyh        |     116.0     |   205.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       welink       |         welink_index        |      1.0      |    1.0     |   NA   |        NA       |        NA        |         0          |       0        |           0            |
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+
+
+read file is: /home/gonglingwen/toolchain/commitid_trunk.txt
+Traceback (most recent call last):
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/run_workload.py", line 596, in <module>
+    main()
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/run_workload.py", line 586, in main
+    html = HTML(report_data, workload_dir, BRANCH, args.only_compile, args.mode, compiler_time, daily=daily, version=comp_in_phone.version)
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/../../Public/scripts/gen_html.py", line 35, in __init__
+    self.commitid_info = " ".join(common.read_file(os.path.join(
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/../../Public/scripts/common.py", line 242, in read_file
+    with open(file_path, "r", encoding='utf-8', newline=None) as my_file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/gonglingwen/toolchain/commitid_trunk.txt'
