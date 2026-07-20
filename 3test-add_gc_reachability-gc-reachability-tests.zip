@@ -1,22 +1,19 @@
-# 进入并清空相关目录，防止旧库干扰
-rm -rf /home/gonglingwen/toolchain/x86_bin/dev/*
-rm -rf /home/gonglingwen/toolchain/arm64_phone_bin/dev/*
-rm -rf /home/gonglingwen/toolchain/dev_tool/dev/*
+# 1. 进入编译器所在的父目录
+cd /home/gonglingwen/toolchain/x86_bin/
+# 强制删除名为 dev 的文件（如果它是文件夹也会被删掉）
+rm -rf dev
 
-# 1. 考入 es2abc (用于编译)
-cp /home/gonglingwen/toolchain/x86_bin/trunk/es2abc /home/gonglingwen/toolchain/x86_bin/dev/
+# 2. 进入引擎所在的父目录
+cd /home/gonglingwen/toolchain/arm64_phone_bin/
+rm -rf dev
 
-# 2. 考入 ark_js_vm (用于手机执行)
-cp /home/gonglingwen/toolchain/x86_bin/trunk/ark_js_vm /home/gonglingwen/toolchain/arm64_phone_bin/dev/
+# 3. 进入库文件所在的父目录
+cd /home/gonglingwen/toolchain/dev_tool/
+rm -rf dev
 
-# 3. 考入 trunk 目录里原本带的所有 .so 文件 (用于配套)
-# 注意：这里指的是你从 Windows 同步过去的那些 trunk 里的库
-cp /home/gonglingwen/toolchain/x86_bin/trunk/*.so /home/gonglingwen/toolchain/dev_tool/dev/
 
-# 4. 统一赋权
-chmod +x /home/gonglingwen/toolchain/x86_bin/dev/es2abc
-chmod +x /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm
+mkdir -p /home/gonglingwen/toolchain/x86_bin/dev
+mkdir -p /home/gonglingwen/toolchain/arm64_phone_bin/dev
+mkdir -p /home/gonglingwen/toolchain/dev_tool/dev
 
-hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
 
-python run_testsuite.py --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --platform phone --suitename reachableTest --enable_cpltp False --branch dev --update False --disable_output True
