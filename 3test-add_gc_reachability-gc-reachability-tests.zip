@@ -1,1 +1,340 @@
 
+
+2026-07-20 11:05:54 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=OneItems_zsyh --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/OneItems_zsyh.abc ; echo $?\"
+2026-07-20 11:05:55 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:05:55 runtime failed_cases: OneItems_zsyh
+2026-07-20 11:05:55 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:05:55 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:05:55 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:05:55 命令输出：
+74
+
+2026-07-20 11:05:55 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:05:55 命令输出：
+31131
+
+2026-07-20 11:05:55 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:05:56 命令输出：
+300
+
+2026-07-20 11:05:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:05:56 命令输出：
+1530000
+
+2026-07-20 11:05:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:05:56 命令输出：
+1530000
+
+2026-07-20 11:05:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:05:56 命令输出：
+1530000
+
+2026-07-20 11:05:56 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:05:56 命令输出：
+1530000
+
+2026-07-20 11:05:56 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=gaode --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/gaode.abc ; echo $?\"
+2026-07-20 11:05:57 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:05:57 runtime failed_cases: gaode
+2026-07-20 11:05:57 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:05:57 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:05:57 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:05:57 命令输出：
+74
+
+2026-07-20 11:05:57 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:05:57 命令输出：
+31131
+
+2026-07-20 11:05:57 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:05:58 命令输出：
+300
+
+2026-07-20 11:05:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:05:58 命令输出：
+1530000
+
+2026-07-20 11:05:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:05:58 命令输出：
+1530000
+
+2026-07-20 11:05:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:05:58 命令输出：
+1530000
+
+2026-07-20 11:05:58 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:05:58 命令输出：
+1530000
+
+2026-07-20 11:05:58 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=shimo --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/shimo.abc ; echo $?\"
+2026-07-20 11:05:59 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:05:59 runtime failed_cases: shimo
+2026-07-20 11:05:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:05:59 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:05:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:05:59 命令输出：
+74
+
+2026-07-20 11:05:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:05:59 命令输出：
+31133
+
+2026-07-20 11:05:59 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:00 命令输出：
+300
+
+2026-07-20 11:06:00 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:00 命令输出：
+1530000
+
+2026-07-20 11:06:00 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:00 命令输出：
+1530000
+
+2026-07-20 11:06:00 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:00 命令输出：
+1530000
+
+2026-07-20 11:06:00 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:01 命令输出：
+1530000
+
+2026-07-20 11:06:01 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=sort_pcfilemanager --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/sort_pcfilemanager.abc ; echo $?\"
+2026-07-20 11:06:01 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:01 runtime failed_cases: sort_pcfilemanager
+2026-07-20 11:06:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:06:01 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:06:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:06:01 命令输出：
+74
+
+2026-07-20 11:06:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:06:01 命令输出：
+31133
+
+2026-07-20 11:06:01 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:02 命令输出：
+300
+
+2026-07-20 11:06:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:02 命令输出：
+1530000
+
+2026-07-20 11:06:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:02 命令输出：
+1530000
+
+2026-07-20 11:06:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:02 命令输出：
+1530000
+
+2026-07-20 11:06:02 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:03 命令输出：
+1530000
+
+2026-07-20 11:06:03 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=arkui --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/arkui.abc ; echo $?\"
+2026-07-20 11:06:03 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:03 runtime failed_cases: arkui
+2026-07-20 11:06:03 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:06:03 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:06:03 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:06:03 命令输出：
+74
+
+2026-07-20 11:06:03 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:06:04 命令输出：
+31133
+
+2026-07-20 11:06:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:04 命令输出：
+300
+
+2026-07-20 11:06:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:04 命令输出：
+1530000
+
+2026-07-20 11:06:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:04 命令输出：
+1530000
+
+2026-07-20 11:06:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:04 命令输出：
+1530000
+
+2026-07-20 11:06:04 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:05 命令输出：
+1530000
+
+2026-07-20 11:06:05 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=tranform_zsyh --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/tranform_zsyh.abc ; echo $?\"
+2026-07-20 11:06:05 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:05 runtime failed_cases: tranform_zsyh
+2026-07-20 11:06:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:06:05 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:06:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:06:05 命令输出：
+74
+
+2026-07-20 11:06:05 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:06:06 命令输出：
+31145
+
+2026-07-20 11:06:06 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:06 命令输出：
+300
+
+2026-07-20 11:06:06 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:06 命令输出：
+1530000
+
+2026-07-20 11:06:06 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:06 命令输出：
+1530000
+
+2026-07-20 11:06:06 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:07 命令输出：
+1530000
+
+2026-07-20 11:06:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:07 命令输出：
+1530000
+
+2026-07-20 11:06:07 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=bili --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/bili.abc ; echo $?\"
+2026-07-20 11:06:07 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:07 runtime failed_cases: bili
+2026-07-20 11:06:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:06:07 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:06:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:06:07 命令输出：
+74
+
+2026-07-20 11:06:07 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:06:08 命令输出：
+31145
+
+2026-07-20 11:06:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:08 命令输出：
+300
+
+2026-07-20 11:06:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:08 命令输出：
+1530000
+
+2026-07-20 11:06:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:08 命令输出：
+1530000
+
+2026-07-20 11:06:08 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:09 命令输出：
+1530000
+
+2026-07-20 11:06:09 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:09 命令输出：
+1530000
+
+2026-07-20 11:06:09 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=testfileinfo --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/testfileinfo.abc ; echo $?\"
+2026-07-20 11:06:09 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:09 runtime failed_cases: testfileinfo
+2026-07-20 11:06:09 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/online
+2026-07-20 11:06:09 命令输出：
+0,4-9,12-13
+
+2026-07-20 11:06:09 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/capacity
+2026-07-20 11:06:10 命令输出：
+74
+
+2026-07-20 11:06:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/hw_thermal/temp/shell_frame/temp
+2026-07-20 11:06:10 命令输出：
+31153
+
+2026-07-20 11:06:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/class/power_supply/Battery/temp
+2026-07-20 11:06:10 命令输出：
+300
+
+2026-07-20 11:06:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+2026-07-20 11:06:10 命令输出：
+1530000
+
+2026-07-20 11:06:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq
+2026-07-20 11:06:10 命令输出：
+1530000
+
+2026-07-20 11:06:10 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq
+2026-07-20 11:06:11 命令输出：
+1530000
+
+2026-07-20 11:06:11 执行远程命令：hdc -t 5JV0226127000574 shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq
+2026-07-20 11:06:11 命令输出：
+1530000
+
+2026-07-20 11:06:11 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/workload && export LD_LIBRARY_PATH=/data/local/tmp/workload && /system/bin/taskset -a 3F0 /data/local/tmp/workload/ark_js_vm --entry-point=welink --stub-file=/data/local/tmp/workload/stub.an --open-ark-tools=true --compiler-opt-track-field=false out-asmint/welink.abc ; echo $?\"
+2026-07-20 11:06:11 命令输出：
+taskset: exec /data/local/tmp/workload/ark_js_vm: No such file or directory
+127
+
+2026-07-20 11:06:11 runtime failed_cases: welink
+2026-07-20 11:06:11 workloat result: {}
+2026-07-20 11:06:11 failed case: {'bili_kntr': {'litecg', 'asmint'}, 'lottie': {'litecg', 'asmint'}, 'OneItems_zsyh': {'litecg', 'asmint'}, 'gaode': {'litecg', 'asmint'}, 'shimo': {'litecg', 'asmint'}, 'sort_pcfilemanager': {'litecg', 'asmint'}, 'arkui': {'litecg', 'asmint'}, 'tranform_zsyh': {'litecg', 'asmint'}, 'bili': {'litecg', 'asmint'}, 'testfileinfo': {'litecg', 'asmint'}, 'welink': {'litecg', 'asmint'}}
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/../../JIT/Workload/v8_data/v8_app_data.json
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/../../JIT/Workload/jit_data/jit_app_data.json
+read json file is: /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/case_test_point.json
+
+workload time:
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+| Num |      Testcase      |             Case            | jit(baseline) | v8(maglev) | asmint | litecg(Current) | litecg(Previous) | Rate(litecg vs v8) | Improved Value | Rate(litecg vs asmint) |
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+|     |   OneItems_zsyh    |     oneItem_zsyh_toBytes    |      31.5     |   148.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |   OneItems_zsyh    | oneItem_zsyh_parseFromBytes |      92.0     |   812.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       arkui        |            arkui            |     137.0     |   264.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |        bili        |             bili            |      67.0     |   164.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |     bili_kntr      |          bili_kntr          |     153.0     |   442.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       gaode        |            gaode            |      22.0     |    54.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       lottie       |        initItems time       |      39.5     |    11.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       shimo        |            shimo            |     812.5     |   2160.0   |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     | sort_pcfilemanager |      sort_pcfilemanager     |      20.0     |    54.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |    testfileinfo    |     testfileinfo-create     |     113.0     |   487.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |    testfileinfo    |    testfileinfo-transfer    |      41.0     |   168.5    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |   tranform_zsyh    |        tranform_zsyh        |     116.0     |   205.0    |   NA   |        NA       |        NA        |         0          |       0        |           0            |
+|     |       welink       |         welink_index        |      1.0      |    1.0     |   NA   |        NA       |        NA        |         0          |       0        |           0            |
++-----+--------------------+-----------------------------+---------------+------------+--------+-----------------+------------------+--------------------+----------------+------------------------+
+
+
+read file is: /home/gonglingwen/toolchain/commitid_trunk.txt
+self.commitid_info:11
