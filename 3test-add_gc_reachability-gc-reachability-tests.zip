@@ -1,4 +1,7 @@
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp --disable_output
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: argument --enable_cpltp: expected one argument
+# 建立一个临时目录存放
+mkdir C:\so_files
+cd C:\so_files
+# 把手机里几个核心位置的库全拉出来
+hdc -t 5JV0226127000574 file recv /system/lib64/platformsdk/ .
+hdc -t 5JV0226127000574 file recv /system/lib64/ndk/ .
+hdc -t 5JV0226127000574 file recv /system/lib64/chipset-sdk-sp/ .
