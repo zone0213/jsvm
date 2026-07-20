@@ -1,1 +1,3 @@
 
+cd ${WORKSPACE}/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites
+python run_testsuite.py --date ${DATE} --suitename speedometer --enable_cpltp True --branch dev --update True --disable_output True
