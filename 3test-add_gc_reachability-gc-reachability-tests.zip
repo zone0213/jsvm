@@ -1,26 +1,22 @@
-ls -lh /home/gonglingwen/Report/reachableTest/concurrentmutator/*.abc
+# 进入并清空相关目录，防止旧库干扰
+rm -rf /home/gonglingwen/toolchain/x86_bin/dev/*
+rm -rf /home/gonglingwen/toolchain/arm64_phone_bin/dev/*
+rm -rf /home/gonglingwen/toolchain/dev_tool/dev/*
 
-# 1. 进入 dev 工具目录（也就是你现在这个脚本报错的地方）
-cd /home/gonglingwen/toolchain/x86_bin/dev/
+# 1. 考入 es2abc (用于编译)
+cp /home/gonglingwen/toolchain/x86_bin/trunk/es2abc /home/gonglingwen/toolchain/x86_bin/dev/
 
-# 2. 用 trunk 目录（之前成功的那个）里的 es2abc 替换现在的
-cp /home/gonglingwen/toolchain/x86_bin/trunk/es2abc .
-chmod +x es2abc
+# 2. 考入 ark_js_vm (用于手机执行)
+cp /home/gonglingwen/toolchain/x86_bin/trunk/ark_js_vm /home/gonglingwen/toolchain/arm64_phone_bin/dev/
 
-# 3. 进入手机引擎目录
-cd /home/gonglingwen/toolchain/arm64_phone_bin/dev/
+# 3. 考入 trunk 目录里原本带的所有 .so 文件 (用于配套)
+# 注意：这里指的是你从 Windows 同步过去的那些 trunk 里的库
+cp /home/gonglingwen/toolchain/x86_bin/trunk/*.so /home/gonglingwen/toolchain/dev_tool/dev/
 
-# 4. 用之前成功的 ark_js_vm 替换现在的
-cp /home/gonglingwen/toolchain/x86_bin/trunk/ark_js_vm .
-chmod +x ark_js_vm
-
-# 5. 进入库文件目录
-cd /home/gonglingwen/toolchain/dev_tool/dev/
-
-# 6. 用之前成功的 .so 库替换现在的（非常重要，防止 Signal 11）
-# 先清空当前目录，防止新旧库混在一起导致冲突
-rm -rf *.so
-# 考入之前成功环境下的所有 .so
-cp /home/gonglingwen/toolchain/x86_bin/trunk/*.so .
+# 4. 统一赋权
+chmod +x /home/gonglingwen/toolchain/x86_bin/dev/es2abc
+chmod +x /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm
 
 hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
+
+python run_testsuite.py --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --platform phone --suitename reachableTest --enable_cpltp False --branch dev --update False --disable_output True
