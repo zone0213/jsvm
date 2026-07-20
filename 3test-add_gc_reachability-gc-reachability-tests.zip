@@ -1,7 +1,14 @@
-# 建立一个临时目录存放
-mkdir C:\so_files
-cd C:\so_files
-# 把手机里几个核心位置的库全拉出来
-hdc -t 5JV0226127000574 file recv /system/lib64/platformsdk/ .
-hdc -t 5JV0226127000574 file recv /system/lib64/ndk/ .
-hdc -t 5JV0226127000574 file recv /system/lib64/chipset-sdk-sp/ .
+# 1. 进入目录
+cd /home/gonglingwen/toolchain/
+
+# 2. 删掉旧的 dev 指向（如果之前建错过）
+rm -rf x86_bin/dev
+rm -rf arm64_phone_bin/dev
+rm -rf dev_tool/dev
+
+# 3. 重新建立指向 trunk 的链接（确保脚本能从 dev 目录捡到 trunk 里的 .so）
+ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/x86_bin/dev
+mkdir -p arm64_phone_bin
+ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/arm64_phone_bin/dev
+mkdir -p dev_tool
+ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/dev_tool/dev
