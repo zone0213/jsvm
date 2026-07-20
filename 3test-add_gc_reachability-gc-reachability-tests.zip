@@ -1,19 +1,74 @@
-# 1. 进入编译器所在的父目录
-cd /home/gonglingwen/toolchain/x86_bin/
-# 强制删除名为 dev 的文件（如果它是文件夹也会被删掉）
-rm -rf dev
 
-# 2. 进入引擎所在的父目录
-cd /home/gonglingwen/toolchain/arm64_phone_bin/
-rm -rf dev
+********** test starting Mon Jul 20 17:18:56 CST 2026 **********
 
-# 3. 进入库文件所在的父目录
-cd /home/gonglingwen/toolchain/dev_tool/
-rm -rf dev
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=AllocationPressureGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/AllocationPressureGcTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=SharedGraphConcurrentMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/AllocationPressureGcTest.abc' with entry 'AllocationPressureGcTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=AllocationPressureGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/AllocationPressureGcTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcBaselineTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc' with entry 'SharedGraphConcurrentMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStrongPublishTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=SharedGraphConcurrentMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc' with entry 'ConcurrentGcBaselineTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcBaselineTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/AllocationPressureGcTest.abc' with entry 'AllocationPressureGcTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc' with entry 'ConcurrentStrongPublishTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStrongPublishTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc' with entry 'SharedGraphConcurrentMutationTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc' with entry 'ConcurrentGcBaselineTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc' with entry 'ConcurrentStrongPublishTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentWeakMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStressRegressionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc' with entry 'ConcurrentWeakMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentWeakMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ThreadLifecycleGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc' with entry 'ConcurrentStressRegressionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStressRegressionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcTestSupport --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentGcTestSupport.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc' with entry 'ThreadLifecycleGcTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ThreadLifecycleGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceReplacementTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc' with entry 'ConcurrentWeakMutationTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc' with entry 'ConcurrentStressRegressionTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc' with entry 'ConcurrentReferenceReplacementTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceReplacementTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc' with entry 'ThreadLifecycleGcTest'
+Signal 11 (core dumped)
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcTestSupport --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentGcTestSupport.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc' with entry 'ConcurrentReferenceReplacementTest'
+Signal 11 (core dumped)
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentContainerMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc' with entry 'ConcurrentContainerMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentContainerMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc' with entry 'ConcurrentContainerMutationTest'
+
+**********  test finish Mon Jul 20 17:18:59 CST 2026 **********
 
 
-mkdir -p /home/gonglingwen/toolchain/x86_bin/dev
-mkdir -p /home/gonglingwen/toolchain/arm64_phone_bin/dev
-mkdir -p /home/gonglingwen/toolchain/dev_tool/dev
+2026-07-20 17:10:47 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/testsuite/Report && tar -zcvf reachableTest.tar.gz reachableTest -C /data/local/tmp/testsuite/Report\"
+2026-07-20 17:10:47 执行远程命令：hdc -t 5JV0226127000574 file recv /data/local/tmp/testsuite/Report/reachableTest.tar.gz temp\reachableTest.tar.gz
+2026-07-20 17:10:48 命令输出：
+FileTransfer finish, Size:659, File count = 1, time:21ms rate:31.38kB/s
 
+2026-07-20 17:10:48 recv file temp\reachableTest.tar.gz -> /home/gonglingwen/Report/reachableTest.tar.gz
 
+2026-07-20 17:10:48 执行命令路径：/home/gonglingwen/Report
+2026-07-20 17:10:48 tar zxvf reachableTest.tar.gz
+============================= TEST RESULT ============================
+  Total 11   Passed 0  Failed 11
+======================================================================
+reachableTest/concurrentmutator/ConcurrentWeakMutationTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentContainerMutationTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentGcBaselineTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentGcTestSupport.ts FAIL
+reachableTest/concurrentmutator/ConcurrentStressRegressionTest.ts FAIL
+reachableTest/concurrentmutator/AllocationPressureGcTest.ts FAIL
+reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.ts FAIL
+reachableTest/concurrentmutator/ThreadLifecycleGcTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentStrongPublishTest.ts FAIL
