@@ -1,14 +1,241 @@
-# 1. 进入工具链目录
-cd /home/gonglingwen/toolchain/
 
-# 2. 给 x86 编译器做个分身
-mkdir -p x86_bin
-ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/x86_bin/dev
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --platform phone  --suitename reachableTest --enable_cpltp False --branch dev --update False --disable_output True
+2026-07-20 16:12:16 mkdir /home/gonglingwen/Report/reachableTest/concurrentmutator/ success！
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc AllocationPressureGcTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/AllocationPressureGcTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ThreadLifecycleGcTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentReferenceReplacementTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentReferenceDeletionTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentGcBaselineTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentStressRegressionTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentStrongPublishTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentWeakMutationTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentGcTestSupport.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentGcTestSupport.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc ConcurrentContainerMutationTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc
+2026-07-20 16:12:16 执行命令路径：/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/reachableTest/concurrentmutator/
+2026-07-20 16:12:16 /home/gonglingwen/toolchain/x86_bin/dev/es2abc SharedGraphConcurrentMutationTest.ts --extension=ts  --module --merge-abc --target-api-sub-version=beta3 --output /home/gonglingwen/Report/reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc
+2026-07-20 16:12:16 SSH开始连接，ssh g50060069@10.174.176.201
+2026-07-20 16:12:17 Connected (version 2.0, client OpenSSH_for_Windows_9.8)
+2026-07-20 16:12:17 Authentication (publickey) successful!
+2026-07-20 16:12:17 [chan 0] Opened sftp connection (server version 3)
+2026-07-20 16:12:17 SSH 连接成功！
+2026-07-20 16:12:17 执行远程命令：hdc -t 5JV0226127000574 target mount
+2026-07-20 16:12:17 命令输出：
+Mount finish
 
-# 3. 给手机运行引擎做个分身
-mkdir -p arm64_phone_bin
-ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/arm64_phone_bin/dev
+2026-07-20 16:12:17 执行远程命令：hdc -t 5JV0226127000574 shell mount /sys_prod -o rw,remount
+2026-07-20 16:12:18 命令输出：
 
-# 4. 给库文件目录做个分身
-mkdir -p dev_tool
-ln -s /home/gonglingwen/toolchain/x86_bin/trunk /home/gonglingwen/toolchain/dev_tool/dev
+2026-07-20 16:12:18 执行远程命令：hdc -t 5JV0226127000574 shell truncate -s 0 /sys_prod/etc/soc_perf/*.xml
+2026-07-20 16:12:18 命令输出：
+
+2026-07-20 16:12:18 执行远程命令：hdc -t 5JV0226127000574 shell mount / -o rw,remount
+2026-07-20 16:12:18 命令输出：
+mount: '/dev/block/dm-2'->'/': Not supported
+
+2026-07-20 16:12:18 执行远程命令：hdc -t 5JV0226127000574 shell mv /system/etc/soc_perf/socperf_resource_config.xml /system/etc/soc_perf/socperf_resource_config.xml
+2026-07-20 16:12:18 命令输出：
+
+2026-07-20 16:12:18 执行远程命令：hdc -t 5JV0226127000574 shell mount /vendor -o rw,remount
+2026-07-20 16:12:19 命令输出：
+
+2026-07-20 16:12:19 执行远程命令：hdc -t 5JV0226127000574 shell mv /vendor/etc/soc_perf/socperf_resource_config.xml /vendor/etc/soc_perf/socperf_resource_config.xml.bak
+2026-07-20 16:12:19 命令输出：
+mv: bad '/vendor/etc/soc_perf/socperf_resource_config.xml': No such file or directory
+
+2026-07-20 16:12:19 执行远程命令：hdc list targets
+2026-07-20 16:12:19 命令输出：
+5JV0226127000574
+
+2026-07-20 16:12:19 hdc list targets output: 5JV0226127000574
+
+2026-07-20 16:12:19 ******** sn:5JV0226127000574 ********
+2026-07-20 16:12:19 执行远程命令：hdc -t 5JV0226127000574 shell setenforce 0
+2026-07-20 16:12:19 命令输出：
+
+2026-07-20 16:12:20 执行远程命令：hdc -t 5JV0226127000574 shell if [ -d /data/local/tmp/testsuite ];then echo 0; else echo 1; fi
+2026-07-20 16:12:20 命令输出：
+0
+
+2026-07-20 16:12:20 执行远程命令：hdc -t 5JV0226127000574 shell if [ -d /data/local/tmp/testsuite/Report ];then echo 0; else echo 1; fi
+2026-07-20 16:12:20 命令输出：
+0
+
+2026-07-20 16:12:20 执行远程命令：hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/Report
+2026-07-20 16:12:20 命令输出：
+
+2026-07-20 16:12:20 执行远程命令：hdc -t 5JV0226127000574 shell mkdir -p /data/local/tmp/testsuite/Report
+2026-07-20 16:12:21 命令输出：
+
+2026-07-20 16:12:21 send file run_test.sh -> temp/run_test.sh
+
+2026-07-20 16:12:21 执行远程命令：hdc -t 5JV0226127000574 file send temp\run_test.sh /data/local/tmp/testsuite
+2026-07-20 16:12:21 命令输出：
+FileTransfer finish, Size:4947, File count = 1, time:13ms rate:380.54kB/s
+
+2026-07-20 16:12:21 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/testsuite/run_test.sh
+2026-07-20 16:12:21 命令输出：
+
+2026-07-20 16:12:21 ['stub.an', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/stub.an']
+2026-07-20 16:12:21 ['ark_aot_compiler', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_aot_compiler']
+2026-07-20 16:12:21 ['ark_js_vm', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm']
+2026-07-20 16:12:21 send file /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm -> temp/ark_js_vm
+
+2026-07-20 16:12:22 执行远程命令：hdc -t 5JV0226127000574 file send temp\ark_js_vm /data/local/tmp/testsuite
+2026-07-20 16:12:22 命令输出：
+FileTransfer finish, Size:539528, File count = 1, time:23ms rate:23457.74kB/s
+
+2026-07-20 16:12:22 执行远程命令：hdc -t 5JV0226127000574 shell chmod 755 /data/local/tmp/testsuite/ark_js_vm
+2026-07-20 16:12:22 命令输出：
+
+2026-07-20 16:12:22 ['libbacktrace_local.so', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/libbacktrace_local.so']
+2026-07-20 16:12:22 ['libark_llvmcodegen.so', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/libark_llvmcodegen.so']
+2026-07-20 16:12:22 ['libark_jsruntime.so', '/home/gonglingwen/toolchain/dev_tool/dev/libark_jsruntime.so']
+2026-07-20 16:12:22 ['libark_jsoptimizer.so', '/home/gonglingwen/toolchain/dev_tool/dev/libark_jsoptimizer.so']
+2026-07-20 16:12:22 ['libbegetutil.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libbegetutil.z.so']
+2026-07-20 16:12:22 ['libcjson.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libcjson.z.so']
+2026-07-20 16:12:22 ['libdfx_procinfo.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libdfx_procinfo.z.so']
+2026-07-20 16:12:22 ['libdfx_signalhandler.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libdfx_signalhandler.z.so']
+2026-07-20 16:12:22 ['libfaultloggerd.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libfaultloggerd.z.so']
+2026-07-20 16:12:22 ['libffrt.so', '/home/gonglingwen/toolchain/dev_tool/dev/libffrt.so']
+2026-07-20 16:12:22 ['libhilog.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhilog.so']
+2026-07-20 16:12:22 ['libhilog_encode.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhilog_encode.so']
+2026-07-20 16:12:22 ['libhisysevent.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhisysevent.z.so']
+2026-07-20 16:12:22 ['libhitrace_meter.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhitrace_meter.so']
+2026-07-20 16:12:22 ['libhitracechain.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhitracechain.so']
+2026-07-20 16:12:22 ['libhmicui18n.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhmicui18n.z.so']
+2026-07-20 16:12:22 ['libhmicuuc.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhmicuuc.z.so']
+2026-07-20 16:12:22 ['libipc_common.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libipc_common.z.so']
+2026-07-20 16:12:22 ['libipc_single.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libipc_single.z.so']
+2026-07-20 16:12:22 ['libjit_code_sign.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libjit_code_sign.z.so']
+2026-07-20 16:12:22 ['liblzma.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/liblzma.z.so']
+2026-07-20 16:12:22 ['libqos.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libqos.z.so']
+2026-07-20 16:12:22 ['libsamgr_proxy.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libsamgr_proxy.z.so']
+2026-07-20 16:12:22 ['libsec_shared.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libsec_shared.z.so']
+2026-07-20 16:12:22 ['libshared_libz.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libshared_libz.z.so']
+2026-07-20 16:12:22 ['libunwinder.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libunwinder.z.so']
+2026-07-20 16:12:22 ['libutils.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/libutils.z.so']
+2026-07-20 16:12:22 ['libuv.so', '/home/gonglingwen/toolchain/dev_tool/dev/libuv.so']
+2026-07-20 16:12:22 ['librtg_interface.z.so', '/home/gonglingwen/toolchain/dev_tool/dev/librtg_interface.z.so']
+2026-07-20 16:12:22 ['libasync_stack.z.so', '/home/gonglingwen/toolchain/arm64_phone_bin/dev/libasync_stack.z.so']
+2026-07-20 16:12:22 ['libhilog_inner.so', '/home/gonglingwen/toolchain/dev_tool/dev/libhilog_inner.so']
+2026-07-20 16:12:22 tar -czf test.tar.gz -C/home/gonglingwen/Report reachableTest
+2026-07-20 16:12:22
+2026-07-20 16:12:22 send file test.tar.gz -> temp/test.tar.gz
+
+2026-07-20 16:12:22 执行远程命令：hdc -t 5JV0226127000574 file send temp\test.tar.gz /data/local/tmp/testsuite
+2026-07-20 16:12:22 命令输出：
+FileTransfer finish, Size:34534, File count = 1, time:6ms rate:5755.67kB/s
+
+2026-07-20 16:12:22 执行远程命令：hdc -t 5JV0226127000574 shell tar -xzf /data/local/tmp/testsuite/test.tar.gz -C /data/local/tmp/testsuite
+2026-07-20 16:12:23 命令输出：
+
+2026-07-20 16:12:23 rm test.tar.gz
+2026-07-20 16:12:23
+2026-07-20 16:12:23 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/testsuite && sh run_test.sh reachableTest phone /data/local/tmp/testsuite dev\"
+2026-07-20 16:12:26 命令输出：
+
+********** test starting Mon Jul 20 16:20:35 CST 2026 **********
+
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=AllocationPressureGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/AllocationPressureGcTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=SharedGraphConcurrentMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/AllocationPressureGcTest.abc' with entry 'AllocationPressureGcTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=AllocationPressureGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/AllocationPressureGcTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcBaselineTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc' with entry 'SharedGraphConcurrentMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=SharedGraphConcurrentMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/AllocationPressureGcTest.abc' with entry 'AllocationPressureGcTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStrongPublishTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc' with entry 'ConcurrentGcBaselineTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcBaselineTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.abc' with entry 'SharedGraphConcurrentMutationTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc' with entry 'ConcurrentStrongPublishTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStrongPublishTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentGcBaselineTest.abc' with entry 'ConcurrentGcBaselineTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStrongPublishTest.abc' with entry 'ConcurrentStrongPublishTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentWeakMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc' with entry 'ConcurrentWeakMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStressRegressionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentWeakMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ThreadLifecycleGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc' with entry 'ConcurrentStressRegressionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentStressRegressionTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcTestSupport --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentGcTestSupport.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentWeakMutationTest.abc' with entry 'ConcurrentWeakMutationTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc' with entry 'ThreadLifecycleGcTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceReplacementTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ThreadLifecycleGcTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentStressRegressionTest.abc' with entry 'ConcurrentStressRegressionTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc' with entry 'ConcurrentReferenceReplacementTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceReplacementTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ThreadLifecycleGcTest.abc' with entry 'ThreadLifecycleGcTest'
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.abc' with entry 'ConcurrentReferenceReplacementTest'
+Signal 11 (core dumped)
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentGcTestSupport --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentGcTestSupport.abc
+Signal 11 (core dumped)
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentContainerMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc' with entry 'ConcurrentContainerMutationTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite && /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentContainerMutationTest --stub-file=/data/local/tmp/testsuite/stub.an --open-ark-tools=true --compiler-opt-track-field=false --compiler-enable-jit=true --compiler-jit-hotness-threshold=2 --compiler-opt-inlining=false --compiler-enable-litecg=true reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc
+Cannot execute panda file 'reachableTest/concurrentmutator/ConcurrentContainerMutationTest.abc' with entry 'ConcurrentContainerMutationTest'
+
+**********  test finish Mon Jul 20 16:20:37 CST 2026 **********
+
+
+2026-07-20 16:12:26 执行远程命令：hdc -t 5JV0226127000574 shell \"cd /data/local/tmp/testsuite/Report && tar -zcvf reachableTest.tar.gz reachableTest -C /data/local/tmp/testsuite/Report\"
+2026-07-20 16:12:26 执行远程命令：hdc -t 5JV0226127000574 file recv /data/local/tmp/testsuite/Report/reachableTest.tar.gz temp\reachableTest.tar.gz
+2026-07-20 16:12:26 命令输出：
+FileTransfer finish, Size:656, File count = 1, time:10ms rate:65.60kB/s
+
+2026-07-20 16:12:26 recv file temp\reachableTest.tar.gz -> /home/gonglingwen/Report/reachableTest.tar.gz
+
+2026-07-20 16:12:26 执行命令路径：/home/gonglingwen/Report
+2026-07-20 16:12:26 tar zxvf reachableTest.tar.gz
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//AllocationPressureGcTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//AllocationPressureGcTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ThreadLifecycleGcTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ThreadLifecycleGcTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentReferenceReplacementTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentReferenceReplacementTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentReferenceDeletionTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentReferenceDeletionTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentGcBaselineTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentGcBaselineTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentStressRegressionTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentStressRegressionTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentStrongPublishTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentStrongPublishTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentWeakMutationTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentWeakMutationTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentGcTestSupport_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentGcTestSupport_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentContainerMutationTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//ConcurrentContainerMutationTest_jit.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//SharedGraphConcurrentMutationTest_asmint.log
+2026-07-20 16:12:26 cat /home/gonglingwen/Report/reachableTest/concurrentmutator//SharedGraphConcurrentMutationTest_jit.log
+============================= TEST RESULT ============================
+  Total 11   Passed 0  Failed 11
+======================================================================
+reachableTest/concurrentmutator/ConcurrentWeakMutationTest.ts FAIL
+reachableTest/concurrentmutator/AllocationPressureGcTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentStrongPublishTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentStressRegressionTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentGcTestSupport.ts FAIL
+reachableTest/concurrentmutator/SharedGraphConcurrentMutationTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentGcBaselineTest.ts FAIL
+reachableTest/concurrentmutator/ThreadLifecycleGcTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentReferenceReplacementTest.ts FAIL
+reachableTest/concurrentmutator/ConcurrentContainerMutationTest.ts FAIL
