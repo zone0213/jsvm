@@ -1,87 +1,4 @@
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp --disable_output
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: argument --enable_cpltp: expected one argument
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp False --disable_output True
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: unrecognized arguments: --mode=release --d8=d8Data/x64.release/d8
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=mozilla --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp --disable_output
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: argument --enable_cpltp: expected one argument
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=mozilla --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp False --disable_output True
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: unrecognized arguments: --mode=release --d8=d8Data/x64.release/d8
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=mozilla --platform=x86 --enable_cpltp False --disable_output True
-+ TOOLCHAIN_PATH=/home/gonglingwen/toolchain
-+ CPLTP_PATH=/home/gonglingwen/toolchain/../OpenHarmony_ArkTS_Test/CI/CPLTP
-+ test -d /home/gonglingwen/toolchain
-+ rm -rf /home/gonglingwen/toolchain
-+ mkdir -p /home/gonglingwen/toolchain
-+ /home/gonglingwen/toolchain/../OpenHarmony_ArkTS_Test/CI/CPLTP/artget pull -ap /home/gonglingwen/toolchain -user l00518251 -pwd encryption:Q21jRGVjcnlwdA==AAAAAgAAAAAAAAAAAAAABgAAAAfnQSwL9MWegi6BZe1SkOfy84BCa+4OqFe5TYVuVRZpogEAAAEAAAAAAAAAIGy0ucomy9ExMMcdWodpG/cUyZU3+hRLv8LLCtB52IOT -d /home/gonglingwen/toolchain/../OpenHarmony_ArkTS_Test/CI/CPLTP/artget.xml
-+ tee /home/gonglingwen/toolchain/toolchain.log
-[INFO ] 2026-07-21 10:20:00.299 1900 [main] - =========== Check ArtGet Version ===========
-[INFO ] 2026-07-21 10:20:00.468 2069 [main] - Current artget version is [1.3.6.1]
-[INFO ] 2026-07-21 10:20:00.469 2070 [main] - ================== ArtGet ==================
-[INFO ] 2026-07-21 10:20:00.470 2071 [main] - * Home: /home/gonglingwen
-[INFO ] 2026-07-21 10:20:00.470 2071 [main] - * Version: 1.3.6.1
-[INFO ] 2026-07-21 10:20:00.471 2072 [main] - * Environment: prod
-[INFO ] 2026-07-21 10:20:00.471 2072 [main] - * Jdk: 11.0.31
-[INFO ] 2026-07-21 10:20:00.471 2072 [main] - * OS Name: Linux
-[INFO ] 2026-07-21 10:20:00.472 2073 [main] - * Jar: artget-prod.jar
-[INFO ] 2026-07-21 10:20:00.472 2073 [main] - * Log: /home/gonglingwen/.ArtGet/logs
-[INFO ] 2026-07-21 10:20:00.595 2196 [main] - [User AdAuth] username: l00518251 password: ****** -> success.
-[INFO ] 2026-07-21 10:20:00.596 2197 [main] - ====================== Clean Local Cache ============================
-[INFO ] 2026-07-21 10:20:00.597 2198 [main] - * Cache: /home/gonglingwen/.ArtGet/cache/
-[INFO ] 2026-07-21 10:20:00.611 2212 [main] - init cacheCopy Thread success 4
-[INFO ] 2026-07-21 10:20:00.612 2213 [main] - CacheManage init status: true
-[INFO ] 2026-07-21 10:20:00.613 2214 [main] - Obtaining the process lock, please wait......
-[INFO ] 2026-07-21 10:20:00.615 2216 [main] - The process lock is successfully obtained.
-[INFO ] 2026-07-21 10:20:00.616 2217 [main] - No need to clear cache. Current cache size: 0
-[INFO ] 2026-07-21 10:20:00.617 2218 [main] - * Setting: /home/gonglingwen/.ArtGet/conf/Setting.xml
-[INFO ] 2026-07-21 10:20:00.618 2219 [main] - * Cache: /home/gonglingwen/.ArtGet/cache/
-[INFO ] 2026-07-21 10:20:00.618 2219 [main] - * Agent: /home/gonglingwen/toolchain
-[INFO ] 2026-07-21 10:20:00.650 2251 [main] - ==================================== Pull Start =======================================
-[INFO ] 2026-07-21 10:20:00.953 2554 [thread-worker-version-preprocess-1] - [Find Version] BVersionSnapshot[category=Release-Snapshot,offering=HOS NEXT BaseSoftware_LVM,version=HOS NEXT BaseSoftware_LVM 6.0.0.B001,serial=latest] -> not exist.
-[ERROR] 2026-07-21 10:20:01.272 2873 [thread-worker-version-preprocess-1] - [Exception] Result: [454]There is an error in the user configuration and the task is aborted
-[ERROR] 2026-07-21 10:20:01.273 2874 [thread-worker-version-preprocess-1] - [Exception] Error Code: ART.0010230.454
-[ERROR] 2026-07-21 10:20:01.273 2874 [thread-worker-version-preprocess-1] - [Exception] Wb Error Code: REC-ARTGET-10230454
-[ERROR] 2026-07-21 10:20:01.273 2874 [thread-worker-version-preprocess-1] - [Exception] Error Cause: Version does not exist
-[ERROR] 2026-07-21 10:20:01.273 2874 [thread-worker-version-preprocess-1] - [Exception] Error Desc: Version Information:BVersionSnapshot[category=Release-Snapshot,offering=HOS NEXT BaseSoftware_LVM,version=HOS NEXT BaseSoftware_LVM 6.0.0.B001,serial=latest]
-[ERROR] 2026-07-21 10:20:01.273 2874 [thread-worker-version-preprocess-1] - [Exception] Solution: Please check the version information
-[ERROR] 2026-07-21 10:20:01.274 2875 [thread-worker-version-preprocess-1] - [Exception] Wiki: https://wiki.huawei.com/domains/1190/wiki/5852/WIKI2021101203064
-[INFO ] 2026-07-21 10:20:01.275 2876 [thread-worker-version-preprocess-1] - Program run time: RRT-ARTGET-00010000:2.75s
-[INFO ] 2026-07-21 10:20:01.275 2876 [thread-worker-version-preprocess-1] - RetMsg: execute failed, RetCode: -1
-+ check_result 0 /home/gonglingwen/toolchain/toolchain.log
-+ '[' 0 -eq 0 ']'
-+ echo -e '---- /home/gonglingwen/toolchain/toolchain.log success.\n'
----- /home/gonglingwen/toolchain/toolchain.log success.
 
-+ find /home/gonglingwen/toolchain -name '*.zip' -exec unzip -d /home/gonglingwen/toolchain '{}' ';'
-2026-07-21 10:20:01 cd /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites && bash run_test.sh mozilla x86 /home/gonglingwen/toolchain trunk
-2026-07-21 10:20:01
-********** test starting Tue Jul 21 10:20:01 AM CST 2026 **********
-
-
-**********  test finish Tue Jul 21 10:20:01 AM CST 2026 **********
-
-
-============================= TEST RESULT ============================
-  Total 0   Passed 0  Failed 0
-======================================================================
-
-Traceback (most recent call last):
-  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 338, in <module>
-    main()
-  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 334, in main
-    run_suites.run()
-  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 102, in run
-    self.get_report()
-  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 254, in get_report
-    "Pass Rate": str(float(len(self.pass_path_list)) / float(total_num) * 100)[:5] + "%",
-ZeroDivisionError: float division by zero
 gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test --mode=release --d8=d8Data/x64.release/d8" --suitename=benchmarks --platform=x86 --enable_cpltp False --disable_output True
 + TOOLCHAIN_PATH=/home/gonglingwen/toolchain
 + CPLTP_PATH=/home/gonglingwen/toolchain/../OpenHarmony_ArkTS_Test/CI/CPLTP
@@ -134,6 +51,29 @@ gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python r
 
 
 **********  test finish Tue Jul 21 10:21:10 AM CST 2026 **********
+
+
+============================= TEST RESULT ============================
+  Total 0   Passed 0  Failed 0
+======================================================================
+
+Traceback (most recent call last):
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 338, in <module>
+    main()
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 334, in main
+    run_suites.run()
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 102, in run
+    self.get_report()
+  File "/home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites/run_testsuite.py", line 254, in get_report
+    "Pass Rate": str(float(len(self.pass_path_list)) / float(total_num) * 100)[:5] + "%",
+ZeroDivisionError: float division by zero
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test --mode=release --d8=d8Data/x64.release/d8" --suitename=benchmarks --platform=x86 --enable_cpltp False --disable_output True --update False
+2026-07-21 10:23:26 cd /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites && bash run_test.sh benchmarks x86 /home/gonglingwen/toolchain trunk
+2026-07-21 10:23:26
+********** test starting Tue Jul 21 10:23:26 AM CST 2026 **********
+
+
+**********  test finish Tue Jul 21 10:23:26 AM CST 2026 **********
 
 
 ============================= TEST RESULT ============================
