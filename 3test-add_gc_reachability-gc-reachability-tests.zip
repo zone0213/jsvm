@@ -1,34 +1,57 @@
 #!/bin/bash
 
-# 修复了参数间的空格，并去掉了 --disable_output 以便观察进度
-python run.py --xflags="--test --ignore-unhandled-promises" --suitename=webkit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+# 定义日志文件
+LOG="test_run.log"
 
-python run.py --xflags="--module" --suitename=inspector --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+# 清空旧日志，开始记录
+echo "==== 自动化测试开始: $(date) ====" > $LOG
 
-python run.py --xflags="--test --enable-inspector --allow-natives-syntax --ignore-unhandled-promises --expose-gc --js-explicit-resource-management" --suitename=debugger --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[1/16] Running webkit..." | tee -a $LOG
+python run.py --xflags="--test --ignore-unhandled-promises" --suitename=webkit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--module" --suitename=modules --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[2/16] Running inspector..." | tee -a $LOG
+python run.py --xflags="--module" --suitename=inspector --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=safari --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[3/16] Running debugger..." | tee -a $LOG
+python run.py --xflags="--test --enable-inspector --allow-natives-syntax --ignore-unhandled-promises --expose-gc --js-explicit-resource-management" --suitename=debugger --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --suitename=mjsunit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[4/16] Running modules..." | tee -a $LOG
+python run.py --xflags="--module" --suitename=modules --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[5/16] Running safari..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=safari --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=benchmarks --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[6/16] Running mjsunit..." | tee -a $LOG
+python run.py --suitename=mjsunit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--module" --suitename=chakaracore --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[7/16] Running mozilla..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--module" --suitename=TypeScript --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[8/16] Running benchmarks..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=benchmarks --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--module" --suitename=aot-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[9/16] Running chakaracore..." | tee -a $LOG
+python run.py --xflags="--module" --suitename=chakaracore --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=intl --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[10/16] Running TypeScript..." | tee -a $LOG
+python run.py --xflags="--module" --suitename=TypeScript --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=js-perf-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[11/16] Running aot-test..." | tee -a $LOG
+python run.py --xflags="--module" --suitename=aot-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=intl-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[12/16] Running intl..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=intl --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=js-perf-test-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[13/16] Running js-perf-test..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=js-perf-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
 
-python run.py --xflags="--test" --suitename=wasm-js --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+echo "[14/16] Running intl-132..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=intl-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
+
+echo "[15/16] Running js-perf-test-132..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=js-perf-test-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
+
+echo "[16/16] Running wasm-js..." | tee -a $LOG
+python run.py --xflags="--test" --suitename=wasm-js --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp 2>&1 | tee -a $LOG
+
+echo "==== 所有测试已完成: $(date) ====" | tee -a $LOG
