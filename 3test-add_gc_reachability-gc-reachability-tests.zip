@@ -1,7 +1,24 @@
+# 进入你现在脚本报错的 dev 编译器目录
+cd /home/gonglingwen/toolchain/x86_bin/dev/
 
-gonglingwen@ubuntu:~/Report/reachableTest/concurrentmutator$ hexdump -C /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/bili.abc | head -n 2
-00000000  50 41 4e 44 41 00 00 00  80 14 3c 26 18 00 00 00  |PANDA.....<&....|
-00000010  b4 18 00 00 00 00 00 00  00 00 00 00 04 00 00 00  |................|
-gonglingwen@ubuntu:~/Report/reachableTest/concurrentmutator$ hexdump -C /home/gonglingwen/Report/reachableTest/concurrentmutator/AllocationPressureGcTest.abc | head -n 2
-00000000  50 41 4e 44 41 00 00 00  01 1b 1f 16 18 00 00 00  |PANDA...........|
-00000010  0c 18 00 00 00 00 00 00  00 00 00 00 04 00 00 00  |................|
+# 用之前 trunk 目录下那个成功过的 es2abc 强行覆盖它
+cp /home/gonglingwen/toolchain/x86_bin/trunk/es2abc .
+chmod +x es2abc
+
+# 进入你现在脚本报错的 dev 手机引擎目录
+cd /home/gonglingwen/toolchain/arm64_phone_bin/dev/
+
+# 用之前那个成功过的 ark_js_vm 强行覆盖它
+cp /home/gonglingwen/toolchain/x86_bin/trunk/ark_js_vm .
+chmod +x ark_js_vm
+
+# 进入库文件目录
+cd /home/gonglingwen/toolchain/dev_tool/dev/
+
+# 确保这里用的是配套的库（如果你之前把 1390 个都堆在这里了，建议先清空再考入 trunk 里的）
+rm -rf *
+cp /home/gonglingwen/toolchain/x86_bin/trunk/*.so .
+chmod 755 *.so
+
+# 在 Windows 命令行执行
+hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
