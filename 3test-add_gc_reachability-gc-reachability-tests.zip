@@ -1,8 +1,6 @@
-rm -rf /home/gonglingwen/toolchain/dev_tool/dev/*
-
-# 1. 进入手机 shell
-hdc -t 5JV0226127000574 shell
-
-# 2. 手动尝试运行其中一个用例（注意路径）
-export LD_LIBRARY_PATH=/data/local/tmp/testsuite
-/data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletionTest /data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
+C:\phone_tools>hdc -t 5JV0226127000574 shell
+# export LD_LIBRARY_PATH=/data/local/tmp/testsuite
+testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc <
+Cannot execute panda file '/data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+# /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletio>
+Cannot execute panda file '/data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
