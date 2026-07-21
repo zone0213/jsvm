@@ -19,3 +19,13 @@ ls /home/gonglingwen/toolchain/dev_tool/dev/libark_jsruntime.so
 
 hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
 python run_testsuite.py --suitename reachableTest --branch dev ... (其他参数不变)
+
+C:\Users\g50060069>mkdir C:\phone_tools
+
+C:\Users\g50060069>cd C:\phone_files
+系统找不到指定的路径。
+
+C:\Users\g50060069>cd C:\phone_tools
+
+C:\phone_tools>hdc -t 5JV0226127000574 file recv /system/bin/ark_js_vm .
+[Fail]Error opening file: no such file or directory, path:/system/bin/ark_js_vm
