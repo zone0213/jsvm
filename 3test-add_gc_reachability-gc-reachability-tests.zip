@@ -1,3 +1,7 @@
-hexdump -C /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/bili.abc | head -n 2
 
-hexdump -C /home/gonglingwen/Report/reachableTest/concurrentmutator/AllocationPressureGcTest.abc | head -n 2
+gonglingwen@ubuntu:~/Report/reachableTest/concurrentmutator$ hexdump -C /home/gonglingwen/OpenHarmony_ArkTS_Test/JIT/Workload/pgo_build/out-asmint/bili.abc | head -n 2
+00000000  50 41 4e 44 41 00 00 00  80 14 3c 26 18 00 00 00  |PANDA.....<&....|
+00000010  b4 18 00 00 00 00 00 00  00 00 00 00 04 00 00 00  |................|
+gonglingwen@ubuntu:~/Report/reachableTest/concurrentmutator$ hexdump -C /home/gonglingwen/Report/reachableTest/concurrentmutator/AllocationPressureGcTest.abc | head -n 2
+00000000  50 41 4e 44 41 00 00 00  01 1b 1f 16 18 00 00 00  |PANDA...........|
+00000010  0c 18 00 00 00 00 00 00  00 00 00 00 04 00 00 00  |................|
