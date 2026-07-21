@@ -1,17 +1,34 @@
+#!/bin/bash
 
-python run.py --xflags="--test --ignore-unhandled-promises" --suitename=webkit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--module" --suitename=inspector  --mode=release  --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test --enable-inspector --allow-natives-syntax --ignore-unhandled-promises --expose-gc --js-explicit-resource-management" --suitename=debugger  --mode=release  --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--module" --suitename=modules  --mode=release  --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=safari  --mode=release  --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --suitename=mjsunit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=benchmarks --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--module" --suitename=chakaracore --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8--enable_cpltp --disable_output
-python run.py --xflags="--module" --suitename=TypeScript --mode=release --platform=phone--ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--module" --suitename=aot-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=intl  --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=js-perf-test  --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8--enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=intl-132  --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=js-perf-test-132  --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
-python run.py --xflags="--test" --suitename=wasm-js  --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp --disable_output
+# 修复了参数间的空格，并去掉了 --disable_output 以便观察进度
+python run.py --xflags="--test --ignore-unhandled-promises" --suitename=webkit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--module" --suitename=inspector --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test --enable-inspector --allow-natives-syntax --ignore-unhandled-promises --expose-gc --js-explicit-resource-management" --suitename=debugger --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--module" --suitename=modules --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=safari --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --suitename=mjsunit --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=benchmarks --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--module" --suitename=chakaracore --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--module" --suitename=TypeScript --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--module" --suitename=aot-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=intl --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=js-perf-test --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=intl-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=js-perf-test-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
+
+python run.py --xflags="--test" --suitename=wasm-js --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phone/d8 --enable_cpltp
