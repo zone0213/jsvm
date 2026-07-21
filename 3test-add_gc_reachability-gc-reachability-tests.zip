@@ -22,3 +22,9 @@ python run_testsuite.py --suitename reachableTest --branch dev ... (其他参数
 
 hdc -t 5JV0226127000574 shell find /system -name "ark_js_vm"
 hdc -t 5JV0226127000574 shell ls /system/bin/ark*
+C:\phone_tools>hdc -t 5JV0226127000574 shell ls /system/bin/ark*
+/system/bin/ark_aot
+/system/bin/ark_aot_compiler
+/system/bin/ark_aptool
+/system/bin/arkdata
+/system/bin/arkweb_crashpad_handler
