@@ -24,3 +24,11 @@ hdc -t 5JV0226127000574 shell find /system -name "ark_js_vm"
 
 hdc -t 5JV0226127000574 shell ls /system/lib64/ark_js_vm
 hdc -t 5JV0226127000574 shell ls /vendor/bin/ark*
+
+cd /home/gonglingwen/toolchain/dev_tool/dev/
+# 把所有深层目录下的 .so 提到当前目录
+find . -name "*.so" -exec mv {} . \;
+
+# 赋予执行权限
+chmod +x /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm
+chmod 755 /home/gonglingwen/toolchain/dev_tool/dev/*.so
