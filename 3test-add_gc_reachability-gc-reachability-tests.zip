@@ -1,5 +1,1 @@
-
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=x86 --d8=d8Data/x64.release --enable_cpltp --disable_output
----- /home/gonglingwen/OpenHarmony_ArkTS_Test/../toolchain/toolchain.log success.
-
-d8Data/x64.release is not exists, please check!
+python run.py --xflags="--test" --suitename=mozilla --mode=release --platform=x86 --d8=/home/gonglingwen/d8Data/x64.release/d8 --enable_cpltp False --disable_output True
