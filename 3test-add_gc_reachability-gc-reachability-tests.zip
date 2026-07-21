@@ -36,3 +36,4 @@ chmod 755 /home/gonglingwen/toolchain/dev_tool/dev/*.so
 ls /home/gonglingwen/toolchain/dev_tool/dev/libark_jsruntime.so
 ls /home/gonglingwen/toolchain/dev_tool/dev/libffrt.so
 ls /home/gonglingwen/toolchain/dev_tool/dev/libhilog.so
+hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
