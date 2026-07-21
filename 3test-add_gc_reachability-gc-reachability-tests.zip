@@ -1,24 +1,8 @@
-# 进入你现在脚本报错的 dev 编译器目录
-cd /home/gonglingwen/toolchain/x86_bin/dev/
+# 赋予编译器权限
+chmod +x /home/gonglingwen/toolchain/x86_bin/dev/es2abc
 
-# 用之前 trunk 目录下那个成功过的 es2abc 强行覆盖它
-cp /home/gonglingwen/toolchain/x86_bin/trunk/es2abc .
-chmod +x es2abc
+# 赋予手机引擎权限
+chmod +x /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm
 
-# 进入你现在脚本报错的 dev 手机引擎目录
-cd /home/gonglingwen/toolchain/arm64_phone_bin/dev/
-
-# 用之前那个成功过的 ark_js_vm 强行覆盖它
-cp /home/gonglingwen/toolchain/x86_bin/trunk/ark_js_vm .
-chmod +x ark_js_vm
-
-# 进入库文件目录
-cd /home/gonglingwen/toolchain/dev_tool/dev/
-
-# 确保这里用的是配套的库（如果你之前把 1390 个都堆在这里了，建议先清空再考入 trunk 里的）
-rm -rf *
-cp /home/gonglingwen/toolchain/x86_bin/trunk/*.so .
-chmod 755 *.so
-
-# 在 Windows 命令行执行
-hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
+# 赋予所有库文件权限
+chmod 755 /home/gonglingwen/toolchain/dev_tool/dev/*.so
