@@ -1,6 +1,6 @@
 
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp --disable_output
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp False --disable_output True
 usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
                         [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: argument --enable_cpltp: expected one argument
+run_testsuite.py: error: unrecognized arguments: --mode=release --d8=d8Data/x64.release/d8
 
