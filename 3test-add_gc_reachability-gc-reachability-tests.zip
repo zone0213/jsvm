@@ -1,6 +1,2 @@
-C:\phone_tools>hdc -t 5JV0226127000574 shell
-# export LD_LIBRARY_PATH=/data/local/tmp/testsuite
-testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc <
-Cannot execute panda file '/data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
-# /data/local/tmp/testsuite/ark_js_vm --entry-point=ConcurrentReferenceDeletio>
-Cannot execute panda file '/data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc' with entry 'ConcurrentReferenceDeletionTest'
+export LD_LIBRARY_PATH=/data/local/tmp/testsuite
+/data/local/tmp/testsuite/ark_js_vm /data/local/tmp/testsuite/reachableTest/concurrentmutator/ConcurrentReferenceDeletionTest.abc
