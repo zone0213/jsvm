@@ -1,6 +1,21 @@
+rm -rf /home/gonglingwen/toolchain/arm64_phone_bin/dev/*
+rm -rf /home/gonglingwen/toolchain/dev_tool/dev/*
 
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JIT/Function_Normal/Suites$ python run_testsuite.py --xflags="--test" --suitename=benchmarks --mode=release --platform=x86 --d8=d8Data/x64.release/d8 --enable_cpltp False --disable_output True
-usage: run_testsuite.py [-h] [--ssh-ip SSH_IP] [--ssh-port SSH_PORT] [--ssh-user SSH_USER] [--ssh-pkey SSH_PKEY] [--sn SN] [--suitename SUITENAME] [--platform {phone,x86}] [--xflags XFLAGS] [--enable_cpltp ENABLE_CPLTP] [--disable_output DISABLE_OUTPUT]
-                        [--branch BRANCH] [--update UPDATE] [--push_so PUSH_SO] [--date DATE]
-run_testsuite.py: error: unrecognized arguments: --mode=release --d8=d8Data/x64.release/d8
+mkdir C:\phone_tools
+cd C:\phone_files
 
+hdc -t 5JV0226127000574 file recv /system/bin/ark_js_vm .
+hdc -t 5JV0226127000574 file recv /system/lib64/platformsdk/ .
+hdc -t 5JV0226127000574 file recv /system/lib64/ndk/ .
+hdc -t 5JV0226127000574 file recv /system/lib64/chipset-sdk-sp/ .
+
+
+# 1. 给权限
+chmod +x /home/gonglingwen/toolchain/arm64_phone_bin/dev/ark_js_vm
+chmod 755 /home/gonglingwen/toolchain/dev_tool/dev/*.so
+
+# 2. 确认库文件里有没有这个关键文件（刚才报错提到的）
+ls /home/gonglingwen/toolchain/dev_tool/dev/libark_jsruntime.so
+
+hdc -t 5JV0226127000574 shell rm -rf /data/local/tmp/testsuite/*
+python run_testsuite.py --suitename reachableTest --branch dev ... (其他参数不变)
