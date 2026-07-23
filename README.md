@@ -1,1 +1,40 @@
 
+============================= TEST RESULT ============================
+  Total 3781   Passed 3748  Failed 33
+======================================================================
+safari/es6/miscellaneous_String.prototype_case_methods_Unicode_support.js FAIL
+safari/es6/Proxy_internal_get_calls_RegExp.prototype[Symbol.replace].js FAIL
+safari/es6/String.prototype_methods_String.prototype.normalize.js FAIL
+safari/es6/Unicode_code_point_escapes_in_identifiers.js FAIL
+safari/microbenchmarks/locale-compare.js FAIL
+safari/microbenchmarks/string-prototype-search-observable-side-effects2.js FAIL
+safari/microbenchmarks/string-prototype-search-observable-side-effects3.js FAIL
+safari/stress/bound-function-empty-name.js FAIL
+safari/stress/has-own-property-arguments.js FAIL
+safari/stress/incorrect-exception-assertion-in-operationRegExpExecNonGlobalOrSticky.js FAIL
+safari/stress/intl-constructors-with-proxy.js FAIL
+safari/stress/intl-date-time-format-date-time-style-basic.js FAIL
+safari/stress/intl-date-time-format-date-time-style-hour-cycle.js FAIL
+safari/stress/intl-datetimeformat-day-period.js FAIL
+safari/stress/intl-legacy-constructors.js FAIL
+safari/stress/intl-listformat.js FAIL
+safari/stress/intl-locale-as-intl-param.js FAIL
+safari/stress/intl-missing-script-locales.js FAIL
+safari/stress/intl-numberformat-format-to-parts.js FAIL
+safari/stress/intl-numberformat-nu.js FAIL
+safari/stress/intl-segmenter.js FAIL
+safari/stress/intl-suppored-locales-of.js FAIL
+safari/stress/regexp-replace-proxy.js FAIL
+safari/stress/regexp-unicode-within-string.js FAIL
+safari/stress/regress-170251.js FAIL
+safari/stress/regress-192441.js FAIL
+safari/stress/string-compare.js FAIL
+safari/stress/string-locale-compare-uca-ducet.js FAIL
+safari/stress/string-toLocaleLowerCase.js FAIL
+safari/stress/string-toLocaleUpperCase.js FAIL
+safari/stress/type-profiler-log-should-defer-pending-exceptions.js FAIL
+safari/stress/typed-array-oom-in-buffer-accessor.js FAIL
+safari/stress/unicode-identifiers-with-surrogate-pairs.js FAIL
+python /home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/../../CI/CPLTP/result_deal_unify.py -r /home/gonglingwen/Report/safari -t safari -d 20260723143330 -i JSVM_FunctionTest-D8-20260723143330-20260723143330 -m safari_phone
+任务 safari 执行完毕。
+-----------------------
