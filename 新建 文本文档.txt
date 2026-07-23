@@ -4,6 +4,9 @@ grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt
 # 2. 尝试删除单层路径 (如 chakaracore/...)
 grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt | tr -d '\r' | sort -u | xargs rm -fv
 
+# 这个命令限制了搜索范围，绝对不会去动这四个文件夹之外的任何文件（如 run.py、test2.sh 等都会很安全）
+grep -oE '[^/ ]+\.js' fail_logs.txt | grep -vE '(assert\.js|utils\.js)' | sort -u | xargs -I {} find safari mjsunit chakaracore js-perf-test-132 -name "{}" -type f -print -delete
+
 # 请确保手机已连接并开启调试
 adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/safari
 adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/mjsunit
