@@ -1,3 +1,7 @@
-grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt | sort -u > to_exclude.tmp && for list_file in $(find . -name "testlist"); do grep -vFf to_exclude.tmp "$list_file" > "${list_file}.new" && mv "${list_file}.new" "$list_file" && echo "已清理: $list_file"; done && rm to_exclude.tmp
+# 查看清单里的那一行（请观察末尾有没有空格或奇怪字符）
+grep "miscellaneous_String.prototype_case_methods_Unicode_support" safari/testlist | cat -A
 
-grep "miscellaneous_String.prototype_case_methods_Unicode_support" safari/testlist
+# 查看我们要排除的清单里的那一行
+grep "miscellaneous_String.prototype_case_methods_Unicode_support" fail_logs.txt | cat -A
+
+
