@@ -1,1 +1,1 @@
-grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt | sed -E 's|^([^/]+)/|\1/\1/|' | tr -d '\r' | xargs rm -v
+ls safari/safari/es6/miscellaneous_String.prototype_case_methods_Unicode_support.js
