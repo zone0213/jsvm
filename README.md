@@ -10,14 +10,7 @@ rm nested_bad_perf.tmp
 # 1. 提取清单中对应的 8 个行匹配特征
 grep "js-perf-test-132/" fail_log.txt | grep -oE 'js-perf-test-132/[^ ]+\.js' | tr -d '\r' > list_exclude.tmp
 
-# 2. 清理 testlist
-tr -d '\r' < js-perf-test-132/testlist | grep -vFf list_exclude.tmp > js-perf-test-132/testlist.new
-mv js-perf-test-132/testlist.new js-perf-test-132/testlist
-
-
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ tr -d '\r' < js-perf-test-132/testlist | grep -vFf list_exclude.tmp > js-perf-test-132/testlist.new mv js-perf-test-132/testlist.new js-perf-test-132/testlist
-grep: mv: No such file or directory
-grep: js-perf-test-132/testlist.new: input file is also the output
+tr -d '\r' < js-perf-test-132/testlist | grep -vFf list_exclude.tmp > js-perf-test-132/testlist.new && mv js-perf-test-132/testlist.new js-perf-test-132/testlist && echo "清单清理成功"
 
 
 rm list_exclude.tmp
