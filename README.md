@@ -14,6 +14,12 @@ grep "js-perf-test-132/" fail_log.txt | grep -oE 'js-perf-test-132/[^ ]+\.js' | 
 tr -d '\r' < js-perf-test-132/testlist | grep -vFf list_exclude.tmp > js-perf-test-132/testlist.new
 mv js-perf-test-132/testlist.new js-perf-test-132/testlist
 
+
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ tr -d '\r' < js-perf-test-132/testlist | grep -vFf list_exclude.tmp > js-perf-test-132/testlist.new mv js-perf-test-132/testlist.new js-perf-test-132/testlist
+grep: mv: No such file or directory
+grep: js-perf-test-132/testlist.new: input file is also the output
+
+
 rm list_exclude.tmp
 
 python run.py --suitename=js-perf-test-132 --mode=release --platform=phone --ssh-ip 10.174.176.201 --ssh-user g50060069 --sn 5JV0226127000574 --d8=/home/gonglingwen/d8phoneBase/d8 --enable_cpltp --xflags="--test"
