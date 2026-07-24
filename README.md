@@ -1,10 +1,5 @@
-PS C:\windows\system32> @("C:\Program Files\Huawei\DevEco Studio","D:\Program Files\Huawei\DevEco Studio","C:\Program
->>   Files\Huawei","D:\Program Files\Huawei") | ForEach-Object { if (Test-Path $_) { Write-Output "存在: $_" } }
-存在: C:\Program Files\Huawei\DevEco Studio
-Test-Path : 路径中具有非法字符。
-所在位置 行:2 字符: 67
-+ ... D:\Program Files\Huawei") | ForEach-Object { if (Test-Path $_) { Writ ...
-+                                                      ~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (C:\Program
-  Files\Huawei:String) [Test-Path]，ArgumentException
-    + FullyQualifiedErrorId : ItemExistsArgumentError,Microsoft.PowerShell.Commands.TestPathCommand
+$b = "C:\Program Files\Huawei\DevEco Studio\sdk"; if (Test-Path $b) { Get-ChildItem $b -Directory | ForEach-Object {
+  $p = Join-Path $_.FullName "sdk-pkg.json"; if (Test-Path $p) { $j = Get-Content $p -Raw -ErrorAction SilentlyContinue
+  | Out-String; $api = ($j -split '"apiVersion"')[1] -split '[^0-9]' | Where-Object { $_ -ne '' } | Select-Object
+  -First 1; Write-Output ("{0}  api={1}" -f $_.Name,$api) } else { Write-Output ("{0} (无 sdk-pkg.json)" -f $_.Name) }
+  } } else { Write-Output "SDK 目录不存在: $b" }
