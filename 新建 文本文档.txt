@@ -10,3 +10,28 @@ grep "miscellaneous_String.prototype_case_methods_Unicode_support" safari/testli
 # 预期：没有任何输出
 
 git push origin glw
+
+
+
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git pull origin glw
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 441 bytes | 441.00 KiB/s, done.
+From ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test
+ * branch                glw        -> FETCH_HEAD
+ * [new branch]          glw        -> origin/glw
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
