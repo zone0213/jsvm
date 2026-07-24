@@ -1,2 +1,3 @@
- Get-Item "D:\api26\jsvm_hap_runner\entry\build\default\outputs\default\entry-default-signed.hap" | Select-Object
-  Length,LastWriteTime,FullName
+$env:PATH = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains;$env:PATH"; hdc shell "uitest
+  dumpLayout -p /data/local/tmp/layout.json -b com.example.jsvm"; hdc file recv /data/local/tmp/layout.json
+  "D:\api26\layout.json"
