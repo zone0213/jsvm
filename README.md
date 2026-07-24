@@ -22,8 +22,7 @@
 
  C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe
 
-  $hdc = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe"
-  & $hdc list targets
+ $env:PATH = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains;$env:PATH"; hdc list targets
     
   & $hdc list targets
   & $hdc install -r "D:\api26\jsvm_hap_runner\entry\build\default\outputs\default\entry-default-signed.hap"
