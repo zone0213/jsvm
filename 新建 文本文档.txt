@@ -1,28 +1,10 @@
-# 1. 尝试删除双层嵌套路径 (如 mjsunit/mjsunit/...)
-grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt | sed -E 's|^([^/]+)/|\1/\1/|' | tr -d '\r' | sort -u | xargs rm -fv
 
-# 2. 尝试删除单层路径 (如 chakaracore/...)
-grep -oE '(safari|mjsunit|chakaracore|js-perf-test-132)/[^ ]+\.js' fail_logs.txt | tr -d '\r' | sort -u | xargs rm -fv
-
-# 这个命令限制了搜索范围，绝对不会去动这四个文件夹之外的任何文件（如 run.py、test2.sh 等都会很安全）
-grep -oE '[^/ ]+\.js' fail_logs.txt | grep -vE '(assert\.js|utils\.js)' | sort -u | xargs -I {} find safari mjsunit chakaracore js-perf-test-132 -name "{}" -type f -print -delete
-
-# 请确保手机已连接并开启调试
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/safari
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/mjsunit
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/chakaracore
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/js-perf-test-132
-# 如果 intl 也没删干净，也执行一下
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/intl
-adb -s 5JV0226127000574 shell rm -rf /data/local/tmp/intl-132
-
-# 检查 chakaracore
-find . -name "unicode_6_identifiers_utf8.js"
-
-# 检查 mjsunit (随机抽一个)
-find . -name "type-reflection.js"
-
-# 检查 safari (随机抽一个)
-find . -name "intl-segmenter.js"
-
-bash test2.sh
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git push origin glw
+To ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git
+ ! [rejected]            glw -> glw (fetch first)
+error: failed to push some refs to 'ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
