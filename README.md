@@ -22,6 +22,11 @@
 
   $hdc = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe"
 
+"C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe" list targets
+Get-ChildItem "C:\Program Files\Huawei\DevEco Studio" -Recurse -Filter "hdc.exe" -ErrorAction SilentlyContinue |
+  Select-Object -First 3 -ExpandProperty FullName
+
+
   & $hdc list targets
   & $hdc install -r "D:\api26\jsvm_hap_runner\entry\build\default\outputs\default\entry-default-signed.hap"
   & $hdc shell "aa start -a EntryAbility -b com.example.jsvm"
