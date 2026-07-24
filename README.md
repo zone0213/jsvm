@@ -20,11 +20,7 @@
 
   第 4 步:装到 API26 手机并启动
 
-  $hdc = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe"
-
-"C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe" list targets
-Get-ChildItem "C:\Program Files\Huawei\DevEco Studio" -Recurse -Filter "hdc.exe" -ErrorAction SilentlyContinue |
-  Select-Object -First 3 -ExpandProperty FullName
+ C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe
 
 
   & $hdc list targets
