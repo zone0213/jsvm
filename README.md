@@ -1,20 +1,48 @@
-版本例行测试： 完成了 ArkTS/JSVM 周版本的例行功能扫描，验证了引擎在最新构建分支下的基础执行逻辑，确保核心功能无回退。
-ArkTS 功能用例调试： 针对自主整理的一套 ArkTS 专项用例进行了环境适配。由于执行中频繁触发 Signal 11 (Segmentation Fault) 段错误，本周重点进行了崩溃现场的堆栈捕获与环境排查。
-D8 专项多平台对比测试： 成功拉起 D8 引擎作为基线，在 x86 模拟器及 Phone 真机（基线/非基线版本）上完成了交叉比对测试，解决了自动化脚本在不同架构下的路径适配与工具链拉取问题。
-资料专项测试： 对开发者文档进行了深度“走测”，通过模拟开发者调用路径，累计发现并反馈了 30 处文档错误（含代码示例失效、接口描述偏差等问题）。
-二、 重难点与遗留问题
-重难点：
-环境适配复杂性： 在跨平台测试中，由于工具链（Toolchain）版本频繁更新且自动下载机制不稳定，导致本地环境配置耗费了较多时间。
-崩溃问题定位： Signal 11 属于底层内存错误，在 JIT（即时编译）模式下诱因复杂，目前定位难度较高，需结合底层日志深入分析。
-遗留问题：
-自研 ArkTS 功能用例由于 Signal 11 崩溃问题，目前尚未完全跑通，需下周协同开发联调。
-部分失败用例已识别并剔除，待下周完成最终的清理上库。
-三、 下周工作计划
-攻克崩溃问题： 集中力量解决 ArkTS 用例的 Signal 11 报错，争取在下周中旬前让用例在真机环境正常跑通。
-测试套件上库： 完成已清理后的测试用例上库操作，确保仓库代码的纯净度和高通过率。
-文档闭环： 跟进本周反馈的 30 处文档错误，协助文档组完成修正与复测。
-持续版本监测： 开启下一轮次的角色版本例行测试。
-四、 收获与感悟
-对引擎原理有了具象理解： 本周通过将 ArkTS 引擎与 d8（V8）进行对比，我深刻理解了“标准字典”对于“翻译机”测试的重要性。只有建立了正确的基线，才能精准识别出引擎本身的 Bug。
-测试工作的“工匠精神”： 在文档测试中发现 30 处错误让我意识到，测试不只是跑脚本，对资料细节的严谨把控能直接影响开发者的第一印象。
-环境是测试的基石： 本周在路径配置、绝对路径与相对路径纠纷上的折腾让我明白，优秀的自动化脚本必须具备极强的环境鲁棒性。在以后的工作中，我会更注重脚本参数设计的灵活性，减少手动调优的时间。
+两条路线,选一条
+
+  路线 A:直接装预编译包(最快,3 条命令)
+
+  $hdc = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe"
+
+  & $hdc list targets                                              # 确认手机连上
+  & $hdc install -r "D:\wasm\jsvm-wasm-hap-dist\hap\entry-default-signed.hap"   # 装包
+  & $hdc shell "aa start -a EntryAbility -b com.example.jsvm"      # 启动
+  打开 App,点紫色按钮 "Wasm: 编译/实例化/cache"。
+
+  ⚠️ 注意:这个包是我机器的 debug 证书签的,跨机常装不上。装不上就走路线 B。
+
+  路线 B:源码重签重编(推荐,能装能改)
+
+  $env:DEVECO_SDK_HOME = "C:\Program Files\Huawei\DevEco Studio\sdk"
+  $env:JAVA_HOME = "C:\Program Files\Huawei\DevEco Studio\jbr"
+  $env:PATH = "$env:JAVA_HOME\bin;$env:PATH"
+
+  cd "D:\wasm\jsvm-wasm-hap-dist\jsvm_hap_runner"
+
+  & "C:\Program Files\Huawei\DevEco Studio\tools\hvigor\bin\hvigorw.bat" `
+      assembleHap --mode module -p product=default -p buildMode=debug --no-daemon
+  成功后产物在 jsvm_hap_runner\entry\build\default\outputs\default\entry-default-signed.hap,再装跑:
+  $hdc = "C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe"
+  & $hdc install -r
+  "D:\wasm\jsvm-wasm-hap-dist\jsvm_hap_runner\entry\build\default\outputs\default\entry-default-signed.hap"
+  & $hdc shell "aa start -a EntryAbility -b com.example.jsvm"
+
+  路线 B 必做一步:用 DevEco 打开工程 → File → Project Structure → Signing Configs → 勾 "Automatically generate
+  signature"。因为源码里 build-profile.json5
+  写死了我机器的证书路径(C:\Users\admin\.ohos\config\...),你机器上没这文件,不重配会编失败。
+
+  怎么判断跑没跑通
+
+  点按钮后,抓 hilog:
+  & $hdc shell "hilog -x | grep -iE 'CompileWasmModule|wasm|JIT'"
+  - 出现 CompileWasmModule status=0、按钮下方显示 add(1,2)=3 → ✅ 跑通(说明那台手机/profile 带 JIT ACL)
+  - 出现 Run OH_JSVM_CompileWasmModule failed: ... ACL certificate authorization ... → ❌ 缺 JIT
+  权限(普通商用手机基本是这个)
+
+  一个要记住的前提
+
+  wasm 要真跑通,签名 profile 必须带 JIT ACL 权限
+  ohos.permission.kernel.ALLOW_EXECUTABLE_FORT_MEMORY。普通调试签名没这个,普通商用手机也没有。所以"合适的手机"对 wasm
+  来说 = profile 带 ACL 的手机/工程机,不是指型号新。带 ACL 的申请流程在包里 README 的"如果要带 JIT ACL"那节。
+
+  详细的(含 ACL 申请、常见报错处理)都在 jsvm-wasm-hap-dist\README-在新电脑上怎么操作.md 里。
