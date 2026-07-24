@@ -12,3 +12,24 @@ git status
 git commit -m "Final cleanup: remove failing tests and sync testlists (history cleaned)"
 
 git push origin glw --force
+
+
+
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git status
+On branch glw
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../../../JIT/Function_Normal/Suites/run_testsuite.py
+        modified:   ../../../JIT/Workload/build.sh
+        deleted:    backup.tar.gz
+        deleted:    test2.log
+        deleted:    test_run.log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../../JIT/Function_Normal/Suites/reachableTest/
+        ../../../JIT/Workload/pgo_build/
+        ../../../Public/scripts/__pycache__/
+
+no changes added to commit (use "git add" and/or "git commit -a")
