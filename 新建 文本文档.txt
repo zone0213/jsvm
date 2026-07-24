@@ -1,37 +1,29 @@
-# 创建一个叫 glw_backup 的分支，保存你现在的辛苦成果
-git branch glw_backup
 
-git pull origin glw
-
-ls safari/safari/es6/miscellaneous_String.prototype_case_methods_Unicode_support.js
-# 预期：提示 No such file
-
-grep "miscellaneous_String.prototype_case_methods_Unicode_support" safari/testlist
-# 预期：没有任何输出
-
-git push origin glw
-
-
-
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git pull origin glw
-remote: Enumerating objects: 9, done.
-remote: Counting objects: 100% (9/9), done.
-remote: Compressing objects: 100% (5/5), done.
-remote: Total 5 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (5/5), 441 bytes | 441.00 KiB/s, done.
-From ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test
- * branch                glw        -> FETCH_HEAD
- * [new branch]          glw        -> origin/glw
-hint: You have divergent branches and need to specify how to reconcile them.
-hint: You can do so by running one of the following commands sometime before
-hint: your next pull:
-hint:
-hint:   git config pull.rebase false  # merge (the default strategy)
-hint:   git config pull.rebase true   # rebase
-hint:   git config pull.ff only       # fast-forward only
-hint:
-hint: You can replace "git config" with "git config --global" to set a default
-hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-hint: or --ff-only on the command line to override the configured default per
-hint: invocation.
-fatal: Need to specify how to reconcile divergent branches.
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git push origin glw
+Enumerating objects: 186, done.
+Counting objects: 100% (129/129), done.
+Delta compression using up to 128 threads
+Compressing objects: 100% (70/70), done.
+Writing objects: 100% (70/70), 18.05 MiB | 5.23 MiB/s, done.
+Total 70 (delta 46), reused 0 (delta 0), pack-reused 0
+remote: Start Git Hooks Checking                                                [FAILED]
+remote: Error: Deny by project hooks setting 'default': the size of file 'JSVM/Function/V8_Lite/test_run.log' has exceeded the upper limited size (50 MiB) in commit 'd0855bf5262b6a4966b935d7c8a16cbe31272b43'.
+remote: The file 'JSVM/Function/V8_Lite/test_run.log' should be tracked using Git LFS (Large File Storage).
+remote: -------------------------------------------------------------------------
+remote: HOW TO FIX:
+remote:
+remote: 1. Undo the last commit (keep changes):
+remote:     git reset --soft HEAD~1
+remote:
+remote: 2. Initialize Git LFS and track the files:
+remote:     git lfs install
+remote:     git lfs track 'JSVM/Function/V8_Lite/test_run.log'
+remote:
+remote: 3. Update .gitattributes and re-commit:
+remote:     git add .gitattributes
+remote:     git add .
+remote:     git commit -m 'chore: migrate large files to LFS'
+remote: -------------------------------------------------------------------------
+To ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git
+ ! [remote rejected]     glw -> glw (pre-receive hook declined)
+error: failed to push some refs to 'ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git'
