@@ -1,9 +1,29 @@
 
-gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git push origin glw
+gonglingwen@ubuntu:~/OpenHarmony_ArkTS_Test/JSVM/Function/V8_Lite$ git push origin glw --force
+Enumerating objects: 137, done.
+Counting objects: 100% (137/137), done.
+Delta compression using up to 128 threads
+Compressing objects: 100% (76/76), done.
+Writing objects: 100% (76/76), 18.05 MiB | 5.12 MiB/s, done.
+Total 76 (delta 52), reused 0 (delta 0), pack-reused 0
+remote: Start Git Hooks Checking                                                [FAILED]
+remote: Error: Deny by project hooks setting 'default': the size of file 'JSVM/Function/V8_Lite/test_run.log' has exceeded the upper limited size (50 MiB) in commit 'd0855bf5262b6a4966b935d7c8a16cbe31272b43'.
+remote: The file 'JSVM/Function/V8_Lite/test_run.log' should be tracked using Git LFS (Large File Storage).
+remote: -------------------------------------------------------------------------
+remote: HOW TO FIX:
+remote:
+remote: 1. Undo the last commit (keep changes):
+remote:     git reset --soft HEAD~1
+remote:
+remote: 2. Initialize Git LFS and track the files:
+remote:     git lfs install
+remote:     git lfs track 'JSVM/Function/V8_Lite/test_run.log'
+remote:
+remote: 3. Update .gitattributes and re-commit:
+remote:     git add .gitattributes
+remote:     git add .
+remote:     git commit -m 'chore: migrate large files to LFS'
+remote: -------------------------------------------------------------------------
 To ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git
- ! [rejected]            glw -> glw (non-fast-forward)
+ ! [remote rejected]     glw -> glw (pre-receive hook declined)
 error: failed to push some refs to 'ssh://codehub-dg-y.huawei.com:2222/OpenHarmony_ArkTS/OpenHarmony_ArkTS_Test.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes (e.g.
-hint: 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
