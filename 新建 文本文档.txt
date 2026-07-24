@@ -1,3 +1,12 @@
+# 创建一个叫 glw_backup 的分支，保存你现在的辛苦成果
+git branch glw_backup
+
 git pull origin glw
+
+ls safari/safari/es6/miscellaneous_String.prototype_case_methods_Unicode_support.js
+# 预期：提示 No such file
+
+grep "miscellaneous_String.prototype_case_methods_Unicode_support" safari/testlist
+# 预期：没有任何输出
 
 git push origin glw
