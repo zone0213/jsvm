@@ -72,6 +72,9 @@ def downloading_other_app(driver, deviceSN, applist):
     log(f'开始下载应用列表：{applist}')
 
     for app_info in applist:
+        # --- [防熄屏修改] 每个应用下载前发送一次唤醒信号 ---
+        run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
+        
         name = app_info[0]
         try:
             log(f'--- 正在处理下载：{name} ---')
@@ -124,6 +127,9 @@ def run_cmd(command):
 
 
 def launch_app(driver, deviceSN, bundle_name):
+    # --- [防熄屏修改] 每次启动前发送唤醒信号 ---
+    run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
+    
     log(f'正在冷启动应用（包名）：{bundle_name}')
     try:
         driver.stop_app(bundle_name)
@@ -152,8 +158,12 @@ def run(deviceSN, i):
     try:
         driver = UiDriver.connect(connector="hdc", device_sn=deviceSN)
 
-        # 防熄屏：设置休眠时间为 30 分钟
-        run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 1800000")
+        # --- [防熄屏修改] 设置休眠时间为永久 (2147483647ms) ---
+        run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 2147483647")
+        # --- [防熄屏修改] 设置充电时永远不熄屏 (1=AC, 2=USB, 3=Both) ---
+        run_cmd(f"hdc -t {deviceSN} shell settings put global stay_on_while_plugged_in 3")
+        # 初始唤醒一次
+        run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
 
         # 1. 下载阶段
         downloading_other_app(driver, deviceSN, OTHER_NAME[i])
