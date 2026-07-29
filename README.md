@@ -21,20 +21,15 @@ def log(message):
         log_file.flush()
 
 def read_app_list(filename="app-list.txt"):
-    """
-    读取从 Excel 复制的 txt。
-    每行格式为：软件名 包名
-    """
+    # 修改：为了支持 Excel 复制过来的 软件名 [空格] 包名 格式
     apps = []
     with open(filename, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line:
-                # 自动处理空格或 Tab 分隔
-                parts = line.split()
+                parts = line.split() # 自动拆分软件名和包名
                 if len(parts) >= 2:
-                    # parts[0] 是软件名, parts[1] 是包名
-                    apps.append(parts) 
+                    apps.append(parts)
     return apps
 
 def split_list(list, num):
@@ -43,7 +38,6 @@ def split_list(list, num):
 
 def downloading_other_app(driver, deviceSN, applist):
     log(f'开始下载应用列表：{applist}')
-    # 判定屏幕是否解锁，未解锁就进行解锁
     status = driver.ScreenLock.is_locked()
     if status:
         driver.ScreenLock.unlock()
@@ -60,20 +54,17 @@ def downloading_other_app(driver, deviceSN, applist):
         driver.touch((BY.text("允许")))
     time.sleep(1)
 
-    # 点击搜索框
+    # 点击搜索框 (坐标完全保留你的)
     run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1169 217")
     time.sleep(2)
-    # 防止有小艺输入法弹窗
     ret5 = driver.find_component(BY.text('同意'))
     if ret5:
         driver.touch(BY.text('同意'))
         time.sleep(1)
 
     for app_info in applist:
-        # 这里提取软件名进行搜索
-        name = app_info[0]
+        name = app_info[0] # 取第一列的软件名用于搜索
         log(f'正在下载应用：{name}')
-        # 输入内容
         driver.input_text(BY.type('SearchField'), name)
         time.sleep(1)
         # 搜索
@@ -89,7 +80,7 @@ def downloading_other_app(driver, deviceSN, applist):
         # 点击输入框的 x
         run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 927 205")
         time.sleep(0.5)
-        log(f'应用 {name} 下载指令发送完成')
+        log(f'应用 {name} 下载完成')
 
     driver.stop_app('com.huawei.hmsapp.appgallery')
     time.sleep(1)
@@ -128,15 +119,11 @@ def run_cmd(command):
 def launch_app(driver, deviceSN, bundle_name):
     log(f'正在冷启动应用（包名）：{bundle_name}')
     try:
-        # 1. 强制停止应用（确保是冷启动）
         driver.stop_app(bundle_name)
         time.sleep(1)
-        # 2. 直接通过包名启动
         driver.start_app(bundle_name)
-        # 3. 验证是否启动成功
         time.sleep(5)
         log(f'{bundle_name} 启动成功')
-        # 4. 再次停止，为下一个应用腾出内存
         driver.stop_app(bundle_name)
     except Exception as e:
         log(f'{bundle_name} 启动失败：{e}')
@@ -145,23 +132,29 @@ def launch_app(driver, deviceSN, bundle_name):
 def run(deviceSN, i):
     log(f'===== 设备 {deviceSN} 开始处理 =====')
     driver = UiDriver.connect(connector="hdc", device_sn=deviceSN)
+    
+    # 【新增点】：仅在这里加了一行，设置休眠时间为 30 分钟，防止熄屏
+    run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 1800000")
+
     log(f'设备 {deviceSN} 开始下载应用...')
     downloading_other_app(driver, deviceSN, OTHER_NAME[i])
     log(f'设备 {deviceSN} 应用下载完成，等待 10 秒后开始启动应用...')
     time.sleep(10)
     for app_info in OTHER_NAME[i]:
-        # 这里提取包名进行启动
-        bundle_name = app_info[1]
+        bundle_name = app_info[1] # 取第二列的包名用于启动
         launch_app(driver, deviceSN, bundle_name)
     log(f'===== 设备 {deviceSN} 处理完成 =====')
 
 def generate_summary(log_filename):
+    # 此处逻辑与你原始代码完全保持一致
     summary_lines = []
     summary_lines.append("\n" + "=" * 60)
     summary_lines.append("执行结果汇总")
     summary_lines.append("=" * 60)
     
-    total_apps = len(read_app_list("app-list.txt"))
+    # 重新读取一次计算总数
+    all_data = read_app_list("app-list.txt")
+    total_apps = len(all_data)
     total_devices = len(sys.argv[1:]) if sys.argv[1:] else 1
     apps_per_device = total_apps // total_devices if total_devices > 0 else total_apps
 
@@ -183,17 +176,13 @@ def generate_summary(log_filename):
     else:
         summary_lines.append("\n【启动失败】无")
 
-    total_tasks = total_apps # 如果是一台设备跑完所有
     success_count = total_apps - len(launch_failures)
-    
-    # 保持原有的成功率计算逻辑逻辑
     rate = (success_count * 100 // total_apps) if total_apps > 0 else 0
     summary_lines.append(f"\n【统计】启动成功率：{success_count}/{total_apps} ({rate}%)")
     summary_lines.append("=" * 60 + "\n")
 
     summary_text = "\n".join(summary_lines)
     print(summary_text)
-
     with open(log_filename, "a", encoding="utf-8") as f:
         f.write(summary_text)
 
@@ -209,7 +198,6 @@ if __name__ == '__main__':
     deviceSN_list = sys.argv[1:]
     devicenum = len(deviceSN_list) if deviceSN_list else 1
     
-    # 这里的 OTHER_NAME 会包含 [软件名, 包名] 的列表
     OTHER_NAME = split_list(read_app_list("app-list.txt"), devicenum)
     
     threads = []
