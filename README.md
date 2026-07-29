@@ -21,13 +21,13 @@ def log(message):
         log_file.flush()
 
 def read_app_list(filename="app-list.txt"):
-    # 修改：为了支持 Excel 复制过来的 软件名 [空格] 包名 格式
     apps = []
     with open(filename, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line:
-                parts = line.split() # 自动拆分软件名和包名
+                # 适配Excel直接粘贴的格式：软件名[空格/Tab]包名
+                parts = line.split()
                 if len(parts) >= 2:
                     apps.append(parts)
     return apps
@@ -54,7 +54,7 @@ def downloading_other_app(driver, deviceSN, applist):
         driver.touch((BY.text("允许")))
     time.sleep(1)
 
-    # 点击搜索框 (坐标完全保留你的)
+    # 点击搜索框
     run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1169 217")
     time.sleep(2)
     ret5 = driver.find_component(BY.text('同意'))
@@ -63,16 +63,24 @@ def downloading_other_app(driver, deviceSN, applist):
         time.sleep(1)
 
     for app_info in applist:
-        name = app_info[0] # 取第一列的软件名用于搜索
+        name = app_info[0] # 取软件名
         log(f'正在下载应用：{name}')
         driver.input_text(BY.type('SearchField'), name)
         time.sleep(1)
-        # 搜索
+        
+        # 搜索 (坐标保持不变)
         run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1091 214")
-        time.sleep(3)
-        # 下载
+        
+        # 【此处为唯一修改点】：动态等待搜索结果加载，解决网络慢搜不到的问题
+        for _ in range(15):
+            if driver.find_component(BY.text('安装')) or driver.find_component(BY.text('下载')) or driver.find_component(BY.text('更新')):
+                break
+            time.sleep(1)
+        
+        # 下载 (坐标保持不变)
         run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1108 432")
         time.sleep(2)
+        
         ret6 = driver.find_component(BY.text('继续'))
         if ret6:
             driver.touch(BY.text('继续'))
@@ -133,7 +141,7 @@ def run(deviceSN, i):
     log(f'===== 设备 {deviceSN} 开始处理 =====')
     driver = UiDriver.connect(connector="hdc", device_sn=deviceSN)
     
-    # 【新增点】：仅在这里加了一行，设置休眠时间为 30 分钟，防止熄屏
+    # 设置永不熄屏命令
     run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 1800000")
 
     log(f'设备 {deviceSN} 开始下载应用...')
@@ -141,33 +149,23 @@ def run(deviceSN, i):
     log(f'设备 {deviceSN} 应用下载完成，等待 10 秒后开始启动应用...')
     time.sleep(10)
     for app_info in OTHER_NAME[i]:
-        bundle_name = app_info[1] # 取第二列的包名用于启动
+        bundle_name = app_info[1] # 取包名
         launch_app(driver, deviceSN, bundle_name)
     log(f'===== 设备 {deviceSN} 处理完成 =====')
 
 def generate_summary(log_filename):
-    # 此处逻辑与你原始代码完全保持一致
     summary_lines = []
     summary_lines.append("\n" + "=" * 60)
     summary_lines.append("执行结果汇总")
     summary_lines.append("=" * 60)
     
-    # 重新读取一次计算总数
-    all_data = read_app_list("app-list.txt")
-    total_apps = len(all_data)
+    # 获取总数
+    all_apps = read_app_list("app-list.txt")
+    total_apps = len(all_apps)
     total_devices = len(sys.argv[1:]) if sys.argv[1:] else 1
-    apps_per_device = total_apps // total_devices if total_devices > 0 else total_apps
 
     summary_lines.append(f"\n设备数量：{total_devices}")
     summary_lines.append(f"应用总数：{total_apps}")
-    summary_lines.append(f"每台设备应用数：{apps_per_device}")
-
-    if download_failures:
-        summary_lines.append(f"\n【下载失败】共 {len(download_failures)} 个:")
-        for device, app, reason in download_failures:
-            summary_lines.append(f"  - 设备 {device}: {app} ({reason})")
-    else:
-        summary_lines.append("\n【下载失败】无")
 
     if launch_failures:
         summary_lines.append(f"\n【启动失败】共 {len(launch_failures)} 个:")
@@ -192,12 +190,8 @@ if __name__ == '__main__':
     log_filename = os.path.join(current_path, f"download_log_{timestamp}.txt")
     log_file = open(log_filename, "w", encoding="utf-8")
     
-    log(f'日志文件：{log_filename}')
-    log(f'设备列表：{sys.argv[1:]}')
-    
     deviceSN_list = sys.argv[1:]
     devicenum = len(deviceSN_list) if deviceSN_list else 1
-    
     OTHER_NAME = split_list(read_app_list("app-list.txt"), devicenum)
     
     threads = []
