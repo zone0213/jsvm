@@ -20,44 +20,9 @@ def log(message):
         log_file.write(msg + "\n")
         log_file.flush()
 
-def handle_common_popups(driver, deviceSN):
-    """
-    弹窗扫描与防熄屏：仅在需要的地方调用（如冷启动阶段）
-    """
-    try:
-        # 发送安全唤醒信号（防止熄屏）
-        run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
-        if driver.ScreenLock.is_locked():
-            driver.ScreenLock.unlock()
-            time.sleep(1)
-    except:
-        pass
-
-    # 弹窗列表：含允许、退出、关闭等
-    popups = ["允许", "始终允许", "同意", "我知道了", "以后再说", "确定", "继续", "跳过", "退出", "关闭", "取消"]
-    for text in popups:
-        try:
-            btn = driver.find_component(BY.text(text))
-            if btn:
-                driver.touch(btn)
-                log(f"【拦截】处理了弹窗: {text}")
-                time.sleep(1.2)
-                return True
-        except:
-            pass
-    return False
-
 def read_app_list(filename="app-list.txt"):
-    apps = []
     with open(filename, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                # 适配Excel复制格式
-                parts = line.split()
-                if len(parts) >= 2:
-                    apps.append(parts)
-    return apps
+        return [line.strip() for line in f if line.strip()]
 
 def split_list(list, num):
     k, m = divmod(len(list), num)
@@ -65,108 +30,125 @@ def split_list(list, num):
 
 def downloading_other_app(driver, deviceSN, applist):
     log(f'开始下载应用列表：{applist}')
+    # 判定屏幕是否解锁，未解锁就进行解锁
+    status = driver.ScreenLock.is_locked()
+    if status:
+        driver.ScreenLock.unlock()
+    time.sleep(1)
     
-    for app_info in applist:
-        name = app_info[0]
-        try:
-            log(f'--- 正在处理下载：{name} ---')
-            run_cmd(f"hdc -t {deviceSN} shell aa start -a MainAbility -b com.huawei.hmsapp.appgallery")
-            time.sleep(2)
-            
-            # 仅在进入应用市场初始界面处理一次可能存在的弹窗
-            handle_common_popups(driver, deviceSN)
+    run_cmd(f"hdc -t {deviceSN} shell aa start -a MainAbility -b com.huawei.hmsapp.appgallery")
+    waitForComponent(driver, BY.text('同意'))
+    time.sleep(1)
+    
+    ret2 = driver.find_component(BY.text('允许'))
+    if ret2:
+        driver.touch((BY.text("允许")))
+        time.sleep(1)
+    ret3 = driver.find_component(BY.text('允许'))
+    if ret3:
+        driver.touch((BY.text("允许")))
+        time.sleep(1)
 
-            # 点击搜索框 (坐标保持 1169 217)
-            run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1169 217")
-            time.sleep(1.5)
-            
-            driver.input_text(BY.type('SearchField'), name)
-            time.sleep(1)
-            
-            # 点击搜索 (坐标保持 1091 214)
-            run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1091 214")
-            
-            # 动态等待搜索结果加载（防止点空）
-            for _ in range(15):
-                if driver.find_component(BY.text('安装')) or driver.find_component(BY.text('下载')) or driver.find_component(BY.text('更新')):
-                    break
-                time.sleep(1)
-            
-            # 点击下载 (坐标保持 1108 432)
-            run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1108 432")
-            time.sleep(2)
-            
-            # --- 根据要求：此处已删除点击下载后的按钮检查逻辑 ---
+    # 点击搜索框
+    run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1169 217")
+    time.sleep(2)
+    # 防止有小艺输入法弹窗
+    ret5 = driver.find_component(BY.text('同意'))
+    if ret5:
+        driver.touch(BY.text('同意'))
+        time.sleep(1)
 
-            run_cmd(f"hdc -t {deviceSN} shell aa start -a MainAbility -b com.huawei.hmsapp.appgallery")
-            # 点击输入框的 x (坐标保持 927 205)
-            run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 927 205")
-            time.sleep(0.5)
-        except Exception as e:
-            log(f"应用 {name} 下载异常（跳过）: {e}")
-            continue
+    for name_and_bundle in applist:
+        # 兼容“名字 包名”格式，搜索时取第一个
+        name = name_and_bundle.split()[0]
+        
+        log(f'正在下载应用：{name}')
+        # 【物理避让】：搜索每个前发送唤醒键，重置休眠倒计时
+        run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
+
+        # 输入内容
+        driver.input_text(BY.type('SearchField'), name)
+        time.sleep(1)
+        # 搜索
+        run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1091 214")
+        time.sleep(3)
+        # 下载
+        run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 1108 432")
+        time.sleep(2)
+        ret6 = driver.find_component(BY.text('继续'))
+        if ret6:
+            driver.touch(BY.text('继续'))
+            
+        run_cmd(f"hdc -t {deviceSN} shell aa start -a MainAbility -b com.huawei.hmsapp.appgallery")
+        # 点击输入框的 x
+        run_cmd(f"hdc -t {deviceSN} shell uinput -T -c 927 205")
+        time.sleep(0.5)
+        log(f'应用 {name} 下载指令发送完成')
 
     driver.stop_app('com.huawei.hmsapp.appgallery')
+    time.sleep(1)
+
+def waitForComponent(driver, by, timeout=5):
+    for i in range(timeout):
+        time.sleep(1)
+        print(f'正在查找控件，请稍等》{timeout - 1 - i} 秒')
+        ret = driver.find_component(by)
+        if ret:
+            driver.touch(by)
+            return
 
 def run_cmd(command):
     try:
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         return result.stdout.strip()
-    except:
-        return ""
+    except Exception as e:
+        return str(e)
 
 def launch_app(driver, deviceSN, bundle_name):
     log(f'正在冷启动应用（包名）：{bundle_name}')
     try:
+        # 【物理避让】：启动每个前发送唤醒键
+        run_cmd(f"hdc -t {deviceSN} shell input keyevent 224")
+        
         driver.stop_app(bundle_name)
         time.sleep(1)
-        
-        # 启动前唤醒并清理可能挡住桌面的弹窗
-        handle_common_popups(driver, deviceSN)
-        
         driver.start_app(bundle_name)
         
-        # --- 根据要求：在冷启动期间加强弹窗检查（解决通知权限等） ---
-        log(f"进入冷启动监控期，处理权限弹窗...")
-        for _ in range(6): 
-            time.sleep(1.5)
-            handle_common_popups(driver, deviceSN)
-            
+        # 验证是否启动成功
+        time.sleep(5)
         log(f'{bundle_name} 启动成功')
         driver.stop_app(bundle_name)
+
     except Exception as e:
-        log(f'应用 {bundle_name} 启动失败（已跳过）: {e}')
+        log(f'{bundle_name} 启动失败：{e}')
         launch_failures.append((deviceSN, bundle_name, str(e)))
 
 def run(deviceSN, i):
-    log(f'===== 设备 {deviceSN} 开始执行 =====')
-    try:
-        driver = UiDriver.connect(connector="hdc", device_sn=deviceSN)
-        
-        # 防熄屏：设置休眠时间为 30 分钟
-        run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 1800000")
+    log(f'===== 设备 {deviceSN} 开始处理 =====')
+    driver = UiDriver.connect(connector="hdc", device_sn=deviceSN)
+    
+    # 【核心修改点 1】：直接通过系统设置将休眠改为 30 分钟 (1800000 毫秒)
+    # 这比框架自带的指令有效得多
+    run_cmd(f"hdc -t {deviceSN} shell settings put system screen_off_timeout 1800000")
 
-        # 1. 下载阶段
-        downloading_other_app(driver, deviceSN, OTHER_NAME[i])
+    log(f'设备 {deviceSN} 开始下载应用...')
+    downloading_other_app(driver, deviceSN, OTHER_NAME[i])
+    
+    log(f'设备 {deviceSN} 下载完成，等待 10 秒后开始冷启动测试...')
+    time.sleep(10)
+    
+    for app_info in OTHER_NAME[i]:
+        # 兼容“名字 包名”格式，启动时取第二个
+        parts = app_info.split()
+        bundle = parts[1] if len(parts) > 1 else parts[0]
+        launch_app(driver, deviceSN, bundle)
         
-        # 2. 安装缓冲
-        time.sleep(10)
-        
-        # 3. 启动阶段（含弹窗拦截）
-        for app_info in OTHER_NAME[i]:
-            try:
-                launch_app(driver, deviceSN, app_info[1])
-            except:
-                continue
-                
-    except Exception as e:
-        log(f"设备 {deviceSN} 发生非预期错误: {e}")
-    log(f'===== 设备 {deviceSN} 处理结束 =====')
+    log(f'===== 设备 {deviceSN} 处理完成 =====')
 
 def generate_summary(log_filename):
     summary_lines = []
     summary_lines.append("\n" + "=" * 60)
-    summary_lines.append("执行结果汇总 (冷启动弹窗拦截)")
+    summary_lines.append("执行结果汇总")
     summary_lines.append("=" * 60)
     
     all_data = read_app_list("app-list.txt")
@@ -177,7 +159,7 @@ def generate_summary(log_filename):
     summary_lines.append(f"总计应用数：{total_apps}")
 
     if launch_failures:
-        summary_lines.append(f"\n【异常记录汇总】:")
+        summary_lines.append(f"\n【异常汇总】:")
         for device, app, reason in launch_failures:
             summary_lines.append(f"  - 设备 {device}: {app}")
     else:
@@ -185,7 +167,7 @@ def generate_summary(log_filename):
 
     success_count = total_apps - len(launch_failures)
     rate = (success_count * 100 // total_apps) if total_apps > 0 else 0
-    summary_lines.append(f"\n【统计】启动成功率：{success_count}/{total_apps} ({rate}%)")
+    summary_lines.append(f"\n最终成功率：{success_count}/{total_apps} ({rate}%)")
     summary_lines.append("=" * 60 + "\n")
 
     summary_text = "\n".join(summary_lines)
@@ -202,8 +184,7 @@ if __name__ == '__main__':
     deviceSN_list = sys.argv[1:]
     devicenum = len(deviceSN_list) if deviceSN_list else 1
     
-    all_info = read_app_list("app-list.txt")
-    OTHER_NAME = split_list(all_info, devicenum)
+    OTHER_NAME = split_list(read_app_list("app-list.txt"), devicenum)
     
     threads = []
     for i, deviceSN in enumerate(deviceSN_list):
