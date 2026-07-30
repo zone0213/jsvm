@@ -1,82 +1,41 @@
-
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.042s
-user    0m44.237s
-sys     0m0.528s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.044s
-user    0m44.031s
-sys     0m0.561s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.043s
-user    0m43.549s
-sys     0m0.616s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.043s
-user    0m42.923s
-sys     0m0.540s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.050s
-user    0m44.400s
-sys     0m0.642s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.048s
-user    0m43.603s
-sys     0m0.536s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.044s
-user    0m44.404s
-sys     0m0.610s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m0.278s
-user    0m0.249s
-sys     0m0.032s
-gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
-es2abc main.js --extension=js --module --merge-abc --output main.abc
-ark_js_vm --entry-point=main main.abc
-解释器结果:
-fuzz-case-done
-
-real    0m30.050s
-user    0m45.972s
-sys     0m0.609s
+gonglingwen@ubuntu:~$ grep -rn "hdc\|source.*env\|export PATH" ~/OpenHarmony_ArkTS_Test/Public/scripts/ 2>/dev/null |head -40
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:57:        output = ssh.execute_command("hdc list targets")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:58:        logging.info(f'hdc list targets output: {output}')
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:69:    ssh.execute_command(f"hdc -t {sn} target mount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:70:    ssh.hdc_shell("mount /sys_prod -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:71:    ssh.hdc_shell("truncate -s 0 /sys_prod/etc/soc_perf/*.xml")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:72:    ssh.hdc_shell("mount / -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:73:    ssh.hdc_shell(
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:75:    ssh.hdc_shell("mount /vendor -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:76:    ssh.hdc_shell(
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:81:    ssh.hdc_shell("cat /sys/devices/system/cpu/online")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:83:    ssh.hdc_shell("cat /sys/class/power_supply/Battery/capacity")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:85:    ssh.hdc_shell("cat /sys/class/hw_thermal/temp/shell_frame/temp")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:87:    ssh.hdc_shell("cat /sys/class/power_supply/Battery/temp")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:90:        ssh.hdc_shell(f"cat /sys/devices/system/cpu/cpu{i}/cpufreq/scaling_cur_freq")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:95:    ssh.hdc_shell(f"rm -rf {remote_path}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:96:    ssh.hdc_shell(f"mkdir -p {remote_path}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:101:        ssh.hdc_file_send(f"{temp_path}\\{bin_file[0]}", remote_path)
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/phone_operation.py:102:        ssh.hdc_shell(f"chmod 755 {remote_path}/{bin_file[0]}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/test_d8.py:29:            js_output = ssh.hdc_shell(f'\\\"{run_cmd}; echo {end_flag}$?\\\"',timeout)
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/suite.py:46:            self.ssh.hdc_shell(f'rm -rf {self.test_path}')
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/suite.py:75:            self.ssh.hdc_file_send(self.suitename, self.test_path)
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/suite.py:79:            self.ssh.hdc_shell(f'chmod 777 -R {self.d8}')
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/suite.py:137:                js_output = ssh.hdc_shell(f'\"{run_cmd}; echo {end_flag}$?\"')
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:37:def hdc_shell(sn, cmd):
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:38:    print(f"hdc -t {sn} shell {cmd}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:40:        f"hdc -t {sn} shell \"{cmd}\"",
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:94:    local_sn_list, retcode = run_shell("hdc list targets")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:109:            count = hdc_shell(sn, f"ls {p_path} | wc -l")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/faultlog_backup.py:111:                subprocess.run(f"hdc -t {sn} file recv {p_path} {win_path}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/push_mobile_bin.py:52:            ssh.hdc_file_send(f"{temp_path}\\{bin_file[0]}", remote_path)
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/push_mobile_bin.py:53:            ssh.hdc_shell(f"chmod 755 {remote_path}/{bin_file[0]}")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:144:        output = ssh.execute_command("hdc list targets")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:145:        logging.info(f'hdc list targets output: {output}')
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:156:    ssh.execute_command(f"hdc -t {sn} target mount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:157:    ssh.hdc_shell("mount /sys_prod -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:158:    ssh.hdc_shell("truncate -s 0 /sys_prod/etc/soc_perf/*.xml")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:159:    ssh.hdc_shell("mount / -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:160:    ssh.hdc_shell(
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:162:    ssh.hdc_shell("mount /vendor -o rw,remount")
+/home/gonglingwen/OpenHarmony_ArkTS_Test/Public/scripts/common.py:163:    ssh.hdc_shell(
