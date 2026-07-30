@@ -1,12 +1,82 @@
-hdc shell "chmod -R 777 /data/local/tmp/webkit"
 
-hdc shell "export LD_LIBRARY_PATH=/data/local/tmp/webkit && /data/local/tmp/webkit/d8 -e 'print(1+1)'"
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
 
+real    0m30.042s
+user    0m44.237s
+sys     0m0.528s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
 
-find ~/ -name "hdc" -type f
+real    0m30.044s
+user    0m44.031s
+sys     0m0.561s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
 
-# 假设搜出来的路径是 /home/gonglingwen/toolchain/hdc
-/home/gonglingwen/toolchain/hdc -t 5JV0226127000574 shell "export LD_LIBRARY_PATH=/data/local/tmp/webkit && /data/local/tmp/webkit/d8 -e 'print(1+1)'"
+real    0m30.043s
+user    0m43.549s
+sys     0m0.616s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
 
-# 还是假设你的 hdc 在 /home/gonglingwen/toolchain/hdc
-sudo cp /home/gonglingwen/toolchain/hdc /usr/local/bin/
+real    0m30.043s
+user    0m42.923s
+sys     0m0.540s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
+
+real    0m30.050s
+user    0m44.400s
+sys     0m0.642s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
+
+real    0m30.048s
+user    0m43.603s
+sys     0m0.536s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
+
+real    0m30.044s
+user    0m44.404s
+sys     0m0.610s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
+
+real    0m0.278s
+user    0m0.249s
+sys     0m0.032s
+gonglingwen@ubuntu:~/arkts$ bash test.sh main.js
+es2abc main.js --extension=js --module --merge-abc --output main.abc
+ark_js_vm --entry-point=main main.abc
+解释器结果:
+fuzz-case-done
+
+real    0m30.050s
+user    0m45.972s
+sys     0m0.609s
