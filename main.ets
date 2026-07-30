@@ -103,7 +103,7 @@ let g14: Object | null = null
 let g15: WeakRef<Object> | null = null
 let g16: Object | null = null
 let g17: Object | null = null
-class Class18 implements ArkTsIndexAccess{
+class Class0 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null)
     {
         this.f0 = f0
@@ -117,25 +117,25 @@ class Class18 implements ArkTsIndexAccess{
     public f3: WeakRef<Object> | null = null
     public loadField(index: number): Object | null{
         switch ((index % 4) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
-            case 3: return f3?.deref();
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
+            case 3: return this.f3?.deref();
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 4) as number){
-            case 0: f0 = anyToInt(value); break;
-            case 1: f1 = value; break;
-            case 2: f2 = anyToBoolean(value); break;
-            case 3: f3 = value == null ? null : new WeakRef<Object>(value); break;
+            case 0: this.f0 = anyToInt(value); break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = anyToBoolean(value); break;
+            case 3: this.f3 = value == null ? null : new WeakRef<Object>(value); break;
             default: break;
         }
     }
 }
 
-class Class19 implements ArkTsIndexAccess{
+class Class1 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null)
     {
         this.f0 = f0
@@ -145,21 +145,21 @@ class Class19 implements ArkTsIndexAccess{
     public f1: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 2) as number){
-            case 0: return f0;
-            case 1: return f1;
+            case 0: return this.f0;
+            case 1: return this.f1;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 2) as number){
-            case 0: f0 = anyToInt(value); break;
-            case 1: f1 = value; break;
+            case 0: this.f0 = anyToInt(value); break;
+            case 1: this.f1 = value; break;
             default: break;
         }
     }
 }
 
-class Class20 implements ArkTsIndexAccess{
+class Class2 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null)
     {
         this.f0 = f0
@@ -175,27 +175,27 @@ class Class20 implements ArkTsIndexAccess{
     public f4: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 5) as number){
-            case 0: return f0;
-            case 1: return f1?.deref();
-            case 2: return f2;
-            case 3: return f3;
-            case 4: return f4;
+            case 0: return this.f0;
+            case 1: return this.f1?.deref();
+            case 2: return this.f2;
+            case 3: return this.f3;
+            case 4: return this.f4;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 5) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value == null ? null : new WeakRef<Object>(value); break;
-            case 2: f2 = anyToInt(value); break;
-            case 3: f3 = anyToInt(value); break;
-            case 4: f4 = value; break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value == null ? null : new WeakRef<Object>(value); break;
+            case 2: this.f2 = anyToInt(value); break;
+            case 3: this.f3 = anyToInt(value); break;
+            case 4: this.f4 = value; break;
             default: break;
         }
     }
 }
 
-class Class21 implements ArkTsIndexAccess{
+class Class3 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null)
     {
         this.f0 = f0
@@ -209,25 +209,25 @@ class Class21 implements ArkTsIndexAccess{
     public f3: number = anyToInt(null)
     public loadField(index: number): Object | null{
         switch ((index % 4) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
-            case 3: return f3;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
+            case 3: return this.f3;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 4) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = anyToInt(value); break;
-            case 2: f2 = value; break;
-            case 3: f3 = anyToInt(value); break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = anyToInt(value); break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = anyToInt(value); break;
             default: break;
         }
     }
 }
 
-class Class22 implements ArkTsIndexAccess{
+class Class4 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null, f5: Object | null, f6: Object | null, f7: Object | null, f8: Object | null, f9: Object | null, f10: Object | null, f11: Object | null, f12: Object | null, f13: Object | null, f14: Object | null, f15: Object | null, f16: Object | null, f17: Object | null, f18: Object | null, f19: Object | null)
     {
         this.f0 = f0
@@ -273,57 +273,57 @@ class Class22 implements ArkTsIndexAccess{
     public f19: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 20) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2?.deref();
-            case 3: return f3;
-            case 4: return f4;
-            case 5: return f5;
-            case 6: return f6;
-            case 7: return f7?.deref();
-            case 8: return f8;
-            case 9: return f9;
-            case 10: return f10;
-            case 11: return f11;
-            case 12: return f12;
-            case 13: return f13;
-            case 14: return f14;
-            case 15: return f15?.deref();
-            case 16: return f16;
-            case 17: return f17;
-            case 18: return f18;
-            case 19: return f19;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2?.deref();
+            case 3: return this.f3;
+            case 4: return this.f4;
+            case 5: return this.f5;
+            case 6: return this.f6;
+            case 7: return this.f7?.deref();
+            case 8: return this.f8;
+            case 9: return this.f9;
+            case 10: return this.f10;
+            case 11: return this.f11;
+            case 12: return this.f12;
+            case 13: return this.f13;
+            case 14: return this.f14;
+            case 15: return this.f15?.deref();
+            case 16: return this.f16;
+            case 17: return this.f17;
+            case 18: return this.f18;
+            case 19: return this.f19;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 20) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value == null ? null : new WeakRef<Object>(value); break;
-            case 3: f3 = value; break;
-            case 4: f4 = value; break;
-            case 5: f5 = value; break;
-            case 6: f6 = anyToInt(value); break;
-            case 7: f7 = value == null ? null : new WeakRef<Object>(value); break;
-            case 8: f8 = anyToInt(value); break;
-            case 9: f9 = value; break;
-            case 10: f10 = anyToInt(value); break;
-            case 11: f11 = value; break;
-            case 12: f12 = anyToInt(value); break;
-            case 13: f13 = value; break;
-            case 14: f14 = value; break;
-            case 15: f15 = value == null ? null : new WeakRef<Object>(value); break;
-            case 16: f16 = value; break;
-            case 17: f17 = value; break;
-            case 18: f18 = value; break;
-            case 19: f19 = value; break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value == null ? null : new WeakRef<Object>(value); break;
+            case 3: this.f3 = value; break;
+            case 4: this.f4 = value; break;
+            case 5: this.f5 = value; break;
+            case 6: this.f6 = anyToInt(value); break;
+            case 7: this.f7 = value == null ? null : new WeakRef<Object>(value); break;
+            case 8: this.f8 = anyToInt(value); break;
+            case 9: this.f9 = value; break;
+            case 10: this.f10 = anyToInt(value); break;
+            case 11: this.f11 = value; break;
+            case 12: this.f12 = anyToInt(value); break;
+            case 13: this.f13 = value; break;
+            case 14: this.f14 = value; break;
+            case 15: this.f15 = value == null ? null : new WeakRef<Object>(value); break;
+            case 16: this.f16 = value; break;
+            case 17: this.f17 = value; break;
+            case 18: this.f18 = value; break;
+            case 19: this.f19 = value; break;
             default: break;
         }
     }
 }
 
-class Class23 implements ArkTsIndexAccess{
+class Class5 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null)
     {
         this.f0 = f0
@@ -335,23 +335,23 @@ class Class23 implements ArkTsIndexAccess{
     public f2: WeakRef<Object> | null = null
     public loadField(index: number): Object | null{
         switch ((index % 3) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2?.deref();
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2?.deref();
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 3) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value == null ? null : new WeakRef<Object>(value); break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value == null ? null : new WeakRef<Object>(value); break;
             default: break;
         }
     }
 }
 
-class Class24 implements ArkTsIndexAccess{
+class Class6 implements ArkTsIndexAccess{
     constructor(f0: Object | null)
     {
         this.f0 = f0
@@ -359,19 +359,19 @@ class Class24 implements ArkTsIndexAccess{
     public f0: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 1) as number){
-            case 0: return f0;
+            case 0: return this.f0;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 1) as number){
-            case 0: f0 = value; break;
+            case 0: this.f0 = value; break;
             default: break;
         }
     }
 }
 
-class Class25 implements ArkTsIndexAccess{
+class Class7 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null, f5: Object | null, f6: Object | null, f7: Object | null)
     {
         this.f0 = f0
@@ -393,33 +393,33 @@ class Class25 implements ArkTsIndexAccess{
     public f7: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 8) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
-            case 3: return f3;
-            case 4: return f4;
-            case 5: return f5;
-            case 6: return f6;
-            case 7: return f7;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
+            case 3: return this.f3;
+            case 4: return this.f4;
+            case 5: return this.f5;
+            case 6: return this.f6;
+            case 7: return this.f7;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 8) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value; break;
-            case 3: f3 = value; break;
-            case 4: f4 = value; break;
-            case 5: f5 = anyToInt(value); break;
-            case 6: f6 = anyToBoolean(value); break;
-            case 7: f7 = value; break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = value; break;
+            case 4: this.f4 = value; break;
+            case 5: this.f5 = anyToInt(value); break;
+            case 6: this.f6 = anyToBoolean(value); break;
+            case 7: this.f7 = value; break;
             default: break;
         }
     }
 }
 
-class Class26 implements ArkTsIndexAccess{
+class Class8 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null, f5: Object | null)
     {
         this.f0 = f0
@@ -437,29 +437,29 @@ class Class26 implements ArkTsIndexAccess{
     public f5: number = anyToInt(null)
     public loadField(index: number): Object | null{
         switch ((index % 6) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
-            case 3: return f3;
-            case 4: return f4;
-            case 5: return f5;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
+            case 3: return this.f3;
+            case 4: return this.f4;
+            case 5: return this.f5;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 6) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value; break;
-            case 3: f3 = value; break;
-            case 4: f4 = value; break;
-            case 5: f5 = anyToInt(value); break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = value; break;
+            case 4: this.f4 = value; break;
+            case 5: this.f5 = anyToInt(value); break;
             default: break;
         }
     }
 }
 
-class Class27 implements ArkTsIndexAccess{
+class Class9 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null, f5: Object | null, f6: Object | null, f7: Object | null, f8: Object | null, f9: Object | null, f10: Object | null, f11: Object | null, f12: Object | null, f13: Object | null, f14: Object | null, f15: Object | null, f16: Object | null)
     {
         this.f0 = f0
@@ -499,51 +499,51 @@ class Class27 implements ArkTsIndexAccess{
     public f16: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 17) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
-            case 3: return f3?.deref();
-            case 4: return f4;
-            case 5: return f5;
-            case 6: return f6;
-            case 7: return f7?.deref();
-            case 8: return f8;
-            case 9: return f9;
-            case 10: return f10;
-            case 11: return f11;
-            case 12: return f12;
-            case 13: return f13;
-            case 14: return f14;
-            case 15: return f15?.deref();
-            case 16: return f16;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
+            case 3: return this.f3?.deref();
+            case 4: return this.f4;
+            case 5: return this.f5;
+            case 6: return this.f6;
+            case 7: return this.f7?.deref();
+            case 8: return this.f8;
+            case 9: return this.f9;
+            case 10: return this.f10;
+            case 11: return this.f11;
+            case 12: return this.f12;
+            case 13: return this.f13;
+            case 14: return this.f14;
+            case 15: return this.f15?.deref();
+            case 16: return this.f16;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 17) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value; break;
-            case 3: f3 = value == null ? null : new WeakRef<Object>(value); break;
-            case 4: f4 = value; break;
-            case 5: f5 = anyToInt(value); break;
-            case 6: f6 = value; break;
-            case 7: f7 = value == null ? null : new WeakRef<Object>(value); break;
-            case 8: f8 = anyToInt(value); break;
-            case 9: f9 = anyToBoolean(value); break;
-            case 10: f10 = value; break;
-            case 11: f11 = value; break;
-            case 12: f12 = value; break;
-            case 13: f13 = value; break;
-            case 14: f14 = value; break;
-            case 15: f15 = value == null ? null : new WeakRef<Object>(value); break;
-            case 16: f16 = value; break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = value == null ? null : new WeakRef<Object>(value); break;
+            case 4: this.f4 = value; break;
+            case 5: this.f5 = anyToInt(value); break;
+            case 6: this.f6 = value; break;
+            case 7: this.f7 = value == null ? null : new WeakRef<Object>(value); break;
+            case 8: this.f8 = anyToInt(value); break;
+            case 9: this.f9 = anyToBoolean(value); break;
+            case 10: this.f10 = value; break;
+            case 11: this.f11 = value; break;
+            case 12: this.f12 = value; break;
+            case 13: this.f13 = value; break;
+            case 14: this.f14 = value; break;
+            case 15: this.f15 = value == null ? null : new WeakRef<Object>(value); break;
+            case 16: this.f16 = value; break;
             default: break;
         }
     }
 }
 
-class Class28 implements ArkTsIndexAccess{
+class Class10 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null)
     {
         this.f0 = f0
@@ -555,23 +555,23 @@ class Class28 implements ArkTsIndexAccess{
     public f2: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 3) as number){
-            case 0: return f0;
-            case 1: return f1;
-            case 2: return f2;
+            case 0: return this.f0;
+            case 1: return this.f1;
+            case 2: return this.f2;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 3) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value; break;
-            case 2: f2 = value; break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value; break;
+            case 2: this.f2 = value; break;
             default: break;
         }
     }
 }
 
-class Class29 implements ArkTsIndexAccess{
+class Class11 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null, f5: Object | null, f6: Object | null)
     {
         this.f0 = f0
@@ -591,31 +591,31 @@ class Class29 implements ArkTsIndexAccess{
     public f6: number = anyToInt(null)
     public loadField(index: number): Object | null{
         switch ((index % 7) as number){
-            case 0: return f0;
-            case 1: return f1?.deref();
-            case 2: return f2;
-            case 3: return f3;
-            case 4: return f4;
-            case 5: return f5;
-            case 6: return f6;
+            case 0: return this.f0;
+            case 1: return this.f1?.deref();
+            case 2: return this.f2;
+            case 3: return this.f3;
+            case 4: return this.f4;
+            case 5: return this.f5;
+            case 6: return this.f6;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 7) as number){
-            case 0: f0 = value; break;
-            case 1: f1 = value == null ? null : new WeakRef<Object>(value); break;
-            case 2: f2 = value; break;
-            case 3: f3 = anyToInt(value); break;
-            case 4: f4 = anyToBoolean(value); break;
-            case 5: f5 = anyToInt(value); break;
-            case 6: f6 = anyToInt(value); break;
+            case 0: this.f0 = value; break;
+            case 1: this.f1 = value == null ? null : new WeakRef<Object>(value); break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = anyToInt(value); break;
+            case 4: this.f4 = anyToBoolean(value); break;
+            case 5: this.f5 = anyToInt(value); break;
+            case 6: this.f6 = anyToInt(value); break;
             default: break;
         }
     }
 }
 
-class Class30 implements ArkTsIndexAccess{
+class Class12 implements ArkTsIndexAccess{
     constructor(f0: Object | null, f1: Object | null, f2: Object | null, f3: Object | null, f4: Object | null)
     {
         this.f0 = f0
@@ -631,27 +631,27 @@ class Class30 implements ArkTsIndexAccess{
     public f4: Object | null = null
     public loadField(index: number): Object | null{
         switch ((index % 5) as number){
-            case 0: return f0?.deref();
-            case 1: return f1?.deref();
-            case 2: return f2;
-            case 3: return f3;
-            case 4: return f4;
+            case 0: return this.f0?.deref();
+            case 1: return this.f1?.deref();
+            case 2: return this.f2;
+            case 3: return this.f3;
+            case 4: return this.f4;
             default: return null;
         }
     }
     public storeField(index: number, value: Object | null): void{
         switch ((index % 5) as number){
-            case 0: f0 = value == null ? null : new WeakRef<Object>(value); break;
-            case 1: f1 = value == null ? null : new WeakRef<Object>(value); break;
-            case 2: f2 = value; break;
-            case 3: f3 = anyToInt(value); break;
-            case 4: f4 = value; break;
+            case 0: this.f0 = value == null ? null : new WeakRef<Object>(value); break;
+            case 1: this.f1 = value == null ? null : new WeakRef<Object>(value); break;
+            case 2: this.f2 = value; break;
+            case 3: this.f3 = anyToInt(value); break;
+            case 4: this.f4 = value; break;
             default: break;
         }
     }
 }
 
-function fun31(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
+function fun0(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
     g1 = l2
     let l3: Object | null = alloc(() => { return new Class7(null, null, null, null, null, null, null, null); })
     tryGc()
@@ -678,7 +678,7 @@ function fun31(l0: Object | null, l1: Object | null, l2: Object | null): Object 
     return null
 }
 
-function fun32(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null, l4: Object | null, l5: Object | null, l6: Object | null, l7: Object | null, l8: Object | null, l9: Object | null, l10: Object | null): Object | null{
+function fun1(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null, l4: Object | null, l5: Object | null, l6: Object | null, l7: Object | null, l8: Object | null, l9: Object | null, l10: Object | null): Object | null{
     tryGc()
     let l11: Object | null = alloc(() => { return new Class12(null, null, null, null, null); })
     l11?.storeField(4, g3)
@@ -702,7 +702,7 @@ function fun32(l0: Object | null, l1: Object | null, l2: Object | null, l3: Obje
     return null
 }
 
-function fun33(l0: Object | null, l1: Object | null): Object | null{
+function fun2(l0: Object | null, l1: Object | null): Object | null{
     g9 = l1
     let l2: Object | null = alloc(() => { return new Class9(l1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null); })
     g2 = l1
@@ -722,7 +722,7 @@ function fun33(l0: Object | null, l1: Object | null): Object | null{
     return null
 }
 
-function fun34(l0: Object | null): Object | null{
+function fun3(l0: Object | null): Object | null{
     let l1: Object | null = alloc(() => { return new Class12(g14, null, null, null, null); })
     g8 = l1?.loadField(1)
     l1 = g0
@@ -752,7 +752,7 @@ function fun34(l0: Object | null): Object | null{
     return null
 }
 
-function fun35(l0: Object | null, l1: Object | null): Object | null{
+function fun4(l0: Object | null, l1: Object | null): Object | null{
     g11
     let l3: Object | null = alloc(() => { return new Class0(g1, l1, l1, null); })
     let l4: Object | null = alloc(() => { return new Class8(g16, l0, g16, g8, l3?.loadField(3), g4); })
@@ -773,7 +773,7 @@ function fun35(l0: Object | null, l1: Object | null): Object | null{
     return null
 }
 
-function fun36(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
+function fun5(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
     g14 = l0
     let l3: Object | null = alloc(() => { return new Class1(g15, l0); })
     let l4: Object | null = alloc(() => { return new Class0(g8, null, null, null); })
@@ -787,7 +787,7 @@ function fun36(l0: Object | null, l1: Object | null, l2: Object | null): Object 
     return null
 }
 
-function fun37(l0: Object | null, l1: Object | null): Object | null{
+function fun6(l0: Object | null, l1: Object | null): Object | null{
     let l2: Object | null = alloc(() => { return new Class10(null, g3, g16); })
     let l3: Object | null = alloc(() => { return new Class11(g5, l1, g16, null, null, null, null); })
     g4
@@ -800,7 +800,7 @@ function fun37(l0: Object | null, l1: Object | null): Object | null{
     return null
 }
 
-function fun38(l0: Object | null): Object | null{
+function fun7(l0: Object | null): Object | null{
     let l1: Object | null = alloc(() => { return new Class10(g2, null, null); })
     let l2: Object | null = alloc(() => { return new Class1(g9, l0); })
     g6
@@ -821,7 +821,7 @@ function fun38(l0: Object | null): Object | null{
     return null
 }
 
-function fun39(l0: Object | null): Object | null{
+function fun8(l0: Object | null): Object | null{
     let l1: Object | null = alloc(() => { return new Class8(null, null, null, null, null, null); })
     let l2: Object | null = alloc(() => { return new Class5(g3, g13, g10); })
     g2 = g16
@@ -848,7 +848,7 @@ function fun39(l0: Object | null): Object | null{
     return null
 }
 
-function fun40(): Object | null{
+function fun9(): Object | null{
     g4
     g15 = g2
     g12 = g4
@@ -878,7 +878,7 @@ function fun40(): Object | null{
     return null
 }
 
-function fun41(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
+function fun10(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
     let l4: Object | null = alloc(() => { return new Class7(g4, l2, null, null, null, null, null, null); })
     l4?.storeField(3, g17)
     for (let i = 0; i < 35; i++){
@@ -896,7 +896,7 @@ function fun41(l0: Object | null, l1: Object | null, l2: Object | null, l3: Obje
     return null
 }
 
-function fun42(): Object | null{
+function fun11(): Object | null{
     g3
     g3 = g2
     let l1: Object | null = alloc(() => { return new Class1(g9, g4); })
@@ -918,7 +918,7 @@ function fun42(): Object | null{
     return null
 }
 
-function fun43(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null, l4: Object | null): Object | null{
+function fun12(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null, l4: Object | null): Object | null{
     let l5: Object | null = alloc(() => { return new Class8(g7, null, null, null, null, null); })
     g15 = g1
     tryGc()
@@ -956,7 +956,7 @@ function fun43(l0: Object | null, l1: Object | null, l2: Object | null, l3: Obje
     return null
 }
 
-function fun44(l0: Object | null): Object | null{
+function fun13(l0: Object | null): Object | null{
     let l1: Object | null = alloc(() => { return new Class8(l0, null, null, null, null, null); })
     let l2: Object | null = alloc(() => { return new Class4(null, g6, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null); })
     l1?.storeField(2, g9)
@@ -975,7 +975,7 @@ function fun44(l0: Object | null): Object | null{
     return null
 }
 
-function fun45(): Object | null{
+function fun14(): Object | null{
     g17 = g2
     g0 = g5
     let l0: Object | null = alloc(() => { return new Class9(null, g17, g3, null, null, null, null, null, null, null, null, null, null, null, null, null, null); })
@@ -991,7 +991,7 @@ function fun45(): Object | null{
     return null
 }
 
-function fun46(): Object | null{
+function fun15(): Object | null{
     g13 = g1
     g5 = g17
     g3 = g8
@@ -1005,7 +1005,7 @@ function fun46(): Object | null{
     return null
 }
 
-function fun47(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
+function fun16(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
     for (let i = 0; i < 51; i++){
         alloc(() => { return new Class3(null, null, null, null); })
     }
@@ -1048,7 +1048,7 @@ function fun47(l0: Object | null, l1: Object | null, l2: Object | null, l3: Obje
     return null
 }
 
-function fun48(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
+function fun17(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
     let l3: Object | null = alloc(() => { return new Class11(g13, null, l2, null, g4, g14, g5); })
     let l4: Object | null = alloc(() => { return new Class12(g0, null, null, null, null); })
     l3?.storeField(2, g11)
@@ -1063,7 +1063,7 @@ function fun48(l0: Object | null, l1: Object | null, l2: Object | null): Object 
     return null
 }
 
-function fun49(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
+function fun18(l0: Object | null, l1: Object | null, l2: Object | null, l3: Object | null): Object | null{
     let l4: Object | null = alloc(() => { return new Class1(g8, g15); })
     g1 = l0
     tryGc()
@@ -1106,7 +1106,7 @@ function fun49(l0: Object | null, l1: Object | null, l2: Object | null, l3: Obje
     return null
 }
 
-function fun50(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
+function fun19(l0: Object | null, l1: Object | null, l2: Object | null): Object | null{
     g16 = g5
     g4 = g1
     g8 = g3
@@ -1166,3 +1166,10 @@ function main(): void{
     terminationRequested = true
     tryGc()
 }
+
+try {
+    main()
+} catch (e) {
+    ;(typeof console !== "undefined") ? console.log("fuzz-terminated:", e) : print("fuzz-terminated:", e)
+}
+;(typeof console !== "undefined") ? console.log("fuzz-case-done") : print("fuzz-case-done")
