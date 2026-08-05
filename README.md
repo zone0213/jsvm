@@ -1,11 +1,29 @@
-  echo "=== 找 es2abc ==="
-  which es2abc 2>/dev/null
-  find / -name "es2abc" -type f 2>/dev/null | head -5
+> hvigor Finished :entry:default@CacheNativeLibs... after 7 ms 
+> hvigor ERROR: Failed :entry:default@CompileArkTS... 
+> hvigor ERROR: Error Code: 00308018 Unknown Error
+ERROR: the D:\project\deveco-runner\entry\build\default\intermediates\res\default\resources\base\profile\main_pages.json file format is invalid.
 
-  echo "=== 找 ark_js_vm ==="
-  which ark_js_vm 2>/dev/null
-  find / -name "ark_js_vm" -type f 2>/dev/null | head -5
+* Try the following:
+  > This error is unknown, view the detailed error logs in the '.hvigor > outputs > build-logs' directory in the project directory for analysis, or contact the developer's official website for help.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building
 
-  echo "=== 找 HarmonyOS/Ark 相关目录 ==="
-  ls /opt/ 2>/dev/null | grep -i -E "harmony|deveco|ark|hmos"
-  find / -type d -name "ark*" 2>/dev/null | head -5
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+
+
+FAILURE: Build completed with 1 failure.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 'default@CompileArkTS'.
+  > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+
+================================================================================
+> hvigor ERROR: BUILD FAILED in 3 s 277 ms 
