@@ -1,2 +1,2 @@
 
- Get-ChildItem "C:\Program Files\Huawei\DevEco Studio" -Recurse -Filter "ark_js_vm*" -ErrorAction SilentlyContinue | Select-Object FullName
+ hdc shell find / -name "ark_js_vm" 2>/dev/null
