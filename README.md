@@ -1,44 +1,56 @@
--07 09:13:26,275] [26024] [DeviceTest] [INFO] [
-screen_lock.unlock(Phone1.8RC9K26613000662)
-]
-[2026-08-07 09:13:26,276] [26024] [DeviceTest] [ERROR] [[Script-0203002] 'Device' object has no attribute 'proxy'] [ErrorNo=00000, is_traceback=True]
-[2026-08-07 09:13:26,276] [26024] [DeviceTest] [INFO] [flash error msg.]
-[2026-08-07 09:13:26,279] [26024] [DeviceTest] [INFO] [
-PerformanceDynamic_Douyin_0010, occurred an error!
-]
-[2026-08-07 09:13:27,133] [26024] [DeviceTest] [INFO] [Screenshot: D:\0806modelcase2\ModelCase_ResourceUsage_OHOS-master-B100_new-8-6\reports\20260807091250699\all\details\PerformanceDynamic_Douyin_0010\8RC9K26613000662.20260807091326279267.jpegPerformanceDynamic_Douyin_0010, occurred an error!]
-[2026-08-07 09:13:27,133] [26024] [DeviceTest] [ERROR] [[Script-0203002] 'Device' object has no attribute 'proxy'] [ErrorNo=00000]
-[2026-08-07 09:13:27,134] [26024] [DeviceTest] [ERROR] [Traceback (most recent call last):
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 1186, in run_keyword
-    _ret = func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\hypium\action\os_hypium\screen_lock.py", line 170, in unlock
-    if not device.proxy.powerApiHelper.isScreenLocked():
-           ^^^^^^^^^^^^
-AttributeError: 'Device' object has no attribute 'proxy'
+# !/usr/bin/env python
+# coding: utf-8
 
-During handling of the above exception, another exception occurred:
+from aw.common.publicsAW import *
+from perfModel.ResourceUsageCase.offload.changjing.base.PerformanceDynamic_Douyin import (
+    PerformanceDynamic_Douyin as testsuite,
+)
 
-Traceback (most recent call last):
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 201, in _exec_func
-    func_ret = func(*args)
-               ^^^^^^^^^^^
-  File "D:\0806modelcase2\ModelCase_ResourceUsage_OHOS-master-B100_new-8-6\ModelCase_ResourceUsage_OHOS-master-B100_new\perfModel\ResourceUsageCase\offload\changjing\PerformanceDynamic_changjing.py", line 617, in test_step_all
-    self.test_step_first()
-  File "D:\0806modelcase2\ModelCase_ResourceUsage_OHOS-master-B100_new-8-6\ModelCase_ResourceUsage_OHOS-master-B100_new\perfModel\ResourceUsageCase\offload\changjing\PerformanceDynamic_changjing.py", line 376, in test_step_first
-    self.d.ScreenLock.unlock()
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 1100, in wrapper
-    run_k = run_keyword(func, *args, **kwargs)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 1167, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 1242, in run_keyword
-    _screenshot_and_flash_error_msg(
-  File "D:\0806modelcase\ModelCase_ResourceUsage_OHOS-master-B100_new\.venv\Lib\site-packages\devicetest\core\test_case.py", line 994, in _screenshot_and_flash_error_msg
-    raise DeviceTestError(error_msg)
-devicetest.core.exception.DeviceTestError: [Script-0203002] 'Device' object has no attribute 'proxy'
-] [ErrorNo=00000]
-[2026-08-07 09:13:27,134] [26024] [DeviceTest] [INFO] [****************************Test test_step_all result is: Failed]
-[2026-08-07 09:13:27,134] [26024] [DeviceTest] [INFO] [TestMethod: test_step_all result is Failed]
-[2026-08-07 09:13:27,134] [26024] [DeviceTest] [INFO] [TestMethod: test_step
+"""
+1、启动抖音(等待5s)
+2、进入拍视频页面：点击“+”(等待2s），点击视频（等待2s）
+3、进行拍照：点击拍照按钮(等待1s),等待10s,点击停止拍摄按钮（等待2s）
+4、返回拍摄界面：侧滑返回（等待2s）
+5、返回应用首页
+6、上滑返回桌面
+"""
+
+
+class PerformanceDynamic_Douyin_0080(testsuite):
+    @testsuite.step_method
+    def case_step_1(self):
+        """
+        1、启动抖音(等待5s)
+        """
+        self.start_douyin()
+
+    @testsuite.step_method
+    def case_step_2(self):
+        """
+        2、进入拍视频页面：点击“+”(等待2s），点击视频（等待2s）
+        """
+        self.d.touch((535, 2176), wait_time=2)
+
+        # self.d.touch(BY.text("视频"), wait_time=2)
+        self.d.touch((555,1787), wait_time=2)
+
+    @testsuite.step_method
+    def case_step_3(self):
+        """
+        3、进行拍照：点击拍照按钮(等待1s),等待10s,点击停止拍摄按钮（等待2s）
+        """
+        self.d.touch((561, 1983), wait_time=1)
+        # self.d.check_component_exist(BY.text("闪光灯"), expect_exist=False)
+        self.d.wait(10)
+        self.d.touch((559, 1991), wait_time=2)
+        # self.d.check_component_exist(BY.text("下一步"))
+
+    @testsuite.step_method
+    def case_step_4(self):
+        """
+        4、返回拍摄界面：侧滑返回（等待2s）
+        """
+        self.d.touch((265, 383), wait_time=2)  #点击左上角清空内容
+        self.d.swipe_to_back()
+
+        self.d.wait(2)
