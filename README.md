@@ -1,15 +1,31 @@
-(.venv) PS D:\0806modelcase2\ModelCase_ResourceUsage_OHOS-master-B100_new-8-6\ModelCase_ResourceUsage_OHOS-master-B100_new> python .\catch_app_mem_info_debug.py
-app_version_check is false
-[2026-08-07 08:59:44,370] [12028] [Main] [INFO] [*************** xDevice Test Framework 7.0.2.10 Starting ***************]
-[2026-08-07 08:59:44,370] [12028] [HypiumPlugins] [INFO] [Start Load hypium plugins]
-[2026-08-07 08:59:44,371] [12028] [HypiumBasic] [INFO] [register task call finished]
-[2026-08-07 08:59:44,371] [12028] [HypiumPlugins] [INFO] [Load hypium plugins finished]
-[2026-08-07 08:59:44,822] [16808] [Hdc] [INFO] [8RC9K26613000662                USB     Connected       localhost
-COM1            UART    Ready   unknown...
-]
-[2026-08-07 08:59:46,635] [15772] [Adb] [ERROR] [AdbMonitor adb socket connection Error: [WinError 10061] 由于目标计算机积极拒绝，无法连接。, host is 127.0.0.1, port is 5037] [ErrorNo=00000]
-[2026-08-07 08:59:50,668] [15772] [Adb] [ERROR] [AdbMonitor adb socket connection Error: [WinError 10061] 由于目标计算机积极拒绝，无法连接。, host is 127.0.0.1, port is 5037] [ErrorNo=00000]
-[2026-08-07 08:59:54,694] [15772] [Adb] [ERROR] [AdbMonitor adb socket connection Error: [WinError 10061] 由于目标计算机积极拒绝，无法连接。, host is 127.0.0.1, port is 5037] [ErrorNo=00000]
-[2026-08-07 08:59:58,725] [15772] [Adb] [ERROR] [AdbMonitor adb socket connection Error: [WinError 10061] 由于目标计算机积极拒绝，无法连接。, host is 127.0.0.1, port is 5037] [ErrorNo=00000]
-[2026-08-07 09:00:02,748] [15772] [Adb] [ERROR] [AdbMonitor adb socket connection Error: [WinError 10061] 由于目标计算机积极拒绝，无法连接。, host is 127.0.0.1, port is 5037] [ErrorNo=00000]
-[2026-08-07 09:00:06,764] [15772] [Adb] [ERROR] [AdbMonito
+https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+
+
+
+你可以直接从 Google 的 Android 开发者官网下载官方的 ADB (SDK Platform-Tools)，这是最安全、最纯净的版本。
+1. 下载地址
+官方下载链接（直接点击下载 Windows 版）：
+https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+官方主页（如果想看其他平台）：
+https://developer.android.com/studio/releases/platform-tools
+2. 安装与配置步骤（非常重要）
+下载后，你不能只把它放在那里，需要将其路径加入到系统的环境变量中，这样 Python 脚本才能随时随地调用它。
+解压： 将下载好的 platform-tools-latest-windows.zip 解压到一个固定的位置（例如：D:\Android\platform-tools）。
+复制路径： 进入文件夹，复制上方地址栏的完整路径。
+设置环境变量：
+右键点击 此电脑 -> 属性 -> 高级系统设置。
+点击 环境变量。
+在“系统变量”栏找到 Path，点击 编辑。
+点击 新建，把刚才复制的路径（例如 D:\Android\platform-tools）粘贴进去。
+一路点击 确定 保存。
+3. 验证是否安装成功
+重新打开一个 PowerShell 或 CMD 窗口（一定要新开窗口，旧的不会生效），输入：
+code
+Powershell
+adb version
+如果看到类似 Android Debug Bridge version 1.0.41 的字样，说明安装成功。
+4. 解决你的报错
+安装完成后，再次运行你的 Python 脚本前，先执行一次：
+code
+Powershell
+adb start-server
